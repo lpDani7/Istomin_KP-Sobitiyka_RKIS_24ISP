@@ -35,7 +35,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable ResponsibleTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT *
+            string querytovar = @"SELECT ФИО, Должность, strftime('%d.%m.%Y', Дата_рож) AS 'Дата рождения', Пол
                                FROM Ответственные";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
@@ -47,7 +47,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable PlacesTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT *
+            string querytovar = @"SELECT Название, Адрес, Вместимость 
                                FROM Места_проведения";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
@@ -59,7 +59,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable TypesOfExpensesTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT *
+            string querytovar = @"SELECT Тип_расхода AS 'Тип расхода'
                                FROM Типы_расходов";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
@@ -71,7 +71,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable PreferentialCategoriesTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT *
+            string querytovar = @"SELECT Название AS 'Название категории', [Послабление(%)]
                                FROM Льготные_категории";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);

@@ -54,11 +54,29 @@
   <ItemGroup>
     <Compile Include="Controller\AppSetting.cs" />
     <Compile Include="Controller\Query.cs" />
+    <Compile Include="FormCorrectionPlaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorrectionPlaces.Designer.cs">
+      <DependentUpon>FormCorrectionPlaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCorrectionResponsible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorrectionResponsible.Designer.cs">
+      <DependentUpon>FormCorrectionResponsible.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCorrectionPreferentialCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorrectionPreferentialCategories.Designer.cs">
+      <DependentUpon>FormCorrectionPreferentialCategories.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSprav.cs">
       <SubType>Form</SubType>
@@ -66,13 +84,31 @@
     <Compile Include="FormSprav.Designer.cs">
       <DependentUpon>FormSprav.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCorrectionTypesOfExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorrectionTypesOfExpenses.Designer.cs">
+      <DependentUpon>FormCorrectionTypesOfExpenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCorrectionPlaces.resx">
+      <DependentUpon>FormCorrectionPlaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCorrectionResponsible.resx">
+      <DependentUpon>FormCorrectionResponsible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCorrectionPreferentialCategories.resx">
+      <DependentUpon>FormCorrectionPreferentialCategories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSprav.resx">
       <DependentUpon>FormSprav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCorrectionTypesOfExpenses.resx">
+      <DependentUpon>FormCorrectionTypesOfExpenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
