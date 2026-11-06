@@ -103,6 +103,7 @@
             this.textBoxCorrectionResponsibleName.Name = "textBoxCorrectionResponsibleName";
             this.textBoxCorrectionResponsibleName.Size = new System.Drawing.Size(361, 22);
             this.textBoxCorrectionResponsibleName.TabIndex = 7;
+            this.textBoxCorrectionResponsibleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorrectionResponsibleName_KeyPress);
             // 
             // textBoxCorrectionResponsiblePost
             // 
@@ -110,6 +111,7 @@
             this.textBoxCorrectionResponsiblePost.Name = "textBoxCorrectionResponsiblePost";
             this.textBoxCorrectionResponsiblePost.Size = new System.Drawing.Size(321, 22);
             this.textBoxCorrectionResponsiblePost.TabIndex = 8;
+            this.textBoxCorrectionResponsiblePost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorrectionResponsiblePost_KeyPress);
             // 
             // comboBoxCorrectionResponsibleGender
             // 

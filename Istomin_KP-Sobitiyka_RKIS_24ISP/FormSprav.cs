@@ -431,5 +431,12 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 return;
             }
         }
+
+        //Событие обработки ввода текста в textBoxResponsibleSearch
+        private void textBoxResponsibleSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
+            if (textBoxResponsibleSearch.Text.Length > 100) e.KeyChar = (char)0;
+        }
     }
 }

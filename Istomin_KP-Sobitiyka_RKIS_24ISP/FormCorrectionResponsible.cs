@@ -21,6 +21,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         private DateTime Date;
         private string gender;
 
+        //Метод инициализации формы Добавления Ответственного
         public FormCorrectionResponsible()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             textBoxCorrectionResponsiblePost.Clear();
         }
 
+        //Метод инициализации формы Редактирования Ответственного
         public FormCorrectionResponsible(int id, string name, string post, DateTime Date, string gender)
         {
             InitializeComponent();
@@ -67,10 +69,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод кнопки "Подтвердить"
         private void buttonCorrectionResponsibleConfirm_Click(object sender, EventArgs e)
         {
-            /*try {*/ string name = textBoxCorrectionResponsibleName.Text.Trim();/* } catch { MessageBox.Show("Ошибка ввода ФИО!");}*/
-            /*try {*/ string post = textBoxCorrectionResponsiblePost.Text.Trim(); /*} catch { MessageBox.Show("Ошибка ввода Должности!"); return; }*/
+            if (String.IsNullOrWhiteSpace(textBoxCorrectionResponsibleName.Text)) { MessageBox.Show("Ошибка ввода ФИО!"); return; }
+            else if (String.IsNullOrWhiteSpace(textBoxCorrectionResponsiblePost.Text)) { MessageBox.Show("Ошибка ввода Должности!"); return; }
+            else if (comboBoxCorrectionResponsibleGender.SelectedIndex==-1) { MessageBox.Show("Выберите пол!"); return; }
+            string name = textBoxCorrectionResponsibleName.Text.Trim();
+            string post = textBoxCorrectionResponsiblePost.Text.Trim();
             string Date = dateTimePickerCorrectionResponsibleDate.Value.ToString("yyyy-MM-dd");
-            /*try {*/ string gender = comboBoxCorrectionResponsibleGender.SelectedItem.ToString(); /*} catch { MessageBox.Show("Ошибка ввода Пола!"); return; }*/
+            string gender = comboBoxCorrectionResponsibleGender.SelectedItem.ToString();
             if (controller.IsResponsibleHasCoincidence(name, post, Date, gender)==false && mode == 1)
             {
                 MessageBox.Show("Запись с такими данными уже существует!");
@@ -82,7 +87,22 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 else if (mode == 2) MessageBox.Show($"Запись {id} отредактирована!");
                 this.Close();
             }
-            //dataGridView.DataSource = controller.TableTovar();
+        }
+
+        //Событие обработки ввода текста в textBoxCorrectionResponsibleName
+        private void textBoxCorrectionResponsibleName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
+            if (textBoxCorrectionResponsibleName.Text.Length > 100) e.KeyChar = (char)0;
+            // e.KeyChar = (char)0; - Запрет ввода со звуком ошибки
+            // e.Handled = true; - Без звука
+        }
+
+        //Событие обработки ввода текста в textBoxCorrectionResponsiblePost
+        private void textBoxCorrectionResponsiblePost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
+            if (textBoxCorrectionResponsiblePost.Text.Length > 100) e.KeyChar = (char)0;
         }
     }
 

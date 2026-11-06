@@ -264,6 +264,7 @@
             this.textBoxResponsibleSearch.Size = new System.Drawing.Size(157, 22);
             this.textBoxResponsibleSearch.TabIndex = 3;
             this.textBoxResponsibleSearch.TextChanged += new System.EventHandler(this.textBoxResponsibleSearch_TextChanged);
+            this.textBoxResponsibleSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxResponsibleSearch_KeyPress);
             // 
             // menuStrip2
             // 
@@ -291,21 +292,21 @@
             // toolStripMenuItemResponsibleAdd
             // 
             this.toolStripMenuItemResponsibleAdd.Name = "toolStripMenuItemResponsibleAdd";
-            this.toolStripMenuItemResponsibleAdd.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemResponsibleAdd.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItemResponsibleAdd.Text = "Добавить";
             this.toolStripMenuItemResponsibleAdd.Click += new System.EventHandler(this.toolStripMenuItemResponsibleAdd_Click);
             // 
             // toolStripMenuItemResponsibleEdit
             // 
             this.toolStripMenuItemResponsibleEdit.Name = "toolStripMenuItemResponsibleEdit";
-            this.toolStripMenuItemResponsibleEdit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemResponsibleEdit.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItemResponsibleEdit.Text = "Редактированть";
             this.toolStripMenuItemResponsibleEdit.Click += new System.EventHandler(this.toolStripMenuItemResponsibleEdit_Click);
             // 
             // toolStripMenuItemResponsibleDelete
             // 
             this.toolStripMenuItemResponsibleDelete.Name = "toolStripMenuItemResponsibleDelete";
-            this.toolStripMenuItemResponsibleDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemResponsibleDelete.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItemResponsibleDelete.Text = "Удалить";
             this.toolStripMenuItemResponsibleDelete.Click += new System.EventHandler(this.toolStripMenuItemResponsibleDelete_Click);
             // 
