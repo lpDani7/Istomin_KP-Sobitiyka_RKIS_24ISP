@@ -307,6 +307,7 @@
             this.toolStripMenuItemResponsibleDelete.Name = "toolStripMenuItemResponsibleDelete";
             this.toolStripMenuItemResponsibleDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemResponsibleDelete.Text = "Удалить";
+            this.toolStripMenuItemResponsibleDelete.Click += new System.EventHandler(this.toolStripMenuItemResponsibleDelete_Click);
             // 
             // выходToolStripMenuItemResponsible
             // 
@@ -333,8 +334,10 @@
             // 
             // dataGridViewResponsible
             // 
-            this.dataGridViewResponsible.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewResponsible.AllowUserToAddRows = false;
+            this.dataGridViewResponsible.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewResponsible.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewResponsible.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewResponsible.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewResponsible.Location = new System.Drawing.Point(7, 117);
             this.dataGridViewResponsible.Name = "dataGridViewResponsible";
@@ -470,21 +473,21 @@
             // toolStripMenuItemPlacesAdd
             // 
             this.toolStripMenuItemPlacesAdd.Name = "toolStripMenuItemPlacesAdd";
-            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPlacesAdd.Text = "Добавить";
             this.toolStripMenuItemPlacesAdd.Click += new System.EventHandler(this.toolStripMenuItemPlacesAdd_Click);
             // 
             // toolStripMenuItemPlacesEdit
             // 
             this.toolStripMenuItemPlacesEdit.Name = "toolStripMenuItemPlacesEdit";
-            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPlacesEdit.Text = "Редактированть";
             this.toolStripMenuItemPlacesEdit.Click += new System.EventHandler(this.toolStripMenuItemPlacesEdit_Click);
             // 
             // toolStripMenuItemPlacesDelete
             // 
             this.toolStripMenuItemPlacesDelete.Name = "toolStripMenuItemPlacesDelete";
-            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPlacesDelete.Text = "Удалить";
             // 
             // выходToolStripMenuItemPlaces
@@ -512,8 +515,10 @@
             // 
             // dataGridViewPlaces
             // 
-            this.dataGridViewPlaces.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewPlaces.AllowUserToAddRows = false;
+            this.dataGridViewPlaces.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPlaces.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewPlaces.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewPlaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlaces.Location = new System.Drawing.Point(7, 110);
             this.dataGridViewPlaces.Name = "dataGridViewPlaces";
@@ -592,21 +597,21 @@
             // toolStripMenuItemTypesOfExpensesAdd
             // 
             this.toolStripMenuItemTypesOfExpensesAdd.Name = "toolStripMenuItemTypesOfExpensesAdd";
-            this.toolStripMenuItemTypesOfExpensesAdd.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemTypesOfExpensesAdd.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemTypesOfExpensesAdd.Text = "Добавить";
             this.toolStripMenuItemTypesOfExpensesAdd.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesAdd_Click);
             // 
             // toolStripMenuItemTypesOfExpensesEdit
             // 
             this.toolStripMenuItemTypesOfExpensesEdit.Name = "toolStripMenuItemTypesOfExpensesEdit";
-            this.toolStripMenuItemTypesOfExpensesEdit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemTypesOfExpensesEdit.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemTypesOfExpensesEdit.Text = "Редактированть";
             this.toolStripMenuItemTypesOfExpensesEdit.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesEdit_Click);
             // 
             // toolStripMenuItemTypesOfExpensesDelete
             // 
             this.toolStripMenuItemTypesOfExpensesDelete.Name = "toolStripMenuItemTypesOfExpensesDelete";
-            this.toolStripMenuItemTypesOfExpensesDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemTypesOfExpensesDelete.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemTypesOfExpensesDelete.Text = "Удалить";
             // 
             // выходToolStripMenuItemTypesOfExpenses
@@ -634,8 +639,10 @@
             // 
             // dataGridViewTypesOfExpenses
             // 
-            this.dataGridViewTypesOfExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewTypesOfExpenses.AllowUserToAddRows = false;
+            this.dataGridViewTypesOfExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTypesOfExpenses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewTypesOfExpenses.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewTypesOfExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTypesOfExpenses.Location = new System.Drawing.Point(7, 87);
             this.dataGridViewTypesOfExpenses.Name = "dataGridViewTypesOfExpenses";
@@ -750,8 +757,10 @@
             // 
             // dataGridViewPreferentialCategories
             // 
-            this.dataGridViewPreferentialCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewPreferentialCategories.AllowUserToAddRows = false;
+            this.dataGridViewPreferentialCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPreferentialCategories.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewPreferentialCategories.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewPreferentialCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPreferentialCategories.Location = new System.Drawing.Point(7, 87);
             this.dataGridViewPreferentialCategories.Name = "dataGridViewPreferentialCategories";
@@ -783,21 +792,21 @@
             // toolStripMenuItemPreferentialCategoriesAdd
             // 
             this.toolStripMenuItemPreferentialCategoriesAdd.Name = "toolStripMenuItemPreferentialCategoriesAdd";
-            this.toolStripMenuItemPreferentialCategoriesAdd.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPreferentialCategoriesAdd.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPreferentialCategoriesAdd.Text = "Добавить";
             this.toolStripMenuItemPreferentialCategoriesAdd.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesAdd_Click);
             // 
             // toolStripMenuItemPreferentialCategoriesEdit
             // 
             this.toolStripMenuItemPreferentialCategoriesEdit.Name = "toolStripMenuItemPreferentialCategoriesEdit";
-            this.toolStripMenuItemPreferentialCategoriesEdit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPreferentialCategoriesEdit.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPreferentialCategoriesEdit.Text = "Редактированть";
             this.toolStripMenuItemPreferentialCategoriesEdit.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesEdit_Click);
             // 
             // toolStripMenuItemPreferentialCategoriesDelete
             // 
             this.toolStripMenuItemPreferentialCategoriesDelete.Name = "toolStripMenuItemPreferentialCategoriesDelete";
-            this.toolStripMenuItemPreferentialCategoriesDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPreferentialCategoriesDelete.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPreferentialCategoriesDelete.Text = "Удалить";
             // 
             // выходToolStripMenuItemPreferentialCategories
@@ -824,7 +833,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSprav";
-            this.Text = "FormSprav";
+            this.Text = "Справочники";
             this.Load += new System.EventHandler(this.FormSprav_Load);
             this.tabControlMain.ResumeLayout(false);
             this.tabPageResponsible.ResumeLayout(false);

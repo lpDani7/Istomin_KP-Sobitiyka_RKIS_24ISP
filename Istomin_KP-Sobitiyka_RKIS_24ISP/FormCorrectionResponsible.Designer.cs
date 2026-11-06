@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCorrectionResponsible));
+            this.labelCorrectionResponsibleID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonCorrectionResponsibleCancel = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxCorrectionResponsibleName = new System.Windows.Forms.TextBox();
+            this.textBoxCorrectionResponsiblePost = new System.Windows.Forms.TextBox();
+            this.comboBoxCorrectionResponsibleGender = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerCorrectionResponsibleDate = new System.Windows.Forms.DateTimePicker();
             this.buttonCorrectionResponsibleConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // labelCorrectionResponsibleID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID: ";
+            this.labelCorrectionResponsibleID.AutoSize = true;
+            this.labelCorrectionResponsibleID.Location = new System.Drawing.Point(17, 9);
+            this.labelCorrectionResponsibleID.Name = "labelCorrectionResponsibleID";
+            this.labelCorrectionResponsibleID.Size = new System.Drawing.Size(26, 16);
+            this.labelCorrectionResponsibleID.TabIndex = 0;
+            this.labelCorrectionResponsibleID.Text = "ID: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 98);
+            this.label2.Location = new System.Drawing.Point(17, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 1;
@@ -62,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 39);
+            this.label3.Location = new System.Drawing.Point(17, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 16);
             this.label3.TabIndex = 2;
@@ -71,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 39);
+            this.label4.Location = new System.Drawing.Point(198, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 3;
@@ -80,7 +81,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 69);
+            this.label5.Location = new System.Drawing.Point(15, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 16);
             this.label5.TabIndex = 4;
@@ -94,36 +95,38 @@
             this.buttonCorrectionResponsibleCancel.TabIndex = 5;
             this.buttonCorrectionResponsibleCancel.Text = "Отменить";
             this.buttonCorrectionResponsibleCancel.UseVisualStyleBackColor = true;
+            this.buttonCorrectionResponsibleCancel.Click += new System.EventHandler(this.buttonCorrectionResponsibleCancel_Click);
             // 
-            // textBox2
+            // textBoxCorrectionResponsibleName
             // 
-            this.textBox2.Location = new System.Drawing.Point(57, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(361, 22);
-            this.textBox2.TabIndex = 7;
+            this.textBoxCorrectionResponsibleName.Location = new System.Drawing.Point(61, 34);
+            this.textBoxCorrectionResponsibleName.Name = "textBoxCorrectionResponsibleName";
+            this.textBoxCorrectionResponsibleName.Size = new System.Drawing.Size(361, 22);
+            this.textBoxCorrectionResponsibleName.TabIndex = 7;
             // 
-            // textBox3
+            // textBoxCorrectionResponsiblePost
             // 
-            this.textBox3.Location = new System.Drawing.Point(96, 69);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(321, 22);
-            this.textBox3.TabIndex = 8;
+            this.textBoxCorrectionResponsiblePost.Location = new System.Drawing.Point(99, 63);
+            this.textBoxCorrectionResponsiblePost.Name = "textBoxCorrectionResponsiblePost";
+            this.textBoxCorrectionResponsiblePost.Size = new System.Drawing.Size(321, 22);
+            this.textBoxCorrectionResponsiblePost.TabIndex = 8;
             // 
-            // comboBox1
+            // comboBoxCorrectionResponsibleGender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(52, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 9;
+            this.comboBoxCorrectionResponsibleGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCorrectionResponsibleGender.FormattingEnabled = true;
+            this.comboBoxCorrectionResponsibleGender.Location = new System.Drawing.Point(56, 92);
+            this.comboBoxCorrectionResponsibleGender.Name = "comboBoxCorrectionResponsibleGender";
+            this.comboBoxCorrectionResponsibleGender.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCorrectionResponsibleGender.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // dateTimePickerCorrectionResponsibleDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(300, 38);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(107, 22);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePickerCorrectionResponsibleDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerCorrectionResponsibleDate.Location = new System.Drawing.Point(310, 94);
+            this.dateTimePickerCorrectionResponsibleDate.Name = "dateTimePickerCorrectionResponsibleDate";
+            this.dateTimePickerCorrectionResponsibleDate.Size = new System.Drawing.Size(107, 22);
+            this.dateTimePickerCorrectionResponsibleDate.TabIndex = 10;
             // 
             // buttonCorrectionResponsibleConfirm
             // 
@@ -133,28 +136,30 @@
             this.buttonCorrectionResponsibleConfirm.TabIndex = 11;
             this.buttonCorrectionResponsibleConfirm.Text = "Подтвердить";
             this.buttonCorrectionResponsibleConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionResponsibleConfirm.Click += new System.EventHandler(this.buttonCorrectionResponsibleConfirm_Click);
             // 
             // FormCorrectionResponsible
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 190);
+            this.ClientSize = new System.Drawing.Size(438, 187);
             this.Controls.Add(this.buttonCorrectionResponsibleConfirm);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dateTimePickerCorrectionResponsibleDate);
+            this.Controls.Add(this.comboBoxCorrectionResponsibleGender);
+            this.Controls.Add(this.textBoxCorrectionResponsiblePost);
+            this.Controls.Add(this.textBoxCorrectionResponsibleName);
             this.Controls.Add(this.buttonCorrectionResponsibleCancel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelCorrectionResponsibleID);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCorrectionResponsible";
             this.Text = "Редактирование/Добавление Ответственных";
-            this.Load += new System.EventHandler(this.FormCorrectionResponsible_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,16 +167,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCorrectionResponsibleID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonCorrectionResponsibleCancel;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBoxCorrectionResponsibleName;
+        private System.Windows.Forms.TextBox textBoxCorrectionResponsiblePost;
+        private System.Windows.Forms.ComboBox comboBoxCorrectionResponsibleGender;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCorrectionResponsibleDate;
         private System.Windows.Forms.Button buttonCorrectionResponsibleConfirm;
     }
 }

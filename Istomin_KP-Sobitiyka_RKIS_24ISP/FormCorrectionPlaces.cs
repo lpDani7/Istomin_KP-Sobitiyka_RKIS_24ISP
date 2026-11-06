@@ -16,5 +16,11 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             InitializeComponent();
         }
+
+        //Метод кнопки "Отмена"
+        private void buttonCorrectionPlacesCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

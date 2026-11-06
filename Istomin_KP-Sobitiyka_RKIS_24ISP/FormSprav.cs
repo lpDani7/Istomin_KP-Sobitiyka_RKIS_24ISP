@@ -23,6 +23,11 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         public FormSprav(int tabIndex)
         {
             InitializeComponent();
+            //Метод для добавления к каждой операции привязки данных метода сокрытия служебного столбца с первичным ключом
+            dataGridViewResponsible.DataBindingComplete += (s, ev) => HideServiceColumns();
+            dataGridViewPlaces.DataBindingComplete += (s, ev) => HideServiceColumns();
+            dataGridViewTypesOfExpenses.DataBindingComplete += (s, ev) => HideServiceColumns();
+            dataGridViewPreferentialCategories.DataBindingComplete += (s, ev) => HideServiceColumns();
             controller = new Query(AppSetting.ConnStr);
             //Заполнение таблиц-справочников записями
             dataGridViewResponsible.DataSource = controller.ResponsibleTable();
@@ -43,27 +48,29 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             //FillingComboBoxSearch(comboBoxPreferentialCategoriesSearch, dataGridViewPreferentialCategories);
         }
 
+        //Метод для сокрытия от пользователя служебного столбца с первичным ключом
+        private void HideServiceColumns()
+        {
+            if (dataGridViewResponsible.Columns.Contains("Таб_номер"))
+                dataGridViewResponsible.Columns["Таб_номер"].Visible = false;
+
+            if (dataGridViewPlaces.Columns.Contains("Код_объекта"))
+                dataGridViewPlaces.Columns["Код_объекта"].Visible = false;
+
+            if (dataGridViewTypesOfExpenses.Columns.Contains("Код_записи"))
+                dataGridViewTypesOfExpenses.Columns["Код_записи"].Visible = false;
+
+            if (dataGridViewPreferentialCategories.Columns.Contains("Код_категории"))
+                dataGridViewPreferentialCategories.Columns["Код_категории"].Visible = false;
+        }
+
+
         private void FormSprav_Load(object sender, EventArgs e)
         {
 
         }
 
-        /*//Метод заполнения таблицы-справочника записями
-        private void FillingTables(DataGridView dataGridView, DataTable dataTable)
-        {
-            dataGridView.DataSource = controller.dataTable;
-        }*/
-
-        /*//Метод поиска по первым буквам
-        private void SearchEntryOnLetter(ToolStripStatusLabel toolStripStatusLabel, DataGridView dataGridView)
-        {
-            string where = "";
-            where = $" WHERE {comboBox1.SelectedItem.ToString()} LIKE '{textBox1.Text}%'";
-            OrderDataGrid.DataSource = controller.TotalOrders(where);
-            ShowCountOfTableEntry(toolStripStatusLabel, dataGridView);
-        }*/
-
-        //Метод заполнения comboBox поиска значениями столбцов таблицы
+        /*//Метод заполнения comboBox поиска значениями столбцов таблицы
         private void FillingComboBoxSearch(System.Windows.Forms.ComboBox comboBoxSearch, DataGridView dataGridViewSearch)
         {
             comboBoxSearch.Items.Clear();
@@ -71,20 +78,20 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             {
                 comboBoxSearch.Items.Add(column.Name);
             }
-        }
+        }*/
 
         //Метод вывода количества записей
         private void ShowCountOfTableEntry(ToolStripStatusLabel toolStripStatusLabel, DataGridView dataGridView)
         {
-            toolStripStatusLabel.Text = $"Количество записей: {(dataGridView.RowCount - 1).ToString()}";
+            toolStripStatusLabel.Text = $"Количество записей: {(dataGridView.RowCount).ToString()}";
         }
 
         //Функция поиска по первым буквам в Ответственных
         private void textBoxResponsibleSearch_TextChanged(object sender, EventArgs e)
         {
             where = $"";
-            if (radioButtonResponsibleSearchName .Checked == true) where = $" WHERE ФИО LIKE '{textBoxResponsibleSearch.Text}%'";
-            else if (radioButtonResponsibleSearchPost .Checked == true) where = $" WHERE Должность LIKE '{textBoxResponsibleSearch.Text}%'";
+            if (radioButtonResponsibleSearchName.Checked == true) where = $" WHERE ФИО LIKE '{textBoxResponsibleSearch.Text}%'";
+            else if (radioButtonResponsibleSearchPost.Checked == true) where = $" WHERE Должность LIKE '{textBoxResponsibleSearch.Text}%'";
             dataGridViewResponsible.DataSource = controller.ResponsibleTable(where);
             ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
         }
@@ -119,10 +126,11 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод поиска мест проведения по диапозону вместимости
         private void PlacesSearchCapacity()
         {
+            where = $"";
             //Если textBox начала и конца не пустые выполняется запрос BETWEEN
-            if (textBoxPlacesSearchCapacityUntil.Text != string.Empty && textBoxPlacesSearchCapacityFrom.Text != string.Empty) 
-                                                                               where = $" WHERE Вместимость BETWEEN {textBoxPlacesSearchCapacityFrom.Text} " +
-                                                                               $"and {textBoxPlacesSearchCapacityUntil.Text}";
+            if (textBoxPlacesSearchCapacityUntil.Text != string.Empty && textBoxPlacesSearchCapacityFrom.Text != string.Empty)
+                where = $" WHERE Вместимость BETWEEN {textBoxPlacesSearchCapacityFrom.Text} " +
+                $"and {textBoxPlacesSearchCapacityUntil.Text}";
             dataGridViewPlaces.DataSource = controller.PlacesTable(where); //Заполнение таблицы значениями
             ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces); //Отображение количества записей
         }
@@ -142,9 +150,10 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод поиска льготных категорий по диапозону послаблений
         private void PreferentialCategoriesSearchConcessions()
         {
-            if (textBoxPreferentialCategoriesSearchConcessionsUntil.Text != string.Empty && textBoxPreferentialCategoriesSearchConcessionsFrom.Text != string.Empty) 
-                                                                               where = $" WHERE [Послабление(%)] BETWEEN {textBoxPreferentialCategoriesSearchConcessionsFrom.Text} " +
-                                                                               $"and {textBoxPreferentialCategoriesSearchConcessionsUntil.Text}";
+            where = $"";
+            if (textBoxPreferentialCategoriesSearchConcessionsUntil.Text != string.Empty && textBoxPreferentialCategoriesSearchConcessionsFrom.Text != string.Empty)
+                where = $" WHERE [Послабление(%)] BETWEEN {textBoxPreferentialCategoriesSearchConcessionsFrom.Text} " +
+                $"and {textBoxPreferentialCategoriesSearchConcessionsUntil.Text}";
             dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable(where);
             ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
         }
@@ -268,88 +277,159 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             CloseFormSprave();
         }
 
-        private void OpenFormCorrectionResponsible()
+        //Метод открытия формы правки Ответсвтвенных
+        private void OpenFormCorrectionResponsible(int mode)
         {
-            FormCorrectionResponsible formCorrectionResponsible = new FormCorrectionResponsible();
+            FormCorrectionResponsible formCorrectionResponsible;
+            if (mode == 1) formCorrectionResponsible = new FormCorrectionResponsible();
+            else
+            {
+                DataGridViewRow row = dataGridViewResponsible.CurrentRow;
+                // Читаем значения из ячеек выбранной строки
+                int id = Convert.ToInt32(row.Cells["Таб_номер"].Value);
+                string name = row.Cells["ФИО"].Value.ToString();
+                string post = row.Cells["Должность"].Value.ToString();
+                string gender = row.Cells["Пол"].Value.ToString();
+                string DateStr = row.Cells["Дата рождения"].Value.ToString();
+                DateTime Date = DateTime.Parse(DateStr);
+                formCorrectionResponsible = new FormCorrectionResponsible(id, name, post, Date, gender);
+            }
             // Блокируем доступ к исходной форме
             this.Enabled = false;
-            // Открываем вторую форму модально
-            formCorrectionResponsible.ShowDialog(this); // Передача this означает, что исходной форме передаётся фокус
+            DialogResult result = formCorrectionResponsible.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                dataGridViewResponsible.DataSource = controller.ResponsibleTable();
+                ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+            }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
         }
 
-        private void OpenFormCorrectionPlaces()
+        //Метод открытия формы правки Мест проведения
+        private void OpenFormCorrectionPlaces(int mode)
         {
             FormCorrectionPlaces formCorrectionPlaces = new FormCorrectionPlaces();
             // Блокируем доступ к исходной форме
             this.Enabled = false;
+            //Изменения назвния формы
+            if (mode == 1) formCorrectionPlaces.Text = "Добавление Мест проведения";
+            else if (mode == 2) formCorrectionPlaces.Text = "Редактирование Мест проведения";
             // Открываем вторую форму модально
             formCorrectionPlaces.ShowDialog(this); // Передача this означает, что исходной форме передаётся фокус
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
         }
 
-        private void OpenFormCorrectionTypesOfExpenses()
+        //Метод открытия формы правки Типов расходов
+        private void OpenFormCorrectionTypesOfExpenses(int mode)
         {
             FormCorrectionTypesOfExpenses formCorrectionTypesOfExpenses = new FormCorrectionTypesOfExpenses();
             // Блокируем доступ к исходной форме
             this.Enabled = false;
+            //Изменения назвния формы
+            if (mode == 1) formCorrectionTypesOfExpenses.Text = "Добавление Типов расходов";
+            else if (mode == 2) formCorrectionTypesOfExpenses.Text = "Редактирование Типов расходов";
             // Открываем вторую форму модально
             formCorrectionTypesOfExpenses.ShowDialog(this); // Передача this означает, что исходной форме передаётся фокус
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
         }
 
-        private void OpenFormCorrectionPreferentialCategories()
+        //Метод открытия формы правки Льготных категорий
+        private void OpenFormCorrectionPreferentialCategories(int mode)
         {
             FormCorrectionPreferentialCategories formCorrectionPreferentialCategories = new FormCorrectionPreferentialCategories();
             // Блокируем доступ к исходной форме
             this.Enabled = false;
+            //Изменения назвния формы
+            if (mode == 1) formCorrectionPreferentialCategories.Text = "Добавление Льготных категорий";
+            else if (mode == 2) formCorrectionPreferentialCategories.Text = "Редактирование Льготных категорий";
             // Открываем вторую форму модально
             formCorrectionPreferentialCategories.ShowDialog(this); // Передача this означает, что исходной форме передаётся фокус
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
         }
 
+        //Метод открытия формы правки-добавления Ответсвтвенных
         private void toolStripMenuItemResponsibleAdd_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionResponsible();
+            mode = 1;
+            OpenFormCorrectionResponsible(mode);
         }
 
+        //Метод открытия формы правки-редактирования Ответсвтвенных
         private void toolStripMenuItemResponsibleEdit_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionResponsible();
+            mode = 2;
+            OpenFormCorrectionResponsible(mode);
         }
 
+        //Метод открытия формы правки-добавления Мест проведения
         private void toolStripMenuItemPlacesAdd_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionPlaces();
+            mode = 1;
+            OpenFormCorrectionPlaces(mode);
         }
 
+        //Метод открытия формы правки-редактирования Мест проведения
         private void toolStripMenuItemPlacesEdit_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionPlaces();
+            mode = 2;
+            OpenFormCorrectionPlaces(mode);
         }
 
+        //Метод открытия формы правки-добавления Типов расходов
         private void toolStripMenuItemTypesOfExpensesAdd_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionTypesOfExpenses();
+            mode = 1;
+            OpenFormCorrectionTypesOfExpenses(mode);
         }
 
+        //Метод открытия формы правки-редактирования Типов расходов
         private void toolStripMenuItemTypesOfExpensesEdit_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionTypesOfExpenses();
+            mode = 2;
+            OpenFormCorrectionTypesOfExpenses(mode);
         }
 
+        //Метод открытия формы правки-добавления Льготных категорий
         private void toolStripMenuItemPreferentialCategoriesAdd_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionPreferentialCategories();
+            mode = 1;
+            OpenFormCorrectionPreferentialCategories(mode);
         }
 
+        //Метод открытия формы правки-редактирования Льготных категорий
         private void toolStripMenuItemPreferentialCategoriesEdit_Click(object sender, EventArgs e)
         {
-            OpenFormCorrectionPreferentialCategories();
+            mode = 2;
+            OpenFormCorrectionPreferentialCategories(mode);
+        }
+
+        //Метод удаления выделенной записи из Ответсвтвенных
+        private void toolStripMenuItemResponsibleDelete_Click(object sender, EventArgs e)
+        {
+            mode = 3;
+            DataGridViewRow row = dataGridViewResponsible.CurrentRow;
+            int id = Convert.ToInt32(row.Cells["Таб_номер"].Value);
+            if (controller.IsResponsebleUsed(id) == true)
+            {
+                DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить ответственного " +
+                                                            $"{dataGridViewResponsible.CurrentRow.Cells["ФИО"].Value}, " +
+                                                            $"{dataGridViewResponsible.CurrentRow.Cells["Должность"].Value}?","Подтверждение", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes && controller.ModifyResponseble(mode, id, "", "", DateTime.Today, "")>0)
+                {
+                    MessageBox.Show($"Запись была удалена!");
+                    dataGridViewResponsible.DataSource = controller.ResponsibleTable();
+                    ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нельзя удалить ответстванного, так как он учавствует в организации мероприятия!", "Ошибка");
+                return;
+            }
         }
     }
 }
