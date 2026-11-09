@@ -474,22 +474,23 @@
             // toolStripMenuItemPlacesAdd
             // 
             this.toolStripMenuItemPlacesAdd.Name = "toolStripMenuItemPlacesAdd";
-            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPlacesAdd.Text = "Добавить";
             this.toolStripMenuItemPlacesAdd.Click += new System.EventHandler(this.toolStripMenuItemPlacesAdd_Click);
             // 
             // toolStripMenuItemPlacesEdit
             // 
             this.toolStripMenuItemPlacesEdit.Name = "toolStripMenuItemPlacesEdit";
-            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPlacesEdit.Text = "Редактированть";
             this.toolStripMenuItemPlacesEdit.Click += new System.EventHandler(this.toolStripMenuItemPlacesEdit_Click);
             // 
             // toolStripMenuItemPlacesDelete
             // 
             this.toolStripMenuItemPlacesDelete.Name = "toolStripMenuItemPlacesDelete";
-            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPlacesDelete.Text = "Удалить";
+            this.toolStripMenuItemPlacesDelete.Click += new System.EventHandler(this.toolStripMenuItemPlacesDelete_Click);
             // 
             // выходToolStripMenuItemPlaces
             // 
@@ -829,7 +830,6 @@
             this.ClientSize = new System.Drawing.Size(1067, 569);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);

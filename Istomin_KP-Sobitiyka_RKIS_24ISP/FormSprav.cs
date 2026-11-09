@@ -135,13 +135,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces); //Отображение количества записей
         }
 
-        //Метод при изменении значения в textBox
+        //Метод при изменении значения в textBox мест проведения
         private void textBoxPlacesSearchCapacityFrom_TextChanged(object sender, EventArgs e)
         {
             if (radioButtonPlacesSearchCapacity.Checked == true) PlacesSearchCapacity();
         }
 
-        //Метод при изменении значения в textBox
+        //Метод при изменении значения в textBox мест проведения
         private void textBoxPlacesSearchCapacityUntil_TextChanged(object sender, EventArgs e)
         {
             if (radioButtonPlacesSearchCapacity.Checked == true) PlacesSearchCapacity();
@@ -158,13 +158,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
         }
 
-        //Метод при изменении значения в textBox
+        //Метод при изменении значения в textBox льготных категорий
         private void textBoxPreferentialCategoriesSearchConcessionsFrom_TextChanged(object sender, EventArgs e)
         {
             if (radioButtonPreferentialCategoriesSearchConcessions.Checked == true) PreferentialCategoriesSearchConcessions();
         }
 
-        //Метод при изменении значения в textBox
+        //Метод при изменении значения в textBox льготных категорий
         private void textBoxPreferentialCategoriesSearchConcessionsUntil_TextChanged(object sender, EventArgs e)
         {
             if (radioButtonPreferentialCategoriesSearchConcessions.Checked == true) PreferentialCategoriesSearchConcessions();
@@ -195,19 +195,19 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
         }
 
-        //Метод при изменении значения в dateTimePicker
+        //Метод при изменении значения в dateTimePicker ответственных
         private void dateTimePickerResponsibleSearchFrom_ValueChanged(object sender, EventArgs e)
         {
             if (radioButtonResponsibleSearchDate.Checked == true) ResponsibleSearchDate();
         }
 
-        //Метод при изменении значения в dateTimePicker
+        //Метод при изменении значения в dateTimePicker ответственных
         private void dateTimePickerResponsibleSearchUntil_ValueChanged(object sender, EventArgs e)
         {
             if (radioButtonResponsibleSearchDate.Checked == true) ResponsibleSearchDate();
         }
 
-        //Метод при назажии RadioButton
+        //Метод при нажатии поиска по дате RadioButton ответственных
         private void radioButtonResponsibleSearchDate_CheckedChanged(object sender, EventArgs e)
         {
             ResponsibleSearchDate();
@@ -309,14 +309,26 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод открытия формы правки Мест проведения
         private void OpenFormCorrectionPlaces(int mode)
         {
-            FormCorrectionPlaces formCorrectionPlaces = new FormCorrectionPlaces();
+            FormCorrectionPlaces formCorrectionPlaces;
+            if (mode == 1) formCorrectionPlaces = new FormCorrectionPlaces();
+            else
+            {
+                DataGridViewRow row = dataGridViewPlaces.CurrentRow;
+                // Читаем значения из ячеек выбранной строки
+                int id = Convert.ToInt32(row.Cells["Код_объекта"].Value);
+                string name = row.Cells["Название"].Value.ToString();
+                string adress = row.Cells["Адрес"].Value.ToString();
+                int capacity = Convert.ToInt32(row.Cells["Вместимость"].Value);
+                formCorrectionPlaces = new FormCorrectionPlaces(id, name, adress, capacity);
+            }
             // Блокируем доступ к исходной форме
             this.Enabled = false;
-            //Изменения назвния формы
-            if (mode == 1) formCorrectionPlaces.Text = "Добавление Мест проведения";
-            else if (mode == 2) formCorrectionPlaces.Text = "Редактирование Мест проведения";
-            // Открываем вторую форму модально
-            formCorrectionPlaces.ShowDialog(this); // Передача this означает, что исходной форме передаётся фокус
+            DialogResult result = formCorrectionPlaces.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                dataGridViewPlaces.DataSource = controller.PlacesTable();
+                ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
+            }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
         }
@@ -432,11 +444,37 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             }
         }
 
+        //Метод удаления выделенной записи из Мест проведения
+        private void toolStripMenuItemPlacesDelete_Click(object sender, EventArgs e)
+        {
+            mode = 3;
+            DataGridViewRow row = dataGridViewPlaces.CurrentRow;
+            int id = Convert.ToInt32(row.Cells["Код_объекта"].Value);
+            if (controller.IsPlacesUsed(id) == true)
+            {
+                DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить место проведения " +
+                                                            $"{dataGridViewPlaces.CurrentRow.Cells["Название"].Value}, " +
+                                                            $"{dataGridViewPlaces.CurrentRow.Cells["Адрес"].Value}?", "Подтверждение", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes && controller.ModifyPlaces(mode, id, "", "", 0) > 0)
+                {
+                    MessageBox.Show($"Запись была удалена!");
+                    dataGridViewPlaces.DataSource = controller.PlacesTable();
+                    ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нельзя удалить место проведения, в нём организуется мероприятие!", "Ошибка!");
+                return;
+            }
+        }
+
         //Событие обработки ввода текста в textBoxResponsibleSearch
         private void textBoxResponsibleSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
             if (textBoxResponsibleSearch.Text.Length > 100) e.KeyChar = (char)0;
         }
+
     }
 }

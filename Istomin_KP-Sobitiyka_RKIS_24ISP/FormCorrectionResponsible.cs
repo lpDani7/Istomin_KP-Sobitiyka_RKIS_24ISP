@@ -105,5 +105,4 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (textBoxCorrectionResponsiblePost.Text.Length > 100) e.KeyChar = (char)0;
         }
     }
-
 }

@@ -112,12 +112,58 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             return command.ExecuteNonQuery();
         }
 
+        //Функция модификации данных Мест проведения
+        public int ModifyPlaces(int mode, int id, string name, string adress, int capacity)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Места_проведения (Адрес, Название, Вместимость) 
+                          VALUES (@adress, @name, @capacity)";
+                    break;
+                case 2:
+                    sql = @"UPDATE Места_проведения 
+                          SET Адрес = @adress, Название = @name, Вместимость = @capacity 
+                          WHERE Код_объекта = @id";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Места_проведения WHERE Код_объекта = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            if (mode != 1) command.Parameters.AddWithValue("@id", id);
+            if (mode != 3)
+            {
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@adress", adress);
+                command.Parameters.AddWithValue("@capacity", capacity);
+            }
+            return command.ExecuteNonQuery();
+        }
+
         //Функция проверки на использование Ответственного в других таблицах БД
         public bool IsResponsebleUsed(int id)
         {
             try
             {
-                string sql = @"SELECT COUNT(*) FROM Мероприятие WHERE Ответственный = @id";
+                string sql = @"SELECT COUNT(*) FROM Ответственный_за_мероприятие WHERE Таб_номер = @id";
+                command = new SQLiteCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", id);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                if (count > 0) return false;
+                else return true;
+            }
+            catch { return false; }
+        }
+
+        //Функция проверки на использование Места проведения в других таблицах БД
+        public bool IsPlacesUsed(int id)
+        {
+            try
+            {
+                string sql = @"SELECT COUNT(*) FROM Мероприятие WHERE Место_проведения = @id";
                 command = new SQLiteCommand(sql, connection);
                 command.Parameters.AddWithValue("@id", id);
                 int count = Convert.ToInt32(command.ExecuteScalar());
@@ -136,6 +182,19 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             command.Parameters.AddWithValue("@post", post);
             command.Parameters.AddWithValue("@Date", Date);
             command.Parameters.AddWithValue("@gender", gender);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция прверки на наличие у Места проведения совпадений в БД
+        public bool IsPlacesHasCoincidence(string name, string adress, int capacity)
+        {
+            string sql = @"SELECT COUNT(*) FROM Места_проведения WHERE Название = @name and Адрес = @adress and Вместимость = @capacity";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@adress", adress);
+            command.Parameters.AddWithValue("@capacity", capacity);
             int count = Convert.ToInt32(command.ExecuteScalar());
             if (count > 0) return false;
             else return true;

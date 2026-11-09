@@ -57,6 +57,7 @@
             this.buttonCorrectionPlacesConfirm.TabIndex = 13;
             this.buttonCorrectionPlacesConfirm.Text = "Подтвердить";
             this.buttonCorrectionPlacesConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionPlacesConfirm.Click += new System.EventHandler(this.buttonCorrectionPlacesConfirm_Click);
             // 
             // buttonCorrectionPlacesCancel
             // 
@@ -115,6 +116,7 @@
             this.textBoxCorrectionPlacesCapacity.Name = "textBoxCorrectionPlacesCapacity";
             this.textBoxCorrectionPlacesCapacity.Size = new System.Drawing.Size(275, 22);
             this.textBoxCorrectionPlacesCapacity.TabIndex = 19;
+            this.textBoxCorrectionPlacesCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorrectionPlacesCapacity_KeyPress);
             // 
             // FormCorrectionPlaces
             // 
