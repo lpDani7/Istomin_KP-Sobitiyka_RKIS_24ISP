@@ -336,14 +336,24 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод открытия формы правки Типов расходов
         private void OpenFormCorrectionTypesOfExpenses(int mode)
         {
-            FormCorrectionTypesOfExpenses formCorrectionTypesOfExpenses = new FormCorrectionTypesOfExpenses();
+            FormCorrectionTypesOfExpenses formCorrectionTypesOfExpenses;
+            if (mode == 1) formCorrectionTypesOfExpenses = new FormCorrectionTypesOfExpenses();
+            else
+            {
+                DataGridViewRow row = dataGridViewTypesOfExpenses.CurrentRow;
+                // Читаем значения из ячеек выбранной строки
+                int id = Convert.ToInt32(row.Cells["Код_записи"].Value);
+                string name = row.Cells["Тип расхода"].Value.ToString();
+                formCorrectionTypesOfExpenses = new FormCorrectionTypesOfExpenses(id, name);
+            }
             // Блокируем доступ к исходной форме
             this.Enabled = false;
-            //Изменения назвния формы
-            if (mode == 1) formCorrectionTypesOfExpenses.Text = "Добавление Типов расходов";
-            else if (mode == 2) formCorrectionTypesOfExpenses.Text = "Редактирование Типов расходов";
-            // Открываем вторую форму модально
-            formCorrectionTypesOfExpenses.ShowDialog(this); // Передача this означает, что исходной форме передаётся фокус
+            DialogResult result = formCorrectionTypesOfExpenses.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                dataGridViewTypesOfExpenses.DataSource = controller.TypesOfExpensesTable();
+                ShowCountOfTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
+            }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
         }
@@ -439,7 +449,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             }
             else
             {
-                MessageBox.Show("Нельзя удалить ответстванного, так как он учавствует в организации мероприятия!", "Ошибка");
+                MessageBox.Show("Нельзя удалить ответстванного, так как он учавствует в организации мероприятия!", "Ошибка!");
                 return;
             }
         }
@@ -469,12 +479,35 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             }
         }
 
+        //Метод удаления выделенной записи из Типов расходов
+        private void toolStripMenuItemTypesOfExpensesDelete_Click_1(object sender, EventArgs e)
+        {
+            mode = 3;
+            DataGridViewRow row = dataGridViewTypesOfExpenses.CurrentRow;
+            int id = Convert.ToInt32(row.Cells["Код_записи"].Value);
+            if (controller.IsTypesOfExpensesUsed(id) == true)
+            {
+                DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить тип расхода " +
+                                                            $"{dataGridViewTypesOfExpenses.CurrentRow.Cells["Тип расхода"].Value}?", "Подтверждение", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes && controller.ModifyTypesOfExpenses(mode, id, "") > 0)
+                {
+                    MessageBox.Show($"Запись была удалена!");
+                    dataGridViewTypesOfExpenses.DataSource = controller.TypesOfExpensesTable();
+                    ShowCountOfTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нельзя удалить тип расхода, так как он учавствует в формировании сметы!", "Ошибка!");
+                return;
+            }
+        }
+
         //Событие обработки ввода текста в textBoxResponsibleSearch
         private void textBoxResponsibleSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
             if (textBoxResponsibleSearch.Text.Length > 100) e.KeyChar = (char)0;
         }
-
     }
 }

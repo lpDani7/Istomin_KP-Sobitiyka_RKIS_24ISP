@@ -143,6 +143,35 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             return command.ExecuteNonQuery();
         }
 
+        //Функция модификации данных Типов расходов
+        public int ModifyTypesOfExpenses(int mode, int id, string name)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Типы_расходов (Тип_расхода) 
+                          VALUES (@name)";
+                    break;
+                case 2:
+                    sql = @"UPDATE Типы_расходов 
+                          SET Тип_расхода = @name
+                          WHERE Код_записи = @id";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Типы_расходов WHERE Код_записи = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            if (mode != 1) command.Parameters.AddWithValue("@id", id);
+            if (mode != 3)
+            {
+                command.Parameters.AddWithValue("@name", name);
+            }
+            return command.ExecuteNonQuery();
+        }
+
         //Функция проверки на использование Ответственного в других таблицах БД
         public bool IsResponsebleUsed(int id)
         {
@@ -164,6 +193,21 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             try
             {
                 string sql = @"SELECT COUNT(*) FROM Мероприятие WHERE Место_проведения = @id";
+                command = new SQLiteCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", id);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                if (count > 0) return false;
+                else return true;
+            }
+            catch { return false; }
+        }
+
+        //Функция проверки на использование Типов расходов в других таблицах БД
+        public bool IsTypesOfExpensesUsed(int id)
+        {
+            try
+            {
+                string sql = @"SELECT COUNT(*) FROM Смета WHERE Тип_расхода = @id";
                 command = new SQLiteCommand(sql, connection);
                 command.Parameters.AddWithValue("@id", id);
                 int count = Convert.ToInt32(command.ExecuteScalar());
@@ -195,6 +239,17 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@adress", adress);
             command.Parameters.AddWithValue("@capacity", capacity);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция прверки на наличие у Типов расходов совпадений в БД
+        public bool IsTypesOfExpensesHasCoincidence(string name)
+        {
+            string sql = @"SELECT COUNT(*) FROM Типы_расходов WHERE Тип_расхода = @name";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
             int count = Convert.ToInt32(command.ExecuteScalar());
             if (count > 0) return false;
             else return true;

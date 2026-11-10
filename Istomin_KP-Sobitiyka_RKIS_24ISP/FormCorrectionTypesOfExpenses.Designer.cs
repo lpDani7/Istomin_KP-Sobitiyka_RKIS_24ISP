@@ -62,6 +62,7 @@
             this.buttonCorrectionTypesOfExpensesConfirm.TabIndex = 17;
             this.buttonCorrectionTypesOfExpensesConfirm.Text = "Подтвердить";
             this.buttonCorrectionTypesOfExpensesConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionTypesOfExpensesConfirm.Click += new System.EventHandler(this.buttonCorrectionTypesOfExpensesConfirm_Click);
             // 
             // buttonCorrectionTypesOfExpensesCancel
             // 
@@ -79,6 +80,7 @@
             this.textBoxCorrectionTypesOfExpensesName.Name = "textBoxCorrectionTypesOfExpensesName";
             this.textBoxCorrectionTypesOfExpensesName.Size = new System.Drawing.Size(277, 22);
             this.textBoxCorrectionTypesOfExpensesName.TabIndex = 18;
+            this.textBoxCorrectionTypesOfExpensesName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorrectionTypesOfExpensesName_KeyPress);
             // 
             // FormCorrectionTypesOfExpenses
             // 

@@ -474,21 +474,21 @@
             // toolStripMenuItemPlacesAdd
             // 
             this.toolStripMenuItemPlacesAdd.Name = "toolStripMenuItemPlacesAdd";
-            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPlacesAdd.Text = "Добавить";
             this.toolStripMenuItemPlacesAdd.Click += new System.EventHandler(this.toolStripMenuItemPlacesAdd_Click);
             // 
             // toolStripMenuItemPlacesEdit
             // 
             this.toolStripMenuItemPlacesEdit.Name = "toolStripMenuItemPlacesEdit";
-            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPlacesEdit.Text = "Редактированть";
             this.toolStripMenuItemPlacesEdit.Click += new System.EventHandler(this.toolStripMenuItemPlacesEdit_Click);
             // 
             // toolStripMenuItemPlacesDelete
             // 
             this.toolStripMenuItemPlacesDelete.Name = "toolStripMenuItemPlacesDelete";
-            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(161, 22);
             this.toolStripMenuItemPlacesDelete.Text = "Удалить";
             this.toolStripMenuItemPlacesDelete.Click += new System.EventHandler(this.toolStripMenuItemPlacesDelete_Click);
             // 
@@ -599,22 +599,23 @@
             // toolStripMenuItemTypesOfExpensesAdd
             // 
             this.toolStripMenuItemTypesOfExpensesAdd.Name = "toolStripMenuItemTypesOfExpensesAdd";
-            this.toolStripMenuItemTypesOfExpensesAdd.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemTypesOfExpensesAdd.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemTypesOfExpensesAdd.Text = "Добавить";
             this.toolStripMenuItemTypesOfExpensesAdd.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesAdd_Click);
             // 
             // toolStripMenuItemTypesOfExpensesEdit
             // 
             this.toolStripMenuItemTypesOfExpensesEdit.Name = "toolStripMenuItemTypesOfExpensesEdit";
-            this.toolStripMenuItemTypesOfExpensesEdit.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemTypesOfExpensesEdit.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemTypesOfExpensesEdit.Text = "Редактированть";
             this.toolStripMenuItemTypesOfExpensesEdit.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesEdit_Click);
             // 
             // toolStripMenuItemTypesOfExpensesDelete
             // 
             this.toolStripMenuItemTypesOfExpensesDelete.Name = "toolStripMenuItemTypesOfExpensesDelete";
-            this.toolStripMenuItemTypesOfExpensesDelete.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemTypesOfExpensesDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemTypesOfExpensesDelete.Text = "Удалить";
+            this.toolStripMenuItemTypesOfExpensesDelete.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesDelete_Click_1);
             // 
             // выходToolStripMenuItemTypesOfExpenses
             // 
