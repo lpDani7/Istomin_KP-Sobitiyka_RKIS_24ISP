@@ -574,6 +574,7 @@
             this.textBoxTypesOfExpensesSearch.Size = new System.Drawing.Size(157, 22);
             this.textBoxTypesOfExpensesSearch.TabIndex = 3;
             this.textBoxTypesOfExpensesSearch.TextChanged += new System.EventHandler(this.textBoxTypesOfExpensesSearch_TextChanged);
+            this.textBoxTypesOfExpensesSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTypesOfExpensesSearch_KeyPress);
             // 
             // menuStrip4
             // 
@@ -615,7 +616,7 @@
             this.toolStripMenuItemTypesOfExpensesDelete.Name = "toolStripMenuItemTypesOfExpensesDelete";
             this.toolStripMenuItemTypesOfExpensesDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemTypesOfExpensesDelete.Text = "Удалить";
-            this.toolStripMenuItemTypesOfExpensesDelete.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesDelete_Click_1);
+            this.toolStripMenuItemTypesOfExpensesDelete.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesDelete_Click);
             // 
             // выходToolStripMenuItemTypesOfExpenses
             // 
@@ -795,22 +796,23 @@
             // toolStripMenuItemPreferentialCategoriesAdd
             // 
             this.toolStripMenuItemPreferentialCategoriesAdd.Name = "toolStripMenuItemPreferentialCategoriesAdd";
-            this.toolStripMenuItemPreferentialCategoriesAdd.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPreferentialCategoriesAdd.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPreferentialCategoriesAdd.Text = "Добавить";
             this.toolStripMenuItemPreferentialCategoriesAdd.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesAdd_Click);
             // 
             // toolStripMenuItemPreferentialCategoriesEdit
             // 
             this.toolStripMenuItemPreferentialCategoriesEdit.Name = "toolStripMenuItemPreferentialCategoriesEdit";
-            this.toolStripMenuItemPreferentialCategoriesEdit.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPreferentialCategoriesEdit.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPreferentialCategoriesEdit.Text = "Редактированть";
             this.toolStripMenuItemPreferentialCategoriesEdit.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesEdit_Click);
             // 
             // toolStripMenuItemPreferentialCategoriesDelete
             // 
             this.toolStripMenuItemPreferentialCategoriesDelete.Name = "toolStripMenuItemPreferentialCategoriesDelete";
-            this.toolStripMenuItemPreferentialCategoriesDelete.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPreferentialCategoriesDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPreferentialCategoriesDelete.Text = "Удалить";
+            this.toolStripMenuItemPreferentialCategoriesDelete.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesDelete_Click);
             // 
             // выходToolStripMenuItemPreferentialCategories
             // 

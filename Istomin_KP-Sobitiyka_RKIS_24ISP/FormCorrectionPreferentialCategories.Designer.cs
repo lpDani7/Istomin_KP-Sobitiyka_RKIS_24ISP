@@ -62,6 +62,7 @@
             this.buttonCorrectionPreferentialCategoriesConfirm.TabIndex = 21;
             this.buttonCorrectionPreferentialCategoriesConfirm.Text = "Подтвердить";
             this.buttonCorrectionPreferentialCategoriesConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionPreferentialCategoriesConfirm.Click += new System.EventHandler(this.buttonCorrectionPreferentialCategoriesConfirm_Click);
             // 
             // buttonCorrectionPreferentialCategoriesCancel
             // 
@@ -88,6 +89,7 @@
             this.textBoxCorrectionPreferentialCategoriesConcession.Name = "textBoxCorrectionPreferentialCategoriesConcession";
             this.textBoxCorrectionPreferentialCategoriesConcession.Size = new System.Drawing.Size(248, 22);
             this.textBoxCorrectionPreferentialCategoriesConcession.TabIndex = 25;
+            this.textBoxCorrectionPreferentialCategoriesConcession.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorrectionPreferentialCategoriesConcession_KeyPress);
             // 
             // label3
             // 

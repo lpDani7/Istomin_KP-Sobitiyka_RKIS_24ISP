@@ -73,6 +73,5 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
             if (textBoxCorrectionTypesOfExpensesName.Text.Length > 100) e.KeyChar = (char)0;
         }
-
     }
 }

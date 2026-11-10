@@ -29,7 +29,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             mode = 1;
             labelCorrectionPlacesID.Text = "";
             textBoxCorrectionPlacesName.Clear();
-            textBoxCorrectionPlacesCapacity.Clear();
+            textBoxCorrectionPlacesAdress.Clear();
             textBoxCorrectionPlacesCapacity.Clear();
         }
 

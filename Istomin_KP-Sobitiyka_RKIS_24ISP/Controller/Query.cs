@@ -172,6 +172,36 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             return command.ExecuteNonQuery();
         }
 
+        //Функция модификации данных Льготных категорий
+        public int ModifyPreferentialCategories(int mode, int id, string name, int concession)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Льготные_категории (Название, [Послабление(%)]) 
+                          VALUES (@name, @concession)";
+                    break;
+                case 2:
+                    sql = @"UPDATE Льготные_категории 
+                          SET Название = @name, [Послабление(%)] = @concession 
+                          WHERE Код_категории = @id";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Льготные_категории WHERE Код_категории = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            if (mode != 1) command.Parameters.AddWithValue("@id", id);
+            if (mode != 3)
+            {
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@concession", concession);
+            }
+            return command.ExecuteNonQuery();
+        }
+
         //Функция проверки на использование Ответственного в других таблицах БД
         public bool IsResponsebleUsed(int id)
         {
@@ -217,6 +247,21 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             catch { return false; }
         }
 
+        //Функция проверки на использование Льготных категорий в других таблицах БД
+        public bool IsPreferentialCategoriesUsed(int id)
+        {
+            try
+            {
+                string sql = @"SELECT COUNT(*) FROM Льготная_посещаемость WHERE Код_категории = @id";
+                command = new SQLiteCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", id);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                if (count > 0) return false;
+                else return true;
+            }
+            catch { return false; }
+        }
+
         //Функция прверки на наличие у Ответственного совпадений в БД
         public bool IsResponsibleHasCoincidence(string name, string post, string Date, string gender)
         {
@@ -250,6 +295,18 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string sql = @"SELECT COUNT(*) FROM Типы_расходов WHERE Тип_расхода = @name";
             command = new SQLiteCommand(sql, connection);
             command.Parameters.AddWithValue("@name", name);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция прверки на наличие у Льготных категорий совпадений в БД
+        public bool IsPreferentialCategoriesHasCoincidence(string name, int concession)
+        {
+            string sql = @"SELECT COUNT(*) FROM Льготные_категории WHERE Название = @name and [Послабление(%)] = @concession";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@concession", concession);
             int count = Convert.ToInt32(command.ExecuteScalar());
             if (count > 0) return false;
             else return true;

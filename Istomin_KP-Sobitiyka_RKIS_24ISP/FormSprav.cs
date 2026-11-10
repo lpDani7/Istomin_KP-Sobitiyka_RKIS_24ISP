@@ -361,14 +361,25 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод открытия формы правки Льготных категорий
         private void OpenFormCorrectionPreferentialCategories(int mode)
         {
-            FormCorrectionPreferentialCategories formCorrectionPreferentialCategories = new FormCorrectionPreferentialCategories();
+            FormCorrectionPreferentialCategories formCorrectionPreferentialCategories;
+            if (mode == 1) formCorrectionPreferentialCategories = new FormCorrectionPreferentialCategories();
+            else
+            {
+                DataGridViewRow row = dataGridViewPreferentialCategories.CurrentRow;
+                // Читаем значения из ячеек выбранной строки
+                int id = Convert.ToInt32(row.Cells["Код_категории"].Value);
+                string name = row.Cells["Название категории"].Value.ToString();
+                int concession = Convert.ToInt32(row.Cells["Послабление(%)"].Value);
+                formCorrectionPreferentialCategories = new FormCorrectionPreferentialCategories(id, name, concession);
+            }
             // Блокируем доступ к исходной форме
             this.Enabled = false;
-            //Изменения назвния формы
-            if (mode == 1) formCorrectionPreferentialCategories.Text = "Добавление Льготных категорий";
-            else if (mode == 2) formCorrectionPreferentialCategories.Text = "Редактирование Льготных категорий";
-            // Открываем вторую форму модально
-            formCorrectionPreferentialCategories.ShowDialog(this); // Передача this означает, что исходной форме передаётся фокус
+            DialogResult result = formCorrectionPreferentialCategories.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable();
+                ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
+            }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
         }
@@ -480,7 +491,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         }
 
         //Метод удаления выделенной записи из Типов расходов
-        private void toolStripMenuItemTypesOfExpensesDelete_Click_1(object sender, EventArgs e)
+        private void toolStripMenuItemTypesOfExpensesDelete_Click(object sender, EventArgs e)
         {
             mode = 3;
             DataGridViewRow row = dataGridViewTypesOfExpenses.CurrentRow;
@@ -503,8 +514,40 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             }
         }
 
+        //Метод удаления выделенной записи из Льготных категорий
+        private void toolStripMenuItemPreferentialCategoriesDelete_Click(object sender, EventArgs e)
+        {
+            mode = 3;
+            DataGridViewRow row = dataGridViewPreferentialCategories.CurrentRow;
+            int id = Convert.ToInt32(row.Cells["Код_категории"].Value);
+            if (controller.IsPreferentialCategoriesUsed(id) == true)
+            {
+                DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить место проведения " +
+                                                            $"{dataGridViewPreferentialCategories.CurrentRow.Cells["Название категории"].Value}, " +
+                                                            $"{dataGridViewPreferentialCategories.CurrentRow.Cells["Послабление(%)"].Value}%?", "Подтверждение", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes && controller.ModifyPreferentialCategories(mode, id, "", 0) > 0)
+                {
+                    MessageBox.Show($"Запись была удалена!");
+                    dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable();
+                    ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нельзя удалить льготную категорию, она используется в учёте льготной посещаемости!", "Ошибка!");
+                return;
+            }
+        }
+
         //Событие обработки ввода текста в textBoxResponsibleSearch
         private void textBoxResponsibleSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
+            if (textBoxResponsibleSearch.Text.Length > 100) e.KeyChar = (char)0;
+        }
+
+        //Событие обработки ввода текста в textBoxCorrectionTypesOfExpensesName
+        private void textBoxTypesOfExpensesSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar)) e.Handled = true; //Запрет на ввод цифр, сохранение ввода Backspace, Delete и Enter
             if (textBoxResponsibleSearch.Text.Length > 100) e.KeyChar = (char)0;
