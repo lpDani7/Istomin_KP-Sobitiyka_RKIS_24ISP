@@ -48,7 +48,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             if (String.IsNullOrWhiteSpace(textBoxCorrectionTypesOfExpensesName.Text)) { MessageBox.Show("Ошибка ввода Типа расхода!"); return; }
             string name = textBoxCorrectionTypesOfExpensesName.Text.Trim();
-            if (controller.IsTypesOfExpensesHasCoincidence(name) == false && mode == 1)
+            if (controller.IsTypesOfExpensesHasCoincidence(name) == false && (mode == 1 || mode == 2))
             {
                 MessageBox.Show("Запись с такими данными уже существует!");
             }

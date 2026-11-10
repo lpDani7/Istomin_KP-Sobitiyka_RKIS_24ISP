@@ -55,7 +55,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             else if (String.IsNullOrWhiteSpace(textBoxCorrectionPreferentialCategoriesConcession.Text)) { MessageBox.Show("Ошибка ввода Послабления(%)!"); return; }
             string name = textBoxCorrectionPreferentialCategoriesName.Text.Trim();
             int concession = Convert.ToInt32(textBoxCorrectionPreferentialCategoriesConcession.Text.Trim());
-            if (controller.IsPreferentialCategoriesHasCoincidence(name, concession) == false && mode == 1)
+            if (controller.IsPreferentialCategoriesHasCoincidence(name, concession) == false && (mode == 1 || mode ==2))
             {
                 MessageBox.Show("Запись с такими данными уже существует!");
             }

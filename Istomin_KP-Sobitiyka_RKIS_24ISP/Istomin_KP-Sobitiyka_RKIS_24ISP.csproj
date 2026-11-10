@@ -54,6 +54,12 @@
   <ItemGroup>
     <Compile Include="Controller\AppSetting.cs" />
     <Compile Include="Controller\Query.cs" />
+    <Compile Include="FormCollectives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCollectives.Designer.cs">
+      <DependentUpon>FormCollectives.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCorrectionPlaces.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCollectives.resx">
+      <DependentUpon>FormCollectives.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCorrectionPlaces.resx">
       <DependentUpon>FormCorrectionPlaces.cs</DependentUpon>
     </EmbeddedResource>

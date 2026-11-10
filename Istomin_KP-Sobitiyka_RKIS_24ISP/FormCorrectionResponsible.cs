@@ -76,7 +76,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             string post = textBoxCorrectionResponsiblePost.Text.Trim();
             string Date = dateTimePickerCorrectionResponsibleDate.Value.ToString("yyyy-MM-dd");
             string gender = comboBoxCorrectionResponsibleGender.SelectedItem.ToString();
-            if (controller.IsResponsibleHasCoincidence(name, post, Date, gender)==false && mode == 1)
+            if (controller.IsResponsibleHasCoincidence(name, post, Date, gender)==false && (mode == 1 || mode == 2))
             {
                 MessageBox.Show("Запись с такими данными уже существует!");
             }

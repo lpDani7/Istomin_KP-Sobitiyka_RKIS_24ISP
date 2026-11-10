@@ -61,7 +61,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             string name = textBoxCorrectionPlacesName.Text.Trim();
             string adress = textBoxCorrectionPlacesAdress.Text.Trim();
             int capacity = Convert.ToInt32(textBoxCorrectionPlacesCapacity.Text.Trim());
-            if (controller.IsPlacesHasCoincidence(name, adress, capacity) == false && mode == 1)
+            if (controller.IsPlacesHasCoincidence(name, adress, capacity) == false && (mode == 1 || mode == 2))
             {
                 MessageBox.Show("Запись с такими данными уже существует!");
             }
