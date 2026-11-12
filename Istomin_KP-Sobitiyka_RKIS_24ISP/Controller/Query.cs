@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
@@ -31,6 +32,106 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         static string typesOfExpensesTable = @"SELECT * FROM Типы_расходов ORDER BY Тип_расхода";
         //Запрос получения всех Льготных категорий
         static string preferentialCategoriesTable = @"SELECT * FROM Льготные_категории ORDER BY Название";
+
+        //Функция получения всех Мероприятий
+        public DataTable EventsTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT Мер.Код_мероприятия, Мер.Название, strftime('%d.%m.%Y', Мер.Дата) AS 'Дата проведения', 
+                                Мест.Название AS 'Место проведения', Мер.Цена_билета AS 'Цена билета', Мер.Тематика, Мер.Посещаемость AS 'Не льготная посещаемость' 
+                                FROM Мероприятия Мер INNER JOIN Места_проведения Мест ON Мер.Место_проведения = Мест.Код_объекта
+                                ";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всех Исполнителей
+        public DataTable EventPerformersTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT К.Название
+                                FROM Коллективы К INNER JOIN Исполнители И ON К.Код_коллектива = И.Код_записи";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всех Ответственных за мероприятие
+        public DataTable ResponsibleForEventTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT О.ФИО, О.Должность, О.Дата_рож AS 'Дата рождения', О.Пол  
+                                FROM Ответственные О INNER JOIN Ответственные_за_мероприятие ОМ ON О.Таб_номер = ОМ.Код_мероприятия";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всех Расходов на мероприятие
+        public DataTable ExpensesForEventTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT Т.Тип_расхода AS 'Тип расхода', С.Затраты, С.Описание 
+                                FROM Смета С INNER JOIN Типы_расходов Т ON С.Номер_записи = Т.Код_записи";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всей Льготной посещаемости мероприятия
+        public DataTable PreferentialCategoriesAtEventTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT ЛК.Название, ЛК.[Послабление(%)], ЛП.Количество  
+                                FROM Льготные_категории ЛК INNER JOIN Льготная_посещаемость ЛП ON ЛК.Код_категории = ЛП.Номер_записи";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения суммы затрат на выбранное мероприятие
+        public int ExpensesSum(int id)
+        {
+            string sql = @"SELECT SUM(Затраты)
+                               FROM Смета 
+                               WHERE Код_мероприятия = @id
+                               GROUP BY Код_мероприятия";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            int sum = Convert.ToInt32(command.ExecuteScalar());
+            return sum;
+        }
+
+        //Функция получения суммы льготной посещвемости на выбранном мероприятии
+        public int PreferentialTrafficSum(int id)
+        {
+            string sql = @"SELECT SUM(Количество)
+                               FROM Льготная_посещаемость 
+                               WHERE Код_мероприятия = @id
+                               GROUP BY Код_мероприятия";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            int sum = Convert.ToInt32(command.ExecuteScalar());
+            return sum;
+        }
+
+        //Функция получения не льготной посещвемости на выбранном мероприятии
+        public int NotPreferentialTrafficSum(int id)
+        {
+            string sql = @"SELECT Посещаемость
+                               FROM Мероприятия 
+                               WHERE Код_мероприятия = @id";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            int sum = Convert.ToInt32(command.ExecuteScalar());
+            return sum;
+        }
 
         //Функция получения всех Ответственных
         public DataTable ResponsibleTable(string where = "")
@@ -207,7 +308,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             try
             {
-                string sql = @"SELECT COUNT(*) FROM Ответственный_за_мероприятие WHERE Таб_номер = @id";
+                string sql = @"SELECT COUNT(*) FROM Ответственный_за_мероприятия WHERE Таб_номер = @id";
                 command = new SQLiteCommand(sql, connection);
                 command.Parameters.AddWithValue("@id", id);
                 int count = Convert.ToInt32(command.ExecuteScalar());
@@ -222,7 +323,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             try
             {
-                string sql = @"SELECT COUNT(*) FROM Мероприятие WHERE Место_проведения = @id";
+                string sql = @"SELECT COUNT(*) FROM Мероприятия WHERE Место_проведения = @id";
                 command = new SQLiteCommand(sql, connection);
                 command.Parameters.AddWithValue("@id", id);
                 int count = Convert.ToInt32(command.ExecuteScalar());

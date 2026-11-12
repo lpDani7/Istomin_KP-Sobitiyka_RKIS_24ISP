@@ -23,11 +23,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         public FormSprav(int tabIndex)
         {
             InitializeComponent();
+            // [ИИ-блок|Начало]
             //Метод для добавления к каждой операции привязки данных метода сокрытия служебного столбца с первичным ключом
-            dataGridViewResponsible.DataBindingComplete += (s, ev) => HideServiceColumns();
-            dataGridViewPlaces.DataBindingComplete += (s, ev) => HideServiceColumns();
-            dataGridViewTypesOfExpenses.DataBindingComplete += (s, ev) => HideServiceColumns();
-            dataGridViewPreferentialCategories.DataBindingComplete += (s, ev) => HideServiceColumns();
+            dataGridViewResponsible.DataBindingComplete += (s, ev) => HideServiceColumnsSprav();
+            dataGridViewPlaces.DataBindingComplete += (s, ev) => HideServiceColumnsSprav();
+            dataGridViewTypesOfExpenses.DataBindingComplete += (s, ev) => HideServiceColumnsSprav();
+            dataGridViewPreferentialCategories.DataBindingComplete += (s, ev) => HideServiceColumnsSprav();
+            // [ИИ-блок|Конец]
             controller = new Query(AppSetting.ConnStr);
             //Заполнение таблиц-справочников записями
             dataGridViewResponsible.DataSource = controller.ResponsibleTable();
@@ -48,8 +50,9 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             //FillingComboBoxSearch(comboBoxPreferentialCategoriesSearch, dataGridViewPreferentialCategories);
         }
 
+        // [ИИ-блок|Начало]
         //Метод для сокрытия от пользователя служебного столбца с первичным ключом
-        private void HideServiceColumns()
+        private void HideServiceColumnsSprav()
         {
             if (dataGridViewResponsible.Columns.Contains("Таб_номер"))
                 dataGridViewResponsible.Columns["Таб_номер"].Visible = false;
@@ -63,6 +66,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (dataGridViewPreferentialCategories.Columns.Contains("Код_категории"))
                 dataGridViewPreferentialCategories.Columns["Код_категории"].Visible = false;
         }
+        // [ИИ-блок|Конец]
 
 
         private void FormSprav_Load(object sender, EventArgs e)
