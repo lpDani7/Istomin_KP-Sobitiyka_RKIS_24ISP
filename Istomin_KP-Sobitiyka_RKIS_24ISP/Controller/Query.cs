@@ -52,7 +52,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             bufferTable = new DataTable();
             string querytovar = @"SELECT К.Название
-                                FROM Коллективы К INNER JOIN Исполнители И ON К.Код_коллектива = И.Код_записи";
+                                FROM Коллективы К INNER JOIN Исполнители И ON К.Код_коллектива = И.Код_коллектива";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
@@ -64,7 +64,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             bufferTable = new DataTable();
             string querytovar = @"SELECT О.ФИО, О.Должность, О.Дата_рож AS 'Дата рождения', О.Пол  
-                                FROM Ответственные О INNER JOIN Ответственные_за_мероприятие ОМ ON О.Таб_номер = ОМ.Код_мероприятия";
+                                FROM Ответственные О INNER JOIN Ответственные_за_мероприятие ОМ ON О.Таб_номер = ОМ.Таб_номер";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
@@ -76,7 +76,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             bufferTable = new DataTable();
             string querytovar = @"SELECT Т.Тип_расхода AS 'Тип расхода', С.Затраты, С.Описание 
-                                FROM Смета С INNER JOIN Типы_расходов Т ON С.Номер_записи = Т.Код_записи";
+                                FROM Типы_расходов Т INNER JOIN Смета С ON С.Тип_расхода = Т.Код_записи";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
@@ -88,7 +88,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             bufferTable = new DataTable();
             string querytovar = @"SELECT ЛК.Название, ЛК.[Послабление(%)], ЛП.Количество  
-                                FROM Льготные_категории ЛК INNER JOIN Льготная_посещаемость ЛП ON ЛК.Код_категории = ЛП.Номер_записи";
+                                FROM Льготные_категории ЛК INNER JOIN Льготная_посещаемость ЛП ON ЛК.Код_категории = ЛП.Код_категории";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
@@ -131,6 +131,30 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             command.Parameters.AddWithValue("@id", id);
             int sum = Convert.ToInt32(command.ExecuteScalar());
             return sum;
+        }
+
+        //Функция получения названия выбранного мероприятия
+        public string SelectedEventName(int id)
+        {
+            string sql = @"SELECT Название
+                               FROM Мероприятия 
+                               WHERE Код_мероприятия = @id";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            string name = command.ExecuteScalar().ToString();
+            return name;
+        }
+
+        //Функция получения названия выбранного мероприятия
+        public string SelectedEventDate(int id)
+        {
+            string sql = @"SELECT strftime('%d.%m.%Y', Дата) AS Дата
+                               FROM Мероприятия 
+                               WHERE Код_мероприятия = @id";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            string name = command.ExecuteScalar().ToString();
+            return name;
         }
 
         //Функция получения всех Ответственных

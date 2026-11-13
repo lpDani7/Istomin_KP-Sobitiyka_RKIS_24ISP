@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
+using System.Windows.Forms.Design;
 
 namespace Istomin_KP_Sobitiyka_RKIS_24ISP
 {
@@ -138,16 +139,90 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             labelEventExpensesSum.Text = controller.ExpensesSum(id).ToString();
             labelEventPreferentialTrafficSum.Text = controller.PreferentialTrafficSum(id).ToString();
             labelEventGeneralTrafficSum.Text = (controller.NotPreferentialTrafficSum(id) + controller.PreferentialTrafficSum(id)).ToString();
+            labelEventSelectedNameAndDate.Text = (controller.SelectedEventName(id) + "  " + controller.SelectedEventDate(id)).ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Функция нажатия на кнопку "Сбросить" для сброса всех значений фильтра
+        private void buttonEventFilterReset_Click(object sender, EventArgs e)
         {
-            groupBoxEventSearch.Visible = false;
+            checkBoxEventNameSearch.Checked = false;
+            textBoxEventNameSearch.Clear();
+            checkBoxEventPlaceSearch.Checked = false;
+            textBoxEventPlaceSearch.Clear();
+            checkBoxEventTopicSearch.Checked = false;
+            textBoxEventTopicSearch.Clear();
+            checkBoxEventDateSearch.Checked = false;
+            dateTimePickerEventDateSearchFrom.Value = DateTime.Now;
+            dateTimePickerEventDateSearchUntil.Value = DateTime.Now;
+            checkBoxEventPriceSearch.Checked = false;
+            textBoxEventPriceSearchFrom.Clear();
+            textBoxEventPriceSearchUntil.Clear();
+            /*checkBoxEventTrafficSearch.Checked = false;
+            comboBoxEventTrafficSearch.SelectedIndex = -1;
+            textBoxEventTrafficSearchFrom.Clear();
+            textBoxEventTrafficSearchUntil.Clear();
+            checkBoxEventExpensesSearch.Checked = false;
+            textBoxEventExpensesSearchFrom.Clear();
+            textBoxEventExpensesSearchUntil.Clear();*/
+            dataGridViewEvents.DataSource = controller.EventsTable();
+            ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        //Функция нажатия на кнопку "Фильтр" для скрытия и раскрытия окна фильтра
+        private void buttonEventFilter_Click(object sender, EventArgs e)
         {
-            groupBoxEventSearch.Visible = true;
+            if (groupBoxEventSearch.Visible == true) groupBoxEventSearch.Visible = false;
+            else groupBoxEventSearch.Visible = true;
+        }
+
+        //Функция нажатия на кнопку "Подтвердить" для фильтрации Мероприятий 
+        private void buttonEventFilterConfirm_Click(object sender, EventArgs e)
+        {
+            string wHERE = "";
+            eventWhere.Clear();
+            eventWhere.Add("WHERE");
+            if (checkBoxEventNameSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventNameSearch.Text) ) eventWhere.Add($"Мер.Название LIKE '{textBoxEventNameSearch.Text}%'");
+            if (checkBoxEventPlaceSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventPlaceSearch.Text)) eventWhere.Add($"Мест.Название LIKE '{textBoxEventPlaceSearch.Text}%'");
+            if (checkBoxEventTopicSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventTopicSearch.Text)) eventWhere.Add($"Мер.Тематика LIKE '{textBoxEventTopicSearch.Text}%'");
+            if (checkBoxEventDateSearch.Checked == true) eventWhere.Add($"Мер.Дата BETWEEN '{dateTimePickerEventDateSearchFrom.Value.ToString("yyyy-MM-dd")}' AND '{dateTimePickerEventDateSearchUntil.Value.ToString("yyyy-MM-dd")}'");
+            if (checkBoxEventPriceSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventPriceSearchFrom.Text) && !String.IsNullOrWhiteSpace(textBoxEventPriceSearchUntil.Text))
+                eventWhere.Add($"[Цена билета] BETWEEN {textBoxEventPriceSearchFrom.Text} AND {textBoxEventPriceSearchUntil.Text}");
+
+            /*if (eventWhere.Count <= 2)
+            {
+                eventWhere[0] = eventWhere[0] + " " + eventWhere[1];
+                wHERE = eventWhere[0];
+                dataGridViewEvents.DataSource = controller.EventsTable(wHERE);
+                ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+            }*/
+            if (eventWhere.Count > 1)
+            {
+                eventWhere[0] = eventWhere[0] + " " + eventWhere[1];
+                wHERE = String.Join(" AND ", eventWhere);
+                dataGridViewEvents.DataSource = controller.EventsTable(wHERE);
+                ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+            }
+            else
+            {
+                dataGridViewEvents.DataSource = controller.EventsTable();
+                ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+            }
+            /*if (eventWhere.Count == 2) wHERE = String.Join(" ", eventWhere);
+            else if (eventWhere.Count >= 3) wHERE = String.Join(" AND ", eventWhere);*/
+        }
+
+        private void textBoxEventPriceSearchFrom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+                e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
+            if (textBoxEventPriceSearchFrom.Text.Length > 5) e.KeyChar = (char)0;
+        }
+
+        private void textBoxEventPriceSearchUntil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+                e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
+            if (textBoxEventPriceSearchUntil.Text.Length > 5) e.KeyChar = (char)0;
         }
     }
 }

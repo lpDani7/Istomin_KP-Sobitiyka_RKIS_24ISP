@@ -33,6 +33,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSprav));
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageResponsible = new System.Windows.Forms.TabPage();
@@ -385,6 +398,8 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewResponsible.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewResponsible.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewResponsible.Size = new System.Drawing.Size(1045, 400);
             this.dataGridViewResponsible.TabIndex = 1;
@@ -495,12 +510,14 @@
             // 
             // menuStrip3
             // 
+            this.menuStrip3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.menuStrip3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemPlacesCorrection,
             this.выходToolStripMenuItemPlaces});
             this.menuStrip3.Location = new System.Drawing.Point(4, 4);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(1051, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(1051, 25);
             this.menuStrip3.TabIndex = 5;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -510,35 +527,39 @@
             this.toolStripMenuItemPlacesAdd,
             this.toolStripMenuItemPlacesEdit,
             this.toolStripMenuItemPlacesDelete});
+            this.toolStripMenuItemPlacesCorrection.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripMenuItemPlacesCorrection.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolStripMenuItemPlacesCorrection.Name = "toolStripMenuItemPlacesCorrection";
-            this.toolStripMenuItemPlacesCorrection.Size = new System.Drawing.Size(59, 20);
+            this.toolStripMenuItemPlacesCorrection.Size = new System.Drawing.Size(67, 21);
             this.toolStripMenuItemPlacesCorrection.Text = "Правка";
             // 
             // toolStripMenuItemPlacesAdd
             // 
             this.toolStripMenuItemPlacesAdd.Name = "toolStripMenuItemPlacesAdd";
-            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPlacesAdd.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPlacesAdd.Text = "Добавить";
             this.toolStripMenuItemPlacesAdd.Click += new System.EventHandler(this.toolStripMenuItemPlacesAdd_Click);
             // 
             // toolStripMenuItemPlacesEdit
             // 
             this.toolStripMenuItemPlacesEdit.Name = "toolStripMenuItemPlacesEdit";
-            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPlacesEdit.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPlacesEdit.Text = "Редактированть";
             this.toolStripMenuItemPlacesEdit.Click += new System.EventHandler(this.toolStripMenuItemPlacesEdit_Click);
             // 
             // toolStripMenuItemPlacesDelete
             // 
             this.toolStripMenuItemPlacesDelete.Name = "toolStripMenuItemPlacesDelete";
-            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPlacesDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPlacesDelete.Text = "Удалить";
             this.toolStripMenuItemPlacesDelete.Click += new System.EventHandler(this.toolStripMenuItemPlacesDelete_Click);
             // 
             // выходToolStripMenuItemPlaces
             // 
+            this.выходToolStripMenuItemPlaces.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.выходToolStripMenuItemPlaces.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.выходToolStripMenuItemPlaces.Name = "выходToolStripMenuItemPlaces";
-            this.выходToolStripMenuItemPlaces.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItemPlaces.Size = new System.Drawing.Size(62, 21);
             this.выходToolStripMenuItemPlaces.Text = "Выход";
             this.выходToolStripMenuItemPlaces.Click += new System.EventHandler(this.выходToolStripMenuItemPlaces_Click);
             // 
@@ -563,13 +584,49 @@
             this.dataGridViewPlaces.AllowUserToAddRows = false;
             this.dataGridViewPlaces.AllowUserToResizeColumns = false;
             this.dataGridViewPlaces.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPlaces.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewPlaces.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPlaces.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewPlaces.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewPlaces.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPlaces.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewPlaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewPlaces.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewPlaces.EnableHeadersVisualStyles = false;
+            this.dataGridViewPlaces.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewPlaces.Location = new System.Drawing.Point(7, 110);
             this.dataGridViewPlaces.Name = "dataGridViewPlaces";
             this.dataGridViewPlaces.ReadOnly = true;
+            this.dataGridViewPlaces.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPlaces.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPlaces.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewPlaces.Size = new System.Drawing.Size(1044, 409);
             this.dataGridViewPlaces.TabIndex = 2;
             // 
@@ -623,12 +680,13 @@
             // 
             // menuStrip4
             // 
+            this.menuStrip4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemTypesOfExpensesCorrection,
             this.выходToolStripMenuItemTypesOfExpenses});
             this.menuStrip4.Location = new System.Drawing.Point(3, 3);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(1053, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(1053, 25);
             this.menuStrip4.TabIndex = 6;
             this.menuStrip4.Text = "menuStrip4";
             // 
@@ -638,35 +696,39 @@
             this.toolStripMenuItemTypesOfExpensesAdd,
             this.toolStripMenuItemTypesOfExpensesEdit,
             this.toolStripMenuItemTypesOfExpensesDelete});
+            this.toolStripMenuItemTypesOfExpensesCorrection.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripMenuItemTypesOfExpensesCorrection.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolStripMenuItemTypesOfExpensesCorrection.Name = "toolStripMenuItemTypesOfExpensesCorrection";
-            this.toolStripMenuItemTypesOfExpensesCorrection.Size = new System.Drawing.Size(59, 20);
+            this.toolStripMenuItemTypesOfExpensesCorrection.Size = new System.Drawing.Size(67, 21);
             this.toolStripMenuItemTypesOfExpensesCorrection.Text = "Правка";
             // 
             // toolStripMenuItemTypesOfExpensesAdd
             // 
             this.toolStripMenuItemTypesOfExpensesAdd.Name = "toolStripMenuItemTypesOfExpensesAdd";
-            this.toolStripMenuItemTypesOfExpensesAdd.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemTypesOfExpensesAdd.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemTypesOfExpensesAdd.Text = "Добавить";
             this.toolStripMenuItemTypesOfExpensesAdd.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesAdd_Click);
             // 
             // toolStripMenuItemTypesOfExpensesEdit
             // 
             this.toolStripMenuItemTypesOfExpensesEdit.Name = "toolStripMenuItemTypesOfExpensesEdit";
-            this.toolStripMenuItemTypesOfExpensesEdit.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemTypesOfExpensesEdit.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemTypesOfExpensesEdit.Text = "Редактированть";
             this.toolStripMenuItemTypesOfExpensesEdit.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesEdit_Click);
             // 
             // toolStripMenuItemTypesOfExpensesDelete
             // 
             this.toolStripMenuItemTypesOfExpensesDelete.Name = "toolStripMenuItemTypesOfExpensesDelete";
-            this.toolStripMenuItemTypesOfExpensesDelete.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemTypesOfExpensesDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemTypesOfExpensesDelete.Text = "Удалить";
             this.toolStripMenuItemTypesOfExpensesDelete.Click += new System.EventHandler(this.toolStripMenuItemTypesOfExpensesDelete_Click);
             // 
             // выходToolStripMenuItemTypesOfExpenses
             // 
+            this.выходToolStripMenuItemTypesOfExpenses.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.выходToolStripMenuItemTypesOfExpenses.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.выходToolStripMenuItemTypesOfExpenses.Name = "выходToolStripMenuItemTypesOfExpenses";
-            this.выходToolStripMenuItemTypesOfExpenses.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItemTypesOfExpenses.Size = new System.Drawing.Size(62, 21);
             this.выходToolStripMenuItemTypesOfExpenses.Text = "Выход";
             this.выходToolStripMenuItemTypesOfExpenses.Click += new System.EventHandler(this.выходToolStripMenuItemTypesOfExpenses_Click);
             // 
@@ -691,13 +753,41 @@
             this.dataGridViewTypesOfExpenses.AllowUserToAddRows = false;
             this.dataGridViewTypesOfExpenses.AllowUserToResizeColumns = false;
             this.dataGridViewTypesOfExpenses.AllowUserToResizeRows = false;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTypesOfExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTypesOfExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTypesOfExpenses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewTypesOfExpenses.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewTypesOfExpenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTypesOfExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTypesOfExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTypesOfExpenses.EnableHeadersVisualStyles = false;
+            this.dataGridViewTypesOfExpenses.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewTypesOfExpenses.Location = new System.Drawing.Point(7, 87);
             this.dataGridViewTypesOfExpenses.Name = "dataGridViewTypesOfExpenses";
             this.dataGridViewTypesOfExpenses.ReadOnly = true;
+            this.dataGridViewTypesOfExpenses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTypesOfExpenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTypesOfExpenses.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTypesOfExpenses.Size = new System.Drawing.Size(1044, 432);
             this.dataGridViewTypesOfExpenses.TabIndex = 3;
             // 
@@ -811,24 +901,53 @@
             this.dataGridViewPreferentialCategories.AllowUserToAddRows = false;
             this.dataGridViewPreferentialCategories.AllowUserToResizeColumns = false;
             this.dataGridViewPreferentialCategories.AllowUserToResizeRows = false;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPreferentialCategories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewPreferentialCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPreferentialCategories.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewPreferentialCategories.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewPreferentialCategories.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPreferentialCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewPreferentialCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPreferentialCategories.EnableHeadersVisualStyles = false;
+            this.dataGridViewPreferentialCategories.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewPreferentialCategories.Location = new System.Drawing.Point(7, 87);
             this.dataGridViewPreferentialCategories.Name = "dataGridViewPreferentialCategories";
             this.dataGridViewPreferentialCategories.ReadOnly = true;
+            this.dataGridViewPreferentialCategories.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPreferentialCategories.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewPreferentialCategories.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewPreferentialCategories.Size = new System.Drawing.Size(1044, 431);
             this.dataGridViewPreferentialCategories.TabIndex = 3;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemPreferentialCategoriesCorrection,
             this.выходToolStripMenuItemPreferentialCategories});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1053, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1053, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -838,35 +957,39 @@
             this.toolStripMenuItemPreferentialCategoriesAdd,
             this.toolStripMenuItemPreferentialCategoriesEdit,
             this.toolStripMenuItemPreferentialCategoriesDelete});
+            this.toolStripMenuItemPreferentialCategoriesCorrection.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripMenuItemPreferentialCategoriesCorrection.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolStripMenuItemPreferentialCategoriesCorrection.Name = "toolStripMenuItemPreferentialCategoriesCorrection";
-            this.toolStripMenuItemPreferentialCategoriesCorrection.Size = new System.Drawing.Size(59, 20);
+            this.toolStripMenuItemPreferentialCategoriesCorrection.Size = new System.Drawing.Size(67, 21);
             this.toolStripMenuItemPreferentialCategoriesCorrection.Text = "Правка";
             // 
             // toolStripMenuItemPreferentialCategoriesAdd
             // 
             this.toolStripMenuItemPreferentialCategoriesAdd.Name = "toolStripMenuItemPreferentialCategoriesAdd";
-            this.toolStripMenuItemPreferentialCategoriesAdd.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPreferentialCategoriesAdd.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPreferentialCategoriesAdd.Text = "Добавить";
             this.toolStripMenuItemPreferentialCategoriesAdd.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesAdd_Click);
             // 
             // toolStripMenuItemPreferentialCategoriesEdit
             // 
             this.toolStripMenuItemPreferentialCategoriesEdit.Name = "toolStripMenuItemPreferentialCategoriesEdit";
-            this.toolStripMenuItemPreferentialCategoriesEdit.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPreferentialCategoriesEdit.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPreferentialCategoriesEdit.Text = "Редактированть";
             this.toolStripMenuItemPreferentialCategoriesEdit.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesEdit_Click);
             // 
             // toolStripMenuItemPreferentialCategoriesDelete
             // 
             this.toolStripMenuItemPreferentialCategoriesDelete.Name = "toolStripMenuItemPreferentialCategoriesDelete";
-            this.toolStripMenuItemPreferentialCategoriesDelete.Size = new System.Drawing.Size(161, 22);
+            this.toolStripMenuItemPreferentialCategoriesDelete.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemPreferentialCategoriesDelete.Text = "Удалить";
             this.toolStripMenuItemPreferentialCategoriesDelete.Click += new System.EventHandler(this.toolStripMenuItemPreferentialCategoriesDelete_Click);
             // 
             // выходToolStripMenuItemPreferentialCategories
             // 
+            this.выходToolStripMenuItemPreferentialCategories.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.выходToolStripMenuItemPreferentialCategories.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.выходToolStripMenuItemPreferentialCategories.Name = "выходToolStripMenuItemPreferentialCategories";
-            this.выходToolStripMenuItemPreferentialCategories.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItemPreferentialCategories.Size = new System.Drawing.Size(62, 21);
             this.выходToolStripMenuItemPreferentialCategories.Text = "Выход";
             this.выходToolStripMenuItemPreferentialCategories.Click += new System.EventHandler(this.выходToolStripMenuItemPreferentialCategories_Click);
             // 

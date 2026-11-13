@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ответственныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,38 +84,30 @@
             this.labelEventGeneralTrafficSum = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBoxEventSearch = new System.Windows.Forms.GroupBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.checkBoxEventExpensesSearch = new System.Windows.Forms.CheckBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBoxEventExpensesSearchUntil = new System.Windows.Forms.TextBox();
-            this.textBoxEventTrafficSearchUntil = new System.Windows.Forms.TextBox();
-            this.textBoxEventTrafficSearchFrom = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBoxEventExpensesSearchFrom = new System.Windows.Forms.TextBox();
-            this.comboBoxEventTrafficSearch = new System.Windows.Forms.ComboBox();
-            this.checkBoxEventTrafficSearch = new System.Windows.Forms.CheckBox();
+            this.buttonEventFilterConfirm = new System.Windows.Forms.Button();
+            this.buttonEventFilterReset = new System.Windows.Forms.Button();
             this.textBoxEventTopicSearch = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.checkBoxEventPriceSearch = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxEventPriceSearchUntil = new System.Windows.Forms.TextBox();
             this.textBoxEventPriceSearchFrom = new System.Windows.Forms.TextBox();
             this.checkBoxEventDateSearch = new System.Windows.Forms.CheckBox();
             this.textBoxEventPlaceSearch = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.dateTimePickerEventDateSearchUntil = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.dateTimePickerEventDateSearchFrom = new System.Windows.Forms.DateTimePicker();
             this.textBoxEventNameSearch = new System.Windows.Forms.TextBox();
+            this.buttonEventFilter = new System.Windows.Forms.Button();
             this.labelEventCount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxEventNameSearch = new System.Windows.Forms.CheckBox();
+            this.checkBoxEventPlaceSearch = new System.Windows.Forms.CheckBox();
+            this.checkBoxEventTopicSearch = new System.Windows.Forms.CheckBox();
+            this.labelEventSelectedNameAndDate = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
@@ -240,48 +232,48 @@
             // dataGridViewEvents
             // 
             this.dataGridViewEvents.AllowUserToAddRows = false;
-            this.dataGridViewEvents.AllowUserToResizeColumns = false;
             this.dataGridViewEvents.AllowUserToResizeRows = false;
-            dataGridViewCellStyle76.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle76.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEvents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewEvents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewEvents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle78.BackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEvents.DefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEvents.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEvents.EnableHeadersVisualStyles = false;
             this.dataGridViewEvents.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewEvents.Location = new System.Drawing.Point(432, 133);
             this.dataGridViewEvents.Name = "dataGridViewEvents";
             this.dataGridViewEvents.ReadOnly = true;
             this.dataGridViewEvents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle79.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle79;
-            dataGridViewCellStyle80.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dataGridViewEvents.RowsDefaultCellStyle = dataGridViewCellStyle80;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Cyan;
+            this.dataGridViewEvents.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewEvents.Size = new System.Drawing.Size(1193, 352);
             this.dataGridViewEvents.TabIndex = 4;
             this.dataGridViewEvents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEvents_CellClick);
@@ -291,45 +283,46 @@
             this.dataGridViewEventPerformers.AllowUserToAddRows = false;
             this.dataGridViewEventPerformers.AllowUserToResizeColumns = false;
             this.dataGridViewEventPerformers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle81.BackColor = System.Drawing.Color.Azure;
-            this.dataGridViewEventPerformers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Azure;
+            this.dataGridViewEventPerformers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewEventPerformers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEventPerformers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewEventPerformers.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewEventPerformers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle82.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle82.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEventPerformers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEventPerformers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewEventPerformers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle83.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle83.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEventPerformers.DefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEventPerformers.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewEventPerformers.EnableHeadersVisualStyles = false;
             this.dataGridViewEventPerformers.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewEventPerformers.Location = new System.Drawing.Point(15, 521);
             this.dataGridViewEventPerformers.Name = "dataGridViewEventPerformers";
             this.dataGridViewEventPerformers.ReadOnly = true;
             this.dataGridViewEventPerformers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle84.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle84.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEventPerformers.RowHeadersDefaultCellStyle = dataGridViewCellStyle84;
-            dataGridViewCellStyle85.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dataGridViewEventPerformers.RowsDefaultCellStyle = dataGridViewCellStyle85;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEventPerformers.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Cyan;
+            this.dataGridViewEventPerformers.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewEventPerformers.Size = new System.Drawing.Size(398, 392);
             this.dataGridViewEventPerformers.TabIndex = 5;
             // 
@@ -359,45 +352,46 @@
             this.dataGridViewResponsibleForEvent.AllowUserToAddRows = false;
             this.dataGridViewResponsibleForEvent.AllowUserToResizeColumns = false;
             this.dataGridViewResponsibleForEvent.AllowUserToResizeRows = false;
-            dataGridViewCellStyle86.BackColor = System.Drawing.Color.Azure;
-            this.dataGridViewResponsibleForEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle86;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Azure;
+            this.dataGridViewResponsibleForEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewResponsibleForEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewResponsibleForEvent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewResponsibleForEvent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewResponsibleForEvent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle87.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle87.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewResponsibleForEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle87;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewResponsibleForEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewResponsibleForEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle88.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle88.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewResponsibleForEvent.DefaultCellStyle = dataGridViewCellStyle88;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewResponsibleForEvent.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewResponsibleForEvent.EnableHeadersVisualStyles = false;
             this.dataGridViewResponsibleForEvent.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewResponsibleForEvent.Location = new System.Drawing.Point(432, 521);
             this.dataGridViewResponsibleForEvent.Name = "dataGridViewResponsibleForEvent";
             this.dataGridViewResponsibleForEvent.ReadOnly = true;
             this.dataGridViewResponsibleForEvent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle89.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle89.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewResponsibleForEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle89;
-            dataGridViewCellStyle90.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dataGridViewResponsibleForEvent.RowsDefaultCellStyle = dataGridViewCellStyle90;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewResponsibleForEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Cyan;
+            this.dataGridViewResponsibleForEvent.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewResponsibleForEvent.Size = new System.Drawing.Size(1193, 116);
             this.dataGridViewResponsibleForEvent.TabIndex = 7;
             // 
@@ -416,45 +410,46 @@
             this.dataGridViewExpensesForEvent.AllowUserToAddRows = false;
             this.dataGridViewExpensesForEvent.AllowUserToResizeColumns = false;
             this.dataGridViewExpensesForEvent.AllowUserToResizeRows = false;
-            dataGridViewCellStyle91.BackColor = System.Drawing.Color.Azure;
-            this.dataGridViewExpensesForEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle91;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Azure;
+            this.dataGridViewExpensesForEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewExpensesForEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewExpensesForEvent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewExpensesForEvent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewExpensesForEvent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle92.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle92.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle92.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle92.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewExpensesForEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle92;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewExpensesForEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewExpensesForEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle93.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle93.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle93.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewExpensesForEvent.DefaultCellStyle = dataGridViewCellStyle93;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewExpensesForEvent.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewExpensesForEvent.EnableHeadersVisualStyles = false;
             this.dataGridViewExpensesForEvent.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewExpensesForEvent.Location = new System.Drawing.Point(432, 659);
             this.dataGridViewExpensesForEvent.Name = "dataGridViewExpensesForEvent";
             this.dataGridViewExpensesForEvent.ReadOnly = true;
             this.dataGridViewExpensesForEvent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle94.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle94.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle94.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle94.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle94.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewExpensesForEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle94;
-            dataGridViewCellStyle95.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dataGridViewExpensesForEvent.RowsDefaultCellStyle = dataGridViewCellStyle95;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewExpensesForEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Cyan;
+            this.dataGridViewExpensesForEvent.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewExpensesForEvent.Size = new System.Drawing.Size(1193, 116);
             this.dataGridViewExpensesForEvent.TabIndex = 9;
             // 
@@ -473,45 +468,46 @@
             this.dataGridViewPreferentialCategoriesAtEvent.AllowUserToAddRows = false;
             this.dataGridViewPreferentialCategoriesAtEvent.AllowUserToResizeColumns = false;
             this.dataGridViewPreferentialCategoriesAtEvent.AllowUserToResizeRows = false;
-            dataGridViewCellStyle96.BackColor = System.Drawing.Color.Azure;
-            this.dataGridViewPreferentialCategoriesAtEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle96;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Azure;
+            this.dataGridViewPreferentialCategoriesAtEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewPreferentialCategoriesAtEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPreferentialCategoriesAtEvent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewPreferentialCategoriesAtEvent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewPreferentialCategoriesAtEvent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle97.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle97.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle97.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle97.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle97.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewPreferentialCategoriesAtEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle97;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPreferentialCategoriesAtEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewPreferentialCategoriesAtEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle98.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle98.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewPreferentialCategoriesAtEvent.DefaultCellStyle = dataGridViewCellStyle98;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewPreferentialCategoriesAtEvent.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewPreferentialCategoriesAtEvent.EnableHeadersVisualStyles = false;
             this.dataGridViewPreferentialCategoriesAtEvent.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewPreferentialCategoriesAtEvent.Location = new System.Drawing.Point(432, 797);
             this.dataGridViewPreferentialCategoriesAtEvent.Name = "dataGridViewPreferentialCategoriesAtEvent";
             this.dataGridViewPreferentialCategoriesAtEvent.ReadOnly = true;
             this.dataGridViewPreferentialCategoriesAtEvent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle99.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle99.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewPreferentialCategoriesAtEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle99;
-            dataGridViewCellStyle100.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dataGridViewPreferentialCategoriesAtEvent.RowsDefaultCellStyle = dataGridViewCellStyle100;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPreferentialCategoriesAtEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Cyan;
+            this.dataGridViewPreferentialCategoriesAtEvent.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewPreferentialCategoriesAtEvent.Size = new System.Drawing.Size(1193, 116);
             this.dataGridViewPreferentialCategoriesAtEvent.TabIndex = 11;
             // 
@@ -588,151 +584,66 @@
             // 
             // groupBoxEventSearch
             // 
-            this.groupBoxEventSearch.Controls.Add(this.button2);
-            this.groupBoxEventSearch.Controls.Add(this.button1);
-            this.groupBoxEventSearch.Controls.Add(this.label20);
-            this.groupBoxEventSearch.Controls.Add(this.button3);
-            this.groupBoxEventSearch.Controls.Add(this.checkBoxEventExpensesSearch);
-            this.groupBoxEventSearch.Controls.Add(this.label19);
-            this.groupBoxEventSearch.Controls.Add(this.textBoxEventExpensesSearchUntil);
-            this.groupBoxEventSearch.Controls.Add(this.textBoxEventTrafficSearchUntil);
-            this.groupBoxEventSearch.Controls.Add(this.textBoxEventTrafficSearchFrom);
-            this.groupBoxEventSearch.Controls.Add(this.label18);
-            this.groupBoxEventSearch.Controls.Add(this.textBoxEventExpensesSearchFrom);
-            this.groupBoxEventSearch.Controls.Add(this.comboBoxEventTrafficSearch);
-            this.groupBoxEventSearch.Controls.Add(this.checkBoxEventTrafficSearch);
+            this.groupBoxEventSearch.Controls.Add(this.checkBoxEventTopicSearch);
+            this.groupBoxEventSearch.Controls.Add(this.checkBoxEventPlaceSearch);
+            this.groupBoxEventSearch.Controls.Add(this.checkBoxEventNameSearch);
+            this.groupBoxEventSearch.Controls.Add(this.buttonEventFilterConfirm);
+            this.groupBoxEventSearch.Controls.Add(this.buttonEventFilterReset);
             this.groupBoxEventSearch.Controls.Add(this.textBoxEventTopicSearch);
-            this.groupBoxEventSearch.Controls.Add(this.label17);
             this.groupBoxEventSearch.Controls.Add(this.checkBoxEventPriceSearch);
             this.groupBoxEventSearch.Controls.Add(this.label16);
             this.groupBoxEventSearch.Controls.Add(this.textBoxEventPriceSearchUntil);
             this.groupBoxEventSearch.Controls.Add(this.textBoxEventPriceSearchFrom);
             this.groupBoxEventSearch.Controls.Add(this.checkBoxEventDateSearch);
             this.groupBoxEventSearch.Controls.Add(this.textBoxEventPlaceSearch);
-            this.groupBoxEventSearch.Controls.Add(this.label15);
-            this.groupBoxEventSearch.Controls.Add(this.label14);
             this.groupBoxEventSearch.Controls.Add(this.dateTimePickerEventDateSearchUntil);
             this.groupBoxEventSearch.Controls.Add(this.label12);
             this.groupBoxEventSearch.Controls.Add(this.dateTimePickerEventDateSearchFrom);
             this.groupBoxEventSearch.Controls.Add(this.textBoxEventNameSearch);
-            this.groupBoxEventSearch.Location = new System.Drawing.Point(15, 123);
+            this.groupBoxEventSearch.Location = new System.Drawing.Point(15, 155);
             this.groupBoxEventSearch.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEventSearch.Name = "groupBoxEventSearch";
             this.groupBoxEventSearch.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxEventSearch.Size = new System.Drawing.Size(398, 352);
+            this.groupBoxEventSearch.Size = new System.Drawing.Size(398, 330);
             this.groupBoxEventSearch.TabIndex = 23;
             this.groupBoxEventSearch.TabStop = false;
             // 
-            // label20
+            // buttonEventFilterConfirm
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(223, 252);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(23, 16);
-            this.label20.TabIndex = 41;
-            this.label20.Text = "до";
+            this.buttonEventFilterConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonEventFilterConfirm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonEventFilterConfirm.Location = new System.Drawing.Point(178, 271);
+            this.buttonEventFilterConfirm.Name = "buttonEventFilterConfirm";
+            this.buttonEventFilterConfirm.Size = new System.Drawing.Size(213, 52);
+            this.buttonEventFilterConfirm.TabIndex = 45;
+            this.buttonEventFilterConfirm.Text = "Подтвердить";
+            this.buttonEventFilterConfirm.UseVisualStyleBackColor = false;
+            this.buttonEventFilterConfirm.Click += new System.EventHandler(this.buttonEventFilterConfirm_Click);
             // 
-            // checkBoxEventExpensesSearch
+            // buttonEventFilterReset
             // 
-            this.checkBoxEventExpensesSearch.AutoSize = true;
-            this.checkBoxEventExpensesSearch.Location = new System.Drawing.Point(8, 251);
-            this.checkBoxEventExpensesSearch.Name = "checkBoxEventExpensesSearch";
-            this.checkBoxEventExpensesSearch.Size = new System.Drawing.Size(131, 20);
-            this.checkBoxEventExpensesSearch.TabIndex = 44;
-            this.checkBoxEventExpensesSearch.Text = "По затратам  от";
-            this.checkBoxEventExpensesSearch.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(269, 220);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(23, 16);
-            this.label19.TabIndex = 38;
-            this.label19.Text = "до";
-            // 
-            // textBoxEventExpensesSearchUntil
-            // 
-            this.textBoxEventExpensesSearchUntil.Location = new System.Drawing.Point(253, 249);
-            this.textBoxEventExpensesSearchUntil.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEventExpensesSearchUntil.Name = "textBoxEventExpensesSearchUntil";
-            this.textBoxEventExpensesSearchUntil.Size = new System.Drawing.Size(70, 22);
-            this.textBoxEventExpensesSearchUntil.TabIndex = 43;
-            // 
-            // textBoxEventTrafficSearchUntil
-            // 
-            this.textBoxEventTrafficSearchUntil.Location = new System.Drawing.Point(299, 217);
-            this.textBoxEventTrafficSearchUntil.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEventTrafficSearchUntil.Name = "textBoxEventTrafficSearchUntil";
-            this.textBoxEventTrafficSearchUntil.Size = new System.Drawing.Size(70, 22);
-            this.textBoxEventTrafficSearchUntil.TabIndex = 40;
-            // 
-            // textBoxEventTrafficSearchFrom
-            // 
-            this.textBoxEventTrafficSearchFrom.Location = new System.Drawing.Point(299, 194);
-            this.textBoxEventTrafficSearchFrom.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEventTrafficSearchFrom.Name = "textBoxEventTrafficSearchFrom";
-            this.textBoxEventTrafficSearchFrom.Size = new System.Drawing.Size(70, 22);
-            this.textBoxEventTrafficSearchFrom.TabIndex = 39;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(166, 200);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(126, 16);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "посещаемости   от";
-            // 
-            // textBoxEventExpensesSearchFrom
-            // 
-            this.textBoxEventExpensesSearchFrom.Location = new System.Drawing.Point(146, 249);
-            this.textBoxEventExpensesSearchFrom.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEventExpensesSearchFrom.Name = "textBoxEventExpensesSearchFrom";
-            this.textBoxEventExpensesSearchFrom.Size = new System.Drawing.Size(70, 22);
-            this.textBoxEventExpensesSearchFrom.TabIndex = 42;
-            // 
-            // comboBoxEventTrafficSearch
-            // 
-            this.comboBoxEventTrafficSearch.FormattingEnabled = true;
-            this.comboBoxEventTrafficSearch.Items.AddRange(new object[] {
-            "не льготной"});
-            this.comboBoxEventTrafficSearch.Location = new System.Drawing.Point(58, 194);
-            this.comboBoxEventTrafficSearch.Name = "comboBoxEventTrafficSearch";
-            this.comboBoxEventTrafficSearch.Size = new System.Drawing.Size(102, 24);
-            this.comboBoxEventTrafficSearch.TabIndex = 36;
-            // 
-            // checkBoxEventTrafficSearch
-            // 
-            this.checkBoxEventTrafficSearch.AutoSize = true;
-            this.checkBoxEventTrafficSearch.Location = new System.Drawing.Point(8, 197);
-            this.checkBoxEventTrafficSearch.Name = "checkBoxEventTrafficSearch";
-            this.checkBoxEventTrafficSearch.Size = new System.Drawing.Size(44, 20);
-            this.checkBoxEventTrafficSearch.TabIndex = 35;
-            this.checkBoxEventTrafficSearch.Text = "По";
-            this.checkBoxEventTrafficSearch.UseVisualStyleBackColor = true;
+            this.buttonEventFilterReset.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonEventFilterReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonEventFilterReset.Location = new System.Drawing.Point(7, 271);
+            this.buttonEventFilterReset.Name = "buttonEventFilterReset";
+            this.buttonEventFilterReset.Size = new System.Drawing.Size(165, 52);
+            this.buttonEventFilterReset.TabIndex = 25;
+            this.buttonEventFilterReset.Text = "Сбросить";
+            this.buttonEventFilterReset.UseVisualStyleBackColor = false;
+            this.buttonEventFilterReset.Click += new System.EventHandler(this.buttonEventFilterReset_Click);
             // 
             // textBoxEventTopicSearch
             // 
-            this.textBoxEventTopicSearch.Location = new System.Drawing.Point(108, 75);
+            this.textBoxEventTopicSearch.Location = new System.Drawing.Point(125, 95);
             this.textBoxEventTopicSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEventTopicSearch.Name = "textBoxEventTopicSearch";
             this.textBoxEventTopicSearch.Size = new System.Drawing.Size(157, 22);
             this.textBoxEventTopicSearch.TabIndex = 34;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 75);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(93, 16);
-            this.label17.TabIndex = 33;
-            this.label17.Text = "По тематике:";
-            // 
             // checkBoxEventPriceSearch
             // 
             this.checkBoxEventPriceSearch.AutoSize = true;
-            this.checkBoxEventPriceSearch.Location = new System.Drawing.Point(7, 161);
+            this.checkBoxEventPriceSearch.Location = new System.Drawing.Point(6, 216);
             this.checkBoxEventPriceSearch.Name = "checkBoxEventPriceSearch";
             this.checkBoxEventPriceSearch.Size = new System.Drawing.Size(156, 20);
             this.checkBoxEventPriceSearch.TabIndex = 32;
@@ -742,7 +653,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(241, 164);
+            this.label16.Location = new System.Drawing.Point(240, 219);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(23, 16);
             this.label16.TabIndex = 28;
@@ -750,24 +661,26 @@
             // 
             // textBoxEventPriceSearchUntil
             // 
-            this.textBoxEventPriceSearchUntil.Location = new System.Drawing.Point(271, 161);
+            this.textBoxEventPriceSearchUntil.Location = new System.Drawing.Point(270, 216);
             this.textBoxEventPriceSearchUntil.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEventPriceSearchUntil.Name = "textBoxEventPriceSearchUntil";
             this.textBoxEventPriceSearchUntil.Size = new System.Drawing.Size(70, 22);
             this.textBoxEventPriceSearchUntil.TabIndex = 30;
+            this.textBoxEventPriceSearchUntil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEventPriceSearchUntil_KeyPress);
             // 
             // textBoxEventPriceSearchFrom
             // 
-            this.textBoxEventPriceSearchFrom.Location = new System.Drawing.Point(167, 161);
+            this.textBoxEventPriceSearchFrom.Location = new System.Drawing.Point(166, 216);
             this.textBoxEventPriceSearchFrom.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEventPriceSearchFrom.Name = "textBoxEventPriceSearchFrom";
             this.textBoxEventPriceSearchFrom.Size = new System.Drawing.Size(70, 22);
             this.textBoxEventPriceSearchFrom.TabIndex = 29;
+            this.textBoxEventPriceSearchFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEventPriceSearchFrom_KeyPress);
             // 
             // checkBoxEventDateSearch
             // 
             this.checkBoxEventDateSearch.AutoSize = true;
-            this.checkBoxEventDateSearch.Location = new System.Drawing.Point(7, 104);
+            this.checkBoxEventDateSearch.Location = new System.Drawing.Point(6, 138);
             this.checkBoxEventDateSearch.Name = "checkBoxEventDateSearch";
             this.checkBoxEventDateSearch.Size = new System.Drawing.Size(184, 20);
             this.checkBoxEventDateSearch.TabIndex = 27;
@@ -776,34 +689,16 @@
             // 
             // textBoxEventPlaceSearch
             // 
-            this.textBoxEventPlaceSearch.Location = new System.Drawing.Point(108, 50);
+            this.textBoxEventPlaceSearch.Location = new System.Drawing.Point(125, 60);
             this.textBoxEventPlaceSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEventPlaceSearch.Name = "textBoxEventPlaceSearch";
             this.textBoxEventPlaceSearch.Size = new System.Drawing.Size(157, 22);
             this.textBoxEventPlaceSearch.TabIndex = 26;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 16);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "По месту:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 26);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 16);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "По названию:";
-            // 
             // dateTimePickerEventDateSearchUntil
             // 
             this.dateTimePickerEventDateSearchUntil.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerEventDateSearchUntil.Location = new System.Drawing.Point(194, 131);
+            this.dateTimePickerEventDateSearchUntil.Location = new System.Drawing.Point(193, 165);
             this.dateTimePickerEventDateSearchUntil.Name = "dateTimePickerEventDateSearchUntil";
             this.dateTimePickerEventDateSearchUntil.Size = new System.Drawing.Size(109, 22);
             this.dateTimePickerEventDateSearchUntil.TabIndex = 8;
@@ -811,7 +706,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(165, 126);
+            this.label12.Location = new System.Drawing.Point(164, 160);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(23, 16);
             this.label12.TabIndex = 7;
@@ -820,18 +715,30 @@
             // dateTimePickerEventDateSearchFrom
             // 
             this.dateTimePickerEventDateSearchFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerEventDateSearchFrom.Location = new System.Drawing.Point(194, 103);
+            this.dateTimePickerEventDateSearchFrom.Location = new System.Drawing.Point(193, 137);
             this.dateTimePickerEventDateSearchFrom.Name = "dateTimePickerEventDateSearchFrom";
             this.dateTimePickerEventDateSearchFrom.Size = new System.Drawing.Size(109, 22);
             this.dateTimePickerEventDateSearchFrom.TabIndex = 7;
             // 
             // textBoxEventNameSearch
             // 
-            this.textBoxEventNameSearch.Location = new System.Drawing.Point(108, 23);
+            this.textBoxEventNameSearch.Location = new System.Drawing.Point(125, 22);
             this.textBoxEventNameSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEventNameSearch.Name = "textBoxEventNameSearch";
             this.textBoxEventNameSearch.Size = new System.Drawing.Size(157, 22);
             this.textBoxEventNameSearch.TabIndex = 3;
+            // 
+            // buttonEventFilter
+            // 
+            this.buttonEventFilter.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonEventFilter.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonEventFilter.Location = new System.Drawing.Point(12, 133);
+            this.buttonEventFilter.Name = "buttonEventFilter";
+            this.buttonEventFilter.Size = new System.Drawing.Size(70, 23);
+            this.buttonEventFilter.TabIndex = 25;
+            this.buttonEventFilter.Text = "Фильтр";
+            this.buttonEventFilter.UseVisualStyleBackColor = false;
+            this.buttonEventFilter.Click += new System.EventHandler(this.buttonEventFilter_Click);
             // 
             // labelEventCount
             // 
@@ -842,41 +749,6 @@
             this.labelEventCount.Size = new System.Drawing.Size(57, 16);
             this.labelEventCount.TabIndex = 24;
             this.labelEventCount.Text = "Кол-во";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(7, 294);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 37);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Сбросить";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(178, 294);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(213, 37);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Подтвердить";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(7, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Фильтр";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -924,6 +796,56 @@
             this.label1.Text = "Регистрация и учёт \r\nгородских культурных\r\nмероприятий";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // checkBoxEventNameSearch
+            // 
+            this.checkBoxEventNameSearch.AutoSize = true;
+            this.checkBoxEventNameSearch.Location = new System.Drawing.Point(6, 24);
+            this.checkBoxEventNameSearch.Name = "checkBoxEventNameSearch";
+            this.checkBoxEventNameSearch.Size = new System.Drawing.Size(116, 20);
+            this.checkBoxEventNameSearch.TabIndex = 46;
+            this.checkBoxEventNameSearch.Text = "По названию:";
+            this.checkBoxEventNameSearch.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEventPlaceSearch
+            // 
+            this.checkBoxEventPlaceSearch.AutoSize = true;
+            this.checkBoxEventPlaceSearch.Location = new System.Drawing.Point(6, 60);
+            this.checkBoxEventPlaceSearch.Name = "checkBoxEventPlaceSearch";
+            this.checkBoxEventPlaceSearch.Size = new System.Drawing.Size(89, 20);
+            this.checkBoxEventPlaceSearch.TabIndex = 47;
+            this.checkBoxEventPlaceSearch.Text = "По месту:";
+            this.checkBoxEventPlaceSearch.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEventTopicSearch
+            // 
+            this.checkBoxEventTopicSearch.AutoSize = true;
+            this.checkBoxEventTopicSearch.Location = new System.Drawing.Point(6, 96);
+            this.checkBoxEventTopicSearch.Name = "checkBoxEventTopicSearch";
+            this.checkBoxEventTopicSearch.Size = new System.Drawing.Size(112, 20);
+            this.checkBoxEventTopicSearch.TabIndex = 48;
+            this.checkBoxEventTopicSearch.Text = "По тематике:";
+            this.checkBoxEventTopicSearch.UseVisualStyleBackColor = true;
+            // 
+            // labelEventSelectedNameAndDate
+            // 
+            this.labelEventSelectedNameAndDate.AutoSize = true;
+            this.labelEventSelectedNameAndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelEventSelectedNameAndDate.Location = new System.Drawing.Point(755, 114);
+            this.labelEventSelectedNameAndDate.Name = "labelEventSelectedNameAndDate";
+            this.labelEventSelectedNameAndDate.Size = new System.Drawing.Size(81, 16);
+            this.labelEventSelectedNameAndDate.TabIndex = 30;
+            this.labelEventSelectedNameAndDate.Text = "Название";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(683, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 16);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Выбрано:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -931,9 +853,12 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1649, 939);
+            this.Controls.Add(this.labelEventSelectedNameAndDate);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonEventFilter);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.labelEventCount);
             this.Controls.Add(this.groupBoxEventSearch);
@@ -1016,32 +941,24 @@
         private System.Windows.Forms.TextBox textBoxEventNameSearch;
         private System.Windows.Forms.CheckBox checkBoxEventDateSearch;
         private System.Windows.Forms.TextBox textBoxEventPlaceSearch;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBoxEventPriceSearch;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxEventPriceSearchUntil;
         private System.Windows.Forms.TextBox textBoxEventPriceSearchFrom;
         private System.Windows.Forms.TextBox textBoxEventTopicSearch;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBoxEventTrafficSearch;
-        private System.Windows.Forms.CheckBox checkBoxEventTrafficSearch;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxEventTrafficSearchUntil;
-        private System.Windows.Forms.TextBox textBoxEventTrafficSearchFrom;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.CheckBox checkBoxEventExpensesSearch;
-        private System.Windows.Forms.TextBox textBoxEventExpensesSearchUntil;
-        private System.Windows.Forms.TextBox textBoxEventExpensesSearchFrom;
         private System.Windows.Forms.Label labelEventCount;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonEventFilterConfirm;
+        private System.Windows.Forms.Button buttonEventFilterReset;
+        private System.Windows.Forms.Button buttonEventFilter;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxEventTopicSearch;
+        private System.Windows.Forms.CheckBox checkBoxEventPlaceSearch;
+        private System.Windows.Forms.CheckBox checkBoxEventNameSearch;
+        private System.Windows.Forms.Label labelEventSelectedNameAndDate;
+        private System.Windows.Forms.Label label8;
     }
 }
 
