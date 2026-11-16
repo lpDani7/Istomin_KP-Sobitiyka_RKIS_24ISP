@@ -56,22 +56,26 @@
             // 
             // buttonCorrectionPreferentialCategoriesConfirm
             // 
+            this.buttonCorrectionPreferentialCategoriesConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionPreferentialCategoriesConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonCorrectionPreferentialCategoriesConfirm.Location = new System.Drawing.Point(152, 89);
             this.buttonCorrectionPreferentialCategoriesConfirm.Name = "buttonCorrectionPreferentialCategoriesConfirm";
             this.buttonCorrectionPreferentialCategoriesConfirm.Size = new System.Drawing.Size(234, 47);
             this.buttonCorrectionPreferentialCategoriesConfirm.TabIndex = 21;
             this.buttonCorrectionPreferentialCategoriesConfirm.Text = "Подтвердить";
-            this.buttonCorrectionPreferentialCategoriesConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionPreferentialCategoriesConfirm.UseVisualStyleBackColor = false;
             this.buttonCorrectionPreferentialCategoriesConfirm.Click += new System.EventHandler(this.buttonCorrectionPreferentialCategoriesConfirm_Click);
             // 
             // buttonCorrectionPreferentialCategoriesCancel
             // 
+            this.buttonCorrectionPreferentialCategoriesCancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionPreferentialCategoriesCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonCorrectionPreferentialCategoriesCancel.Location = new System.Drawing.Point(15, 89);
             this.buttonCorrectionPreferentialCategoriesCancel.Name = "buttonCorrectionPreferentialCategoriesCancel";
             this.buttonCorrectionPreferentialCategoriesCancel.Size = new System.Drawing.Size(131, 47);
             this.buttonCorrectionPreferentialCategoriesCancel.TabIndex = 20;
             this.buttonCorrectionPreferentialCategoriesCancel.Text = "Отменить";
-            this.buttonCorrectionPreferentialCategoriesCancel.UseVisualStyleBackColor = true;
+            this.buttonCorrectionPreferentialCategoriesCancel.UseVisualStyleBackColor = false;
             this.buttonCorrectionPreferentialCategoriesCancel.Click += new System.EventHandler(this.buttonCorrectionPreferentialCategoriesCancel_Click);
             // 
             // labelCorrectionPreferentialCategoriesID

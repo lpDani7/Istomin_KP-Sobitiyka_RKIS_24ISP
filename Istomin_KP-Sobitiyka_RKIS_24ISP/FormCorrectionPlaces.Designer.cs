@@ -51,22 +51,26 @@
             // 
             // buttonCorrectionPlacesConfirm
             // 
+            this.buttonCorrectionPlacesConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionPlacesConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonCorrectionPlacesConfirm.Location = new System.Drawing.Point(152, 121);
             this.buttonCorrectionPlacesConfirm.Name = "buttonCorrectionPlacesConfirm";
             this.buttonCorrectionPlacesConfirm.Size = new System.Drawing.Size(234, 47);
             this.buttonCorrectionPlacesConfirm.TabIndex = 13;
             this.buttonCorrectionPlacesConfirm.Text = "Подтвердить";
-            this.buttonCorrectionPlacesConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionPlacesConfirm.UseVisualStyleBackColor = false;
             this.buttonCorrectionPlacesConfirm.Click += new System.EventHandler(this.buttonCorrectionPlacesConfirm_Click);
             // 
             // buttonCorrectionPlacesCancel
             // 
+            this.buttonCorrectionPlacesCancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionPlacesCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonCorrectionPlacesCancel.Location = new System.Drawing.Point(15, 121);
             this.buttonCorrectionPlacesCancel.Name = "buttonCorrectionPlacesCancel";
             this.buttonCorrectionPlacesCancel.Size = new System.Drawing.Size(131, 47);
             this.buttonCorrectionPlacesCancel.TabIndex = 12;
             this.buttonCorrectionPlacesCancel.Text = "Отменить";
-            this.buttonCorrectionPlacesCancel.UseVisualStyleBackColor = true;
+            this.buttonCorrectionPlacesCancel.UseVisualStyleBackColor = false;
             this.buttonCorrectionPlacesCancel.Click += new System.EventHandler(this.buttonCorrectionPlacesCancel_Click);
             // 
             // label5

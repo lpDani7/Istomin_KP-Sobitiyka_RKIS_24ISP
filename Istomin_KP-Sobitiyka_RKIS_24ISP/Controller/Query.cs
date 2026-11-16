@@ -436,5 +436,146 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             if (count > 0) return false;
             else return true;
         }
+
+        //Функция получения всех Коллективов
+        public DataTable CollectivesTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT Код_коллектива, Название AS 'Название коллектива'
+                               FROM Коллективы";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всех участников выбранного коллектива
+        public DataTable CompositionOfCollectivesTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT СК.Код_участника, СК.ФИО, СК.Должность, strftime('%d.%m.%Y', СК.Дата_рож) AS 'Дата рождения', СК.Пол
+                                FROM Состав_коллектива СК ";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        /*//Функция получения всех свободных участников коллективов
+        public DataTable FreeCompositionTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT СК.Код_участника, СК.ФИО, СК.Должность, strftime('%d.%m.%Y', СК.Дата_рож) AS 'Дата рождения', СК.Пол, СК.Код_коллектива
+                                FROM Состав_коллектива СК
+                                WHERE СК.Код_коллектива IS NULL";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }*/
+
+        //Функция модификации данных Коллективов
+        public int ModifyCollectives(int mode, int id, string name)
+        {
+            string sql = "";
+            string dop = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Коллективы (Название) 
+                          VALUES (@name)";
+                    break;
+                case 2:
+                    sql = @"UPDATE Коллективы 
+                          SET Название = @name
+                          WHERE Код_коллектива = @id";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Коллективы WHERE Код_коллектива = @id";
+                    dop = @"UPDATE Состав_коллектива 
+                          SET Код_коллектива = NULL
+                          WHERE Код_коллектива = @id";
+                    break;
+                case 4:
+                    sql = @"DELETE FROM Коллективы WHERE Код_коллектива = @id";
+                    dop = @"DELETE FROM Состав_коллектива WHERE Код_коллектива = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            if (mode != 1) command.Parameters.AddWithValue("@id", id);
+            if (mode != 3 && mode != 4)
+            {
+                command.Parameters.AddWithValue("@name", name);
+            }
+            command.ExecuteNonQuery();
+            command = new SQLiteCommand(dop, connection);
+            if (mode != 1) command.Parameters.AddWithValue("@id", id);
+            if (mode != 3 && mode!= 4)
+            {
+                command.Parameters.AddWithValue("@name", name);
+            }
+            return command.ExecuteNonQuery();
+        }
+
+        //Функция прверки на наличие у Коллектива совпадений в БД
+        public bool IsCollectivesHasCoincidence(string name)
+        {
+            string sql = @"SELECT COUNT(*) FROM Коллективы WHERE Название = @name";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция получения номера коллектива по названию
+        public int IDCollectivesByName(string name)
+        {
+            string sql = @"SELECT Код_коллектива
+                               FROM Коллективы 
+                               WHERE Название = @name";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            int id = Convert.ToInt32(command.ExecuteScalar());
+            return id;
+        }
+
+        //Функция обновления Кода_коллектива у Участника
+        public int ModifyCompositionIDCollectives(int mode, int idCom, int idCol)
+        {
+            string sql = "";
+            if (mode == 1)
+            {
+                sql = @"UPDATE Состав_коллектива 
+                           SET Код_коллектива = @idCol
+                           WHERE Код_участника = @idCom";
+            }
+            else if (mode == 2)
+            {
+                sql = @"UPDATE Состав_коллектива 
+                           SET Код_коллектива = NULL
+                           WHERE Код_участника = @idCom";
+            }
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@idCol", idCol);
+            command.Parameters.AddWithValue("@idCom", idCom);
+            return command.ExecuteNonQuery();
+        }
+
+        //Функция проверки на использование Коллектива в других таблицах БД
+        public bool IsCollectivesUsed(int id)
+        {
+            try
+            {
+                string sql = @"SELECT COUNT(*) FROM Исполнители WHERE Код_коллектива = @id";
+                command = new SQLiteCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", id);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                if (count > 0) return false;
+                else return true;
+            }
+            catch { return false; }
+        }
     }
 }

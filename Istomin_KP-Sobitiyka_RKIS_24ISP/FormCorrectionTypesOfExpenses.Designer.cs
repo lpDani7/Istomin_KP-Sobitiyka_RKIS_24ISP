@@ -56,22 +56,26 @@
             // 
             // buttonCorrectionTypesOfExpensesConfirm
             // 
+            this.buttonCorrectionTypesOfExpensesConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionTypesOfExpensesConfirm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCorrectionTypesOfExpensesConfirm.Location = new System.Drawing.Point(149, 71);
             this.buttonCorrectionTypesOfExpensesConfirm.Name = "buttonCorrectionTypesOfExpensesConfirm";
             this.buttonCorrectionTypesOfExpensesConfirm.Size = new System.Drawing.Size(234, 47);
             this.buttonCorrectionTypesOfExpensesConfirm.TabIndex = 17;
             this.buttonCorrectionTypesOfExpensesConfirm.Text = "Подтвердить";
-            this.buttonCorrectionTypesOfExpensesConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionTypesOfExpensesConfirm.UseVisualStyleBackColor = false;
             this.buttonCorrectionTypesOfExpensesConfirm.Click += new System.EventHandler(this.buttonCorrectionTypesOfExpensesConfirm_Click);
             // 
             // buttonCorrectionTypesOfExpensesCancel
             // 
+            this.buttonCorrectionTypesOfExpensesCancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionTypesOfExpensesCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCorrectionTypesOfExpensesCancel.Location = new System.Drawing.Point(12, 71);
             this.buttonCorrectionTypesOfExpensesCancel.Name = "buttonCorrectionTypesOfExpensesCancel";
             this.buttonCorrectionTypesOfExpensesCancel.Size = new System.Drawing.Size(131, 47);
             this.buttonCorrectionTypesOfExpensesCancel.TabIndex = 16;
             this.buttonCorrectionTypesOfExpensesCancel.Text = "Отменить";
-            this.buttonCorrectionTypesOfExpensesCancel.UseVisualStyleBackColor = true;
+            this.buttonCorrectionTypesOfExpensesCancel.UseVisualStyleBackColor = false;
             this.buttonCorrectionTypesOfExpensesCancel.Click += new System.EventHandler(this.buttonCorrectionTypesOfExpensesCancel_Click);
             // 
             // textBoxCorrectionTypesOfExpensesName

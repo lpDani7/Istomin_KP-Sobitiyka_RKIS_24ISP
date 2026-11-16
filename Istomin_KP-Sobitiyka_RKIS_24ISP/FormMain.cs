@@ -101,6 +101,20 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             this.Enabled = true;
         }
 
+        //Функция открытия формы отчётов
+        private void отчётыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReport formReport = new FormReport();
+            formReport.ShowDialog(this);
+        }
+
+        //Функция открытия формы коллективов
+        private void коллективыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCollectives formCollectives = new FormCollectives();
+            formCollectives.ShowDialog(this);
+        }
+
         //Функция выхода из приложения
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -108,12 +122,12 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (result != DialogResult.Yes) return;
             else Close();
         }
-
-        //Функция открытия формы коллективов
-        private void коллективыToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        //Функция отображания окна справки о приложении
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCollectives collection = new FormCollectives();
-            collection.ShowDialog(this);
+            MessageBox.Show("Программа 'Событийка' предназначена для регистрации и ведения учёта городских культурных мероприятий. " +
+                "\nРазработчик: Студент 3 курса ОГТИ Истомин Данил Евгеньевич");
         }
 
         //Функция обновления вспомогательных таблиц при нажатии на строку главной таблицы

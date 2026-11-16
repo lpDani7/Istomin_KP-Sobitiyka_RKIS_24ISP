@@ -30,19 +30,23 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             dataGridViewTypesOfExpenses.DataBindingComplete += (s, ev) => HideServiceColumnsSprav();
             dataGridViewPreferentialCategories.DataBindingComplete += (s, ev) => HideServiceColumnsSprav();
             // [ИИ-блок|Конец]
+
             controller = new Query(AppSetting.ConnStr);
+
             //Заполнение таблиц-справочников записями
             dataGridViewResponsible.DataSource = controller.ResponsibleTable();
             dataGridViewPlaces.DataSource = controller.PlacesTable();
             dataGridViewTypesOfExpenses.DataSource = controller.TypesOfExpensesTable();
             dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable();
+
             //Открытие нужной страницы по выбранному в главной форме индексу
             tabControlMain.SelectedIndex = tabIndex;
+
             //Вывод количества записей
-            ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
-            ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
-            ShowCountOfTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
-            ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
             //Заполнения comboBox поиска значениями столбцов таблицы
             //FillingComboBoxSearch(comboBoxResponsibleSearch, dataGridViewResponsible);
             //FillingComboBoxSearch(comboBoxPlacesSearch, dataGridViewPlaces);
@@ -50,8 +54,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             //FillingComboBoxSearch(comboBoxPreferentialCategoriesSearch, dataGridViewPreferentialCategories);
         }
 
-        // [ИИ-блок|Начало]
         //Метод для сокрытия от пользователя служебного столбца с первичным ключом
+        // [ИИ-блок|Начало]
         private void HideServiceColumnsSprav()
         {
             if (dataGridViewResponsible.Columns.Contains("Таб_номер"))
@@ -85,7 +89,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         }*/
 
         //Метод вывода количества записей
-        private void ShowCountOfTableEntry(ToolStripStatusLabel toolStripStatusLabel, DataGridView dataGridView)
+        private void ShowCountOfSpravTableEntry(ToolStripStatusLabel toolStripStatusLabel, DataGridView dataGridView)
         {
             toolStripStatusLabel.Text = $"Количество записей: {(dataGridView.RowCount).ToString()}";
         }
@@ -97,7 +101,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (radioButtonResponsibleSearchName.Checked == true) where = $" WHERE ФИО LIKE '{textBoxResponsibleSearch.Text}%'";
             else if (radioButtonResponsibleSearchPost.Checked == true) where = $" WHERE Должность LIKE '{textBoxResponsibleSearch.Text}%'";
             dataGridViewResponsible.DataSource = controller.ResponsibleTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
         }
 
         //Функция поиска по первым буквам в Местах проведения
@@ -107,7 +111,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (radioButtonPlaceSearchName.Checked == true) where = $" WHERE Название LIKE '{textBoxPlacesSearch.Text}%'";
             else if (radioButtonPlaceSearchAdress.Checked == true) where = $" WHERE Адрес LIKE '%{textBoxPlacesSearch.Text}%'";
             dataGridViewPlaces.DataSource = controller.PlacesTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
         }
 
         //Функция поиска по первым буквам в Типах расходов
@@ -115,7 +119,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             where = $" WHERE Тип_расхода LIKE '{textBoxTypesOfExpensesSearch.Text}%'";
             dataGridViewTypesOfExpenses.DataSource = controller.TypesOfExpensesTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
         }
 
         //Функция поиска по первым буквам в Льготных гатегориях
@@ -124,7 +128,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             where = $"";
             if (radioButtonPreferentialCategoriesSearchName.Checked == true) where = $" WHERE Название LIKE '{textBoxPreferentialCategoriesSearch.Text}%'";
             dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
         }
 
         //Метод поиска мест проведения по диапозону вместимости
@@ -136,7 +140,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 where = $" WHERE Вместимость BETWEEN {textBoxPlacesSearchCapacityFrom.Text} " +
                 $"and {textBoxPlacesSearchCapacityUntil.Text}";
             dataGridViewPlaces.DataSource = controller.PlacesTable(where); //Заполнение таблицы значениями
-            ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces); //Отображение количества записей
+            ShowCountOfSpravTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces); //Отображение количества записей
         }
 
         //Метод при изменении значения в textBox мест проведения
@@ -159,7 +163,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 where = $" WHERE [Послабление(%)] BETWEEN {textBoxPreferentialCategoriesSearchConcessionsFrom.Text} " +
                 $"and {textBoxPreferentialCategoriesSearchConcessionsUntil.Text}";
             dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
         }
 
         //Метод при изменении значения в textBox льготных категорий
@@ -179,7 +183,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             where = $" WHERE Пол == 'Мужской'";
             dataGridViewResponsible.DataSource = controller.ResponsibleTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
         }
 
         //Метод поиска ответственных женщин
@@ -187,7 +191,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             where = $" WHERE Пол == 'Женский'";
             dataGridViewResponsible.DataSource = controller.ResponsibleTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
         }
 
         //Метод поиска ответственных по диапозону дат рождения
@@ -196,7 +200,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             where = $" WHERE Дата_рож BETWEEN '{dateTimePickerResponsibleSearchFrom.Value.ToString("yyyy-MM-dd")}' " +
                     $"and '{dateTimePickerResponsibleSearchUntil.Value.ToString("yyyy-MM-dd")}'";
             dataGridViewResponsible.DataSource = controller.ResponsibleTable(where);
-            ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+            ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
         }
 
         //Метод при изменении значения в dateTimePicker ответственных
@@ -304,7 +308,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (result == DialogResult.OK)
             {
                 dataGridViewResponsible.DataSource = controller.ResponsibleTable();
-                ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+                ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
             }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
@@ -331,7 +335,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (result == DialogResult.OK)
             {
                 dataGridViewPlaces.DataSource = controller.PlacesTable();
-                ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
+                ShowCountOfSpravTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
             }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
@@ -356,7 +360,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (result == DialogResult.OK)
             {
                 dataGridViewTypesOfExpenses.DataSource = controller.TypesOfExpensesTable();
-                ShowCountOfTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
+                ShowCountOfSpravTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
             }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
@@ -382,7 +386,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (result == DialogResult.OK)
             {
                 dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable();
-                ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
+                ShowCountOfSpravTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
             }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
@@ -459,7 +463,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 {
                     MessageBox.Show($"Запись была удалена!");
                     dataGridViewResponsible.DataSource = controller.ResponsibleTable();
-                    ShowCountOfTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+                    ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
                 }
             }
             else
@@ -484,7 +488,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 {
                     MessageBox.Show($"Запись была удалена!");
                     dataGridViewPlaces.DataSource = controller.PlacesTable();
-                    ShowCountOfTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
+                    ShowCountOfSpravTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
                 }
             }
             else
@@ -508,7 +512,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 {
                     MessageBox.Show($"Запись была удалена!");
                     dataGridViewTypesOfExpenses.DataSource = controller.TypesOfExpensesTable();
-                    ShowCountOfTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
+                    ShowCountOfSpravTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
                 }
             }
             else
@@ -533,7 +537,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 {
                     MessageBox.Show($"Запись была удалена!");
                     dataGridViewPreferentialCategories.DataSource = controller.PreferentialCategoriesTable();
-                    ShowCountOfTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
+                    ShowCountOfSpravTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
                 }
             }
             else

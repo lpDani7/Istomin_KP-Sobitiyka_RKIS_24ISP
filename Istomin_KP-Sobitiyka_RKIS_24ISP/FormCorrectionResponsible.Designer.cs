@@ -89,12 +89,14 @@
             // 
             // buttonCorrectionResponsibleCancel
             // 
+            this.buttonCorrectionResponsibleCancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionResponsibleCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCorrectionResponsibleCancel.Location = new System.Drawing.Point(16, 126);
             this.buttonCorrectionResponsibleCancel.Name = "buttonCorrectionResponsibleCancel";
             this.buttonCorrectionResponsibleCancel.Size = new System.Drawing.Size(147, 47);
             this.buttonCorrectionResponsibleCancel.TabIndex = 5;
             this.buttonCorrectionResponsibleCancel.Text = "Отменить";
-            this.buttonCorrectionResponsibleCancel.UseVisualStyleBackColor = true;
+            this.buttonCorrectionResponsibleCancel.UseVisualStyleBackColor = false;
             this.buttonCorrectionResponsibleCancel.Click += new System.EventHandler(this.buttonCorrectionResponsibleCancel_Click);
             // 
             // textBoxCorrectionResponsibleName
@@ -132,12 +134,14 @@
             // 
             // buttonCorrectionResponsibleConfirm
             // 
+            this.buttonCorrectionResponsibleConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionResponsibleConfirm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCorrectionResponsibleConfirm.Location = new System.Drawing.Point(169, 126);
             this.buttonCorrectionResponsibleConfirm.Name = "buttonCorrectionResponsibleConfirm";
             this.buttonCorrectionResponsibleConfirm.Size = new System.Drawing.Size(248, 47);
             this.buttonCorrectionResponsibleConfirm.TabIndex = 11;
             this.buttonCorrectionResponsibleConfirm.Text = "Подтвердить";
-            this.buttonCorrectionResponsibleConfirm.UseVisualStyleBackColor = true;
+            this.buttonCorrectionResponsibleConfirm.UseVisualStyleBackColor = false;
             this.buttonCorrectionResponsibleConfirm.Click += new System.EventHandler(this.buttonCorrectionResponsibleConfirm_Click);
             // 
             // FormCorrectionResponsible
