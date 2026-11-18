@@ -453,8 +453,20 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable CompositionOfCollectivesTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT СК.Код_участника, СК.ФИО, СК.Должность, strftime('%d.%m.%Y', СК.Дата_рож) AS 'Дата рождения', СК.Пол
+            string querytovar = @"SELECT СК.Код_участника, СК.ФИО, СК.Должность, strftime('%d.%m.%Y', СК.Дата_рож) AS 'Дата рождения', СК.Пол, СК.Код_коллектива
                                 FROM Состав_коллектива СК ";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всех кодов коллективов в участниках и названий этих коллективов
+        public DataTable CompositionIDAndCollectivesNameTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT К.Название, К.Код_коллектива
+                                FROM Коллективы К";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
@@ -569,6 +581,89 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             try
             {
                 string sql = @"SELECT COUNT(*) FROM Исполнители WHERE Код_коллектива = @id";
+                command = new SQLiteCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", id);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                if (count > 0) return false;
+                else return true;
+            }
+            catch { return false; }
+        }
+
+        //Функция прверки на наличие у Участника совпадений в БД для добавления
+        public bool IsCompositionHasCoincidenceForAdd(string name, string post, string Date, string gender)
+        {
+            string sql = @"SELECT COUNT(*) FROM Состав_коллектива WHERE ФИО = @name and Должность = @post and Дата_рож = @Date and Пол = @gender";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@post", post);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.Parameters.AddWithValue("@gender", gender);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция прверки на наличие у Участника совпадений в БД для редактирования
+        public bool IsCompositionHasCoincidenceForEdit(string name, string post, string Date, string gender, int collective)
+        {
+            string sql = @"SELECT COUNT(*) FROM Состав_коллектива WHERE ФИО = @name and Должность = @post and Дата_рож = @Date 
+                           and Пол = @gender and Код_коллектива = @collective";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@post", post);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.Parameters.AddWithValue("@gender", gender);
+            command.Parameters.AddWithValue("@collective", collective);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция модификации данных Участников
+        public int ModifyComposition(int mode, int id, string name, string post, DateTime Date, string gender, int collective, bool chek)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    if (chek) sql = @"INSERT INTO Состав_коллектива (ФИО, Должность, Дата_рож, Пол, Код_коллектива) 
+                              VALUES (@name, @post, @date, @gender, NULL)";
+                    else sql = @"INSERT INTO Состав_коллектива (ФИО, Должность, Дата_рож, Пол, Код_коллектива) 
+                              VALUES (@name, @post, @date, @gender, @collective)";
+                    break;
+                case 2:
+                    if (chek) sql = @"UPDATE Состав_коллектива 
+                          SET ФИО = @name, Должность = @post, Дата_рож = @date, Пол = @gender, Код_коллектива = NULL
+                          WHERE Код_участника = @id";
+                    else sql = @"UPDATE Состав_коллектива 
+                          SET ФИО = @name, Должность = @post, Дата_рож = @date, Пол = @gender, Код_коллектива = @collective
+                          WHERE Код_участника = @id";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Состав_коллектива WHERE Код_участника = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            if (mode != 1) command.Parameters.AddWithValue("@id", id);
+            if (mode != 3)
+            {
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@date", Date.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@post", post);
+                command.Parameters.AddWithValue("@gender", gender);
+                command.Parameters.AddWithValue("@collective", collective);
+            }
+            return command.ExecuteNonQuery();
+        }
+
+        //Функция проверки на использование Участника в коллективе
+        public bool IsCompositionUsed(int id)
+        {
+            try
+            {
+                string sql = @"SELECT COUNT(*) FROM Состав_коллектива WHERE Код_участника = @id and Код_коллектива IS NOT NULL";
                 command = new SQLiteCommand(sql, connection);
                 command.Parameters.AddWithValue("@id", id);
                 int count = Convert.ToInt32(command.ExecuteScalar());

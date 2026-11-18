@@ -1,6 +1,7 @@
 ﻿using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Istomin_KP_Sobitiyka_RKIS_24ISP
 {
@@ -45,10 +47,10 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (dataGridViewCompositionOfCollectives.Columns.Contains("Код_участника"))
                 dataGridViewCompositionOfCollectives.Columns["Код_участника"].Visible = false;
 
-            /*if (dataGridViewTypesOfExpenses.Columns.Contains("Код_записи"))
-                dataGridViewTypesOfExpenses.Columns["Код_записи"].Visible = false;
+            if (dataGridViewCompositionOfCollectives.Columns.Contains("Код_коллектива"))
+                dataGridViewCompositionOfCollectives.Columns["Код_коллектива"].Visible = false;
 
-            if (dataGridViewPreferentialCategories.Columns.Contains("Код_категории"))
+            /*if (dataGridViewPreferentialCategories.Columns.Contains("Код_категории"))
                 dataGridViewPreferentialCategories.Columns["Код_категории"].Visible = false;*/
         }
 
@@ -94,12 +96,19 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             labelCollectivesCompositionShowMode.Text = "Все участники:";
         }
 
-        private void dataGridViewCompositionOfCollectives_CellClick(object sender, DataGridViewCellEventArgs e)
+        //Функция изменения значения label на имя и дату рож. выбранного участника
+        private void UpdateSelectedComposition()
         {
             DataGridViewRow row = dataGridViewCompositionOfCollectives.CurrentRow;
             string name = row.Cells["ФИО"].Value.ToString();
             string DateStr = row.Cells["Дата рождения"].Value.ToString();
             labelCompositionOfCollectivesSelectedNameAndDate.Text = name + "  " + DateStr;
+        }
+
+        //Функция при нажатии на строку таблицы с участниками коллективов
+        private void dataGridViewCompositionOfCollectives_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateSelectedComposition();
         }
 
         //Метод открытия формы правки Ответсвтвенных
@@ -189,6 +198,81 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             else
             {
                 MessageBox.Show("Нельзя удалить коллектив, так как он учавствует в организации мероприятия!", "Ошибка!");
+                return;
+            }
+        }
+
+        //Метод открытия формы правки Участников коллектива
+        private void OpenFormCorrectionComposition(int mode)
+        {
+            FormCorrectionComposition formCorrectionComposition;
+            if (mode == 1) formCorrectionComposition = new FormCorrectionComposition();
+            else
+            {
+                DataGridViewRow row = dataGridViewCompositionOfCollectives.CurrentRow;
+                // Читаем значения из ячеек выбранной строки
+                int id = Convert.ToInt32(row.Cells["Код_участника"].Value);
+                string name = row.Cells["ФИО"].Value.ToString();
+                string post = row.Cells["Должность"].Value.ToString();
+                string DateStr = row.Cells["Дата рождения"].Value.ToString();
+                DateTime Date = DateTime.Parse(DateStr);
+                string genderText = row.Cells["Пол"].Value.ToString();
+                int gender;
+                if (genderText == "Мужской") gender = 0;
+                else gender = 1;
+                //label2.Text = row.Cells["Код_коллектива"].Value.ToString();
+                int collectiveID;
+                if (String.IsNullOrWhiteSpace(row.Cells["Код_коллектива"].Value.ToString())) collectiveID = -10;
+                else collectiveID = Convert.ToInt32(row.Cells["Код_коллектива"].Value);
+                formCorrectionComposition = new FormCorrectionComposition(id, name, post, Date, gender, collectiveID);
+            }
+            // Блокируем доступ к исходной форме
+            this.Enabled = false;
+            DialogResult result = formCorrectionComposition.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                dataGridViewCompositionOfCollectives.DataSource = controller.CompositionOfCollectivesTable();
+                ShowCountOfCollectivesTableEntry(labelCompositionOfCollectivesCount, dataGridViewCompositionOfCollectives);
+            }
+            // После закрытия form2 возвращаемся к исходной форме
+            this.Enabled = true;
+        }
+
+        //Функция нажатия на кнопку "Добавить"
+        private void buttonCompositionOfCollectivesAdd_Click(object sender, EventArgs e)
+        {
+            int mode = 1;
+            OpenFormCorrectionComposition(mode);
+        }
+
+        //Функция нажатия на кнопку "Редактировать"
+        private void buttonCompositionOfCollectivesEdit_Click(object sender, EventArgs e)
+        {
+            int mode = 2;
+            OpenFormCorrectionComposition(mode);
+        }
+
+        //Функция нажатия на кнопку "Удалить"
+        private void buttonCompositionOfCollectivesDelete_Click(object sender, EventArgs e)
+        {
+            int mode = 3;
+            DataGridViewRow row = dataGridViewCompositionOfCollectives.CurrentRow;
+            int id = Convert.ToInt32(row.Cells["Код_участника"].Value);
+            if (controller.IsCompositionUsed(id) == true)
+            {
+                DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить участника " +
+                                                            $"{dataGridViewCompositionOfCollectives.CurrentRow.Cells["ФИО"].Value}, " +
+                                                            $"{dataGridViewCompositionOfCollectives.CurrentRow.Cells["Должность"].Value}?", "Подтверждение", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes && controller.ModifyComposition(mode, id, "", "", DateTime.Today, "", 0, false) > 0)
+                {
+                    MessageBox.Show($"Запись была удалена!");
+                    dataGridViewCompositionOfCollectives.DataSource = controller.CompositionOfCollectivesTable();
+                    ShowCountOfCollectivesTableEntry(labelCompositionOfCollectivesCount, dataGridViewCompositionOfCollectives);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нельзя удалить ответстванного, так как он учавствует в организации мероприятия!", "Ошибка!");
                 return;
             }
         }

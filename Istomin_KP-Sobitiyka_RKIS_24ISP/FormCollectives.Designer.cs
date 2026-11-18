@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавтьКоллективToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьКоллективToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьКоллективToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewCollectives = new System.Windows.Forms.DataGridView();
             this.dataGridViewCompositionOfCollectives = new System.Windows.Forms.DataGridView();
@@ -69,7 +70,9 @@
             this.radioButtonCompositionOfCollectivesSearchMan = new System.Windows.Forms.RadioButton();
             this.radioButtonCompositionOfCollectivesSearchDate = new System.Windows.Forms.RadioButton();
             this.buttonCollectivesShowAllComposition = new System.Windows.Forms.Button();
-            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonCompositionOfCollectivesAdd = new System.Windows.Forms.Button();
+            this.buttonCompositionOfCollectivesEdit = new System.Windows.Forms.Button();
+            this.buttonCompositionOfCollectivesDelete = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCollectives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompositionOfCollectives)).BeginInit();
@@ -105,23 +108,30 @@
             // добавтьКоллективToolStripMenuItem
             // 
             this.добавтьКоллективToolStripMenuItem.Name = "добавтьКоллективToolStripMenuItem";
-            this.добавтьКоллективToolStripMenuItem.Size = new System.Drawing.Size(266, 24);
+            this.добавтьКоллективToolStripMenuItem.Size = new System.Drawing.Size(342, 24);
             this.добавтьКоллективToolStripMenuItem.Text = "Добавть коллектив";
             this.добавтьКоллективToolStripMenuItem.Click += new System.EventHandler(this.добавтьКоллективToolStripMenuItem_Click);
             // 
             // редактироватьКоллективToolStripMenuItem
             // 
             this.редактироватьКоллективToolStripMenuItem.Name = "редактироватьКоллективToolStripMenuItem";
-            this.редактироватьКоллективToolStripMenuItem.Size = new System.Drawing.Size(266, 24);
+            this.редактироватьКоллективToolStripMenuItem.Size = new System.Drawing.Size(342, 24);
             this.редактироватьКоллективToolStripMenuItem.Text = "Редактировать коллектив";
             this.редактироватьКоллективToolStripMenuItem.Click += new System.EventHandler(this.редактироватьКоллективToolStripMenuItem_Click);
             // 
             // удалитьКоллективToolStripMenuItem
             // 
             this.удалитьКоллективToolStripMenuItem.Name = "удалитьКоллективToolStripMenuItem";
-            this.удалитьКоллективToolStripMenuItem.Size = new System.Drawing.Size(266, 24);
+            this.удалитьКоллективToolStripMenuItem.Size = new System.Drawing.Size(342, 24);
             this.удалитьКоллективToolStripMenuItem.Text = "Удалить коллектив";
             this.удалитьКоллективToolStripMenuItem.Click += new System.EventHandler(this.удалитьКоллективToolStripMenuItem_Click);
+            // 
+            // удалитьКоллективИЕгоУчастниковToolStripMenuItem
+            // 
+            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Name = "удалитьКоллективИЕгоУчастниковToolStripMenuItem";
+            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Size = new System.Drawing.Size(342, 24);
+            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Text = "Удалить коллектив и его участников";
+            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Click += new System.EventHandler(this.удалитьКоллективИЕгоУчастниковToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
@@ -137,22 +147,22 @@
             this.dataGridViewCollectives.AllowUserToAddRows = false;
             this.dataGridViewCollectives.AllowUserToDeleteRows = false;
             this.dataGridViewCollectives.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCollectives.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewCollectives.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewCollectives.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCollectives.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewCollectives.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewCollectives.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCollectives.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCollectives.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCollectives.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCollectives.EnableHeadersVisualStyles = false;
             this.dataGridViewCollectives.GridColor = System.Drawing.SystemColors.ControlText;
@@ -160,18 +170,18 @@
             this.dataGridViewCollectives.Name = "dataGridViewCollectives";
             this.dataGridViewCollectives.ReadOnly = true;
             this.dataGridViewCollectives.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCollectives.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCollectives.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCollectives.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewCollectives.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewCollectives.Size = new System.Drawing.Size(1043, 306);
             this.dataGridViewCollectives.TabIndex = 1;
             this.dataGridViewCollectives.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCollectives_CellClick);
@@ -181,22 +191,22 @@
             this.dataGridViewCompositionOfCollectives.AllowUserToAddRows = false;
             this.dataGridViewCompositionOfCollectives.AllowUserToDeleteRows = false;
             this.dataGridViewCompositionOfCollectives.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCompositionOfCollectives.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewCompositionOfCollectives.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewCompositionOfCollectives.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCompositionOfCollectives.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewCompositionOfCollectives.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewCompositionOfCollectives.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCompositionOfCollectives.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCompositionOfCollectives.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewCompositionOfCollectives.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCompositionOfCollectives.EnableHeadersVisualStyles = false;
             this.dataGridViewCompositionOfCollectives.GridColor = System.Drawing.SystemColors.ControlText;
@@ -204,18 +214,18 @@
             this.dataGridViewCompositionOfCollectives.Name = "dataGridViewCompositionOfCollectives";
             this.dataGridViewCompositionOfCollectives.ReadOnly = true;
             this.dataGridViewCompositionOfCollectives.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCompositionOfCollectives.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCompositionOfCollectives.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCompositionOfCollectives.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewCompositionOfCollectives.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewCompositionOfCollectives.Size = new System.Drawing.Size(1043, 319);
             this.dataGridViewCompositionOfCollectives.TabIndex = 2;
             this.dataGridViewCompositionOfCollectives.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCompositionOfCollectives_CellClick);
@@ -346,7 +356,7 @@
             this.groupBox2.Controls.Add(this.textBoxCompositionOfCollectivesSearchName);
             this.groupBox2.Controls.Add(this.radioButtonCompositionOfCollectivesSearchMan);
             this.groupBox2.Controls.Add(this.radioButtonCompositionOfCollectivesSearchDate);
-            this.groupBox2.Location = new System.Drawing.Point(9, 472);
+            this.groupBox2.Location = new System.Drawing.Point(12, 432);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(799, 86);
             this.groupBox2.TabIndex = 13;
@@ -462,7 +472,7 @@
             // 
             this.buttonCollectivesShowAllComposition.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonCollectivesShowAllComposition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonCollectivesShowAllComposition.Location = new System.Drawing.Point(12, 432);
+            this.buttonCollectivesShowAllComposition.Location = new System.Drawing.Point(9, 523);
             this.buttonCollectivesShowAllComposition.Name = "buttonCollectivesShowAllComposition";
             this.buttonCollectivesShowAllComposition.Size = new System.Drawing.Size(220, 35);
             this.buttonCollectivesShowAllComposition.TabIndex = 15;
@@ -470,18 +480,50 @@
             this.buttonCollectivesShowAllComposition.UseVisualStyleBackColor = false;
             this.buttonCollectivesShowAllComposition.Click += new System.EventHandler(this.buttonCollectivesShowAllComposition_Click);
             // 
-            // удалитьКоллективИЕгоУчастниковToolStripMenuItem
+            // buttonCompositionOfCollectivesAdd
             // 
-            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Name = "удалитьКоллективИЕгоУчастниковToolStripMenuItem";
-            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Size = new System.Drawing.Size(342, 24);
-            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Text = "Удалить коллектив и его участников";
-            this.удалитьКоллективИЕгоУчастниковToolStripMenuItem.Click += new System.EventHandler(this.удалитьКоллективИЕгоУчастниковToolStripMenuItem_Click);
+            this.buttonCompositionOfCollectivesAdd.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCompositionOfCollectivesAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCompositionOfCollectivesAdd.Location = new System.Drawing.Point(712, 523);
+            this.buttonCompositionOfCollectivesAdd.Name = "buttonCompositionOfCollectivesAdd";
+            this.buttonCompositionOfCollectivesAdd.Size = new System.Drawing.Size(103, 35);
+            this.buttonCompositionOfCollectivesAdd.TabIndex = 16;
+            this.buttonCompositionOfCollectivesAdd.Text = "Добавить";
+            this.buttonCompositionOfCollectivesAdd.UseVisualStyleBackColor = false;
+            this.buttonCompositionOfCollectivesAdd.Click += new System.EventHandler(this.buttonCompositionOfCollectivesAdd_Click);
+            // 
+            // buttonCompositionOfCollectivesEdit
+            // 
+            this.buttonCompositionOfCollectivesEdit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCompositionOfCollectivesEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCompositionOfCollectivesEdit.Location = new System.Drawing.Point(821, 523);
+            this.buttonCompositionOfCollectivesEdit.Name = "buttonCompositionOfCollectivesEdit";
+            this.buttonCompositionOfCollectivesEdit.Size = new System.Drawing.Size(122, 35);
+            this.buttonCompositionOfCollectivesEdit.TabIndex = 17;
+            this.buttonCompositionOfCollectivesEdit.Text = "Редактировать";
+            this.buttonCompositionOfCollectivesEdit.UseVisualStyleBackColor = false;
+            this.buttonCompositionOfCollectivesEdit.Click += new System.EventHandler(this.buttonCompositionOfCollectivesEdit_Click);
+            // 
+            // buttonCompositionOfCollectivesDelete
+            // 
+            this.buttonCompositionOfCollectivesDelete.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCompositionOfCollectivesDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCompositionOfCollectivesDelete.Location = new System.Drawing.Point(949, 523);
+            this.buttonCompositionOfCollectivesDelete.Name = "buttonCompositionOfCollectivesDelete";
+            this.buttonCompositionOfCollectivesDelete.Size = new System.Drawing.Size(103, 35);
+            this.buttonCompositionOfCollectivesDelete.TabIndex = 18;
+            this.buttonCompositionOfCollectivesDelete.Text = "Удалить";
+            this.buttonCompositionOfCollectivesDelete.UseVisualStyleBackColor = false;
+            this.buttonCompositionOfCollectivesDelete.Click += new System.EventHandler(this.buttonCompositionOfCollectivesDelete_Click);
             // 
             // FormCollectives
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 920);
+            this.Controls.Add(this.buttonCompositionOfCollectivesDelete);
+            this.Controls.Add(this.buttonCompositionOfCollectivesEdit);
+            this.Controls.Add(this.buttonCompositionOfCollectivesAdd);
             this.Controls.Add(this.buttonCollectivesShowAllComposition);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -551,5 +593,8 @@
         private System.Windows.Forms.RadioButton radioButtonCompositionOfCollectivesSearchFree;
         private System.Windows.Forms.RadioButton radioButtonCollectivesSearchName;
         private System.Windows.Forms.ToolStripMenuItem удалитьКоллективИЕгоУчастниковToolStripMenuItem;
+        private System.Windows.Forms.Button buttonCompositionOfCollectivesAdd;
+        private System.Windows.Forms.Button buttonCompositionOfCollectivesEdit;
+        private System.Windows.Forms.Button buttonCompositionOfCollectivesDelete;
     }
 }

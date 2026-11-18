@@ -72,6 +72,12 @@
     <Compile Include="FormCorrectionComposition.Designer.cs">
       <DependentUpon>FormCorrectionComposition.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCorrectionEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorrectionEvent.Designer.cs">
+      <DependentUpon>FormCorrectionEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCorrectionPlaces.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCorrectionComposition.resx">
       <DependentUpon>FormCorrectionComposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCorrectionEvent.resx">
+      <DependentUpon>FormCorrectionEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCorrectionPlaces.resx">
       <DependentUpon>FormCorrectionPlaces.cs</DependentUpon>

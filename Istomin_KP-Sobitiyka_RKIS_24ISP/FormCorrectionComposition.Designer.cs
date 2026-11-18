@@ -29,16 +29,19 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelCorrectionCompositionID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBoxCorrectionCompositionName = new System.Windows.Forms.TextBox();
+            this.textBoxCorrectionCompositionPost = new System.Windows.Forms.TextBox();
+            this.dateTimePickerCorrectionCompositionDate = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxCorrectionCompositionGender = new System.Windows.Forms.ComboBox();
+            this.comboBoxCorrectionCompositionCollectives = new System.Windows.Forms.ComboBox();
+            this.buttonCorrectionCompositionCancel = new System.Windows.Forms.Button();
+            this.buttonCorrectionCompositionConfirm = new System.Windows.Forms.Button();
+            this.checkBoxCorrectionCompositionCollectivesFree = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -51,14 +54,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ФИО:";
             // 
-            // label2
+            // labelCorrectionCompositionID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Номер:";
+            this.labelCorrectionCompositionID.AutoSize = true;
+            this.labelCorrectionCompositionID.Location = new System.Drawing.Point(13, 9);
+            this.labelCorrectionCompositionID.Name = "labelCorrectionCompositionID";
+            this.labelCorrectionCompositionID.Size = new System.Drawing.Size(53, 16);
+            this.labelCorrectionCompositionID.TabIndex = 1;
+            this.labelCorrectionCompositionID.Text = "Номер:";
             // 
             // label3
             // 
@@ -96,62 +99,101 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Коллектив:";
             // 
-            // textBox1
+            // textBoxCorrectionCompositionName
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 22);
-            this.textBox1.TabIndex = 6;
+            this.textBoxCorrectionCompositionName.Location = new System.Drawing.Point(127, 32);
+            this.textBoxCorrectionCompositionName.Name = "textBoxCorrectionCompositionName";
+            this.textBoxCorrectionCompositionName.Size = new System.Drawing.Size(345, 22);
+            this.textBoxCorrectionCompositionName.TabIndex = 6;
+            this.textBoxCorrectionCompositionName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorrectionCompositionName_KeyPress);
             // 
-            // textBox2
+            // textBoxCorrectionCompositionPost
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 22);
-            this.textBox2.TabIndex = 7;
+            this.textBoxCorrectionCompositionPost.Location = new System.Drawing.Point(128, 60);
+            this.textBoxCorrectionCompositionPost.Name = "textBoxCorrectionCompositionPost";
+            this.textBoxCorrectionCompositionPost.Size = new System.Drawing.Size(345, 22);
+            this.textBoxCorrectionCompositionPost.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dateTimePickerCorrectionCompositionDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 98);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(128, 22);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePickerCorrectionCompositionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerCorrectionCompositionDate.Location = new System.Drawing.Point(128, 98);
+            this.dateTimePickerCorrectionCompositionDate.Name = "dateTimePickerCorrectionCompositionDate";
+            this.dateTimePickerCorrectionCompositionDate.Size = new System.Drawing.Size(128, 22);
+            this.dateTimePickerCorrectionCompositionDate.TabIndex = 8;
             // 
-            // comboBox1
+            // comboBoxCorrectionCompositionGender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 130);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 24);
-            this.comboBox1.TabIndex = 9;
+            this.comboBoxCorrectionCompositionGender.FormattingEnabled = true;
+            this.comboBoxCorrectionCompositionGender.Location = new System.Drawing.Point(127, 127);
+            this.comboBoxCorrectionCompositionGender.Name = "comboBoxCorrectionCompositionGender";
+            this.comboBoxCorrectionCompositionGender.Size = new System.Drawing.Size(142, 24);
+            this.comboBoxCorrectionCompositionGender.TabIndex = 9;
             // 
-            // comboBox2
+            // comboBoxCorrectionCompositionCollectives
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(99, 164);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(219, 24);
-            this.comboBox2.TabIndex = 10;
+            this.comboBoxCorrectionCompositionCollectives.FormattingEnabled = true;
+            this.comboBoxCorrectionCompositionCollectives.Location = new System.Drawing.Point(127, 164);
+            this.comboBoxCorrectionCompositionCollectives.Name = "comboBoxCorrectionCompositionCollectives";
+            this.comboBoxCorrectionCompositionCollectives.Size = new System.Drawing.Size(346, 24);
+            this.comboBoxCorrectionCompositionCollectives.TabIndex = 10;
+            // 
+            // buttonCorrectionCompositionCancel
+            // 
+            this.buttonCorrectionCompositionCancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionCompositionCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCorrectionCompositionCancel.Location = new System.Drawing.Point(16, 206);
+            this.buttonCorrectionCompositionCancel.Name = "buttonCorrectionCompositionCancel";
+            this.buttonCorrectionCompositionCancel.Size = new System.Drawing.Size(209, 43);
+            this.buttonCorrectionCompositionCancel.TabIndex = 11;
+            this.buttonCorrectionCompositionCancel.Text = "Отмена";
+            this.buttonCorrectionCompositionCancel.UseVisualStyleBackColor = false;
+            this.buttonCorrectionCompositionCancel.Click += new System.EventHandler(this.buttonCorrectionCompositionCancel_Click);
+            // 
+            // buttonCorrectionCompositionConfirm
+            // 
+            this.buttonCorrectionCompositionConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonCorrectionCompositionConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCorrectionCompositionConfirm.Location = new System.Drawing.Point(231, 206);
+            this.buttonCorrectionCompositionConfirm.Name = "buttonCorrectionCompositionConfirm";
+            this.buttonCorrectionCompositionConfirm.Size = new System.Drawing.Size(339, 43);
+            this.buttonCorrectionCompositionConfirm.TabIndex = 12;
+            this.buttonCorrectionCompositionConfirm.Text = "Подтвердить";
+            this.buttonCorrectionCompositionConfirm.UseVisualStyleBackColor = false;
+            this.buttonCorrectionCompositionConfirm.Click += new System.EventHandler(this.buttonCorrectionCompositionConfirm_Click);
+            // 
+            // checkBoxCorrectionCompositionCollectivesFree
+            // 
+            this.checkBoxCorrectionCompositionCollectivesFree.AutoSize = true;
+            this.checkBoxCorrectionCompositionCollectivesFree.Location = new System.Drawing.Point(479, 167);
+            this.checkBoxCorrectionCompositionCollectivesFree.Name = "checkBoxCorrectionCompositionCollectivesFree";
+            this.checkBoxCorrectionCompositionCollectivesFree.Size = new System.Drawing.Size(91, 20);
+            this.checkBoxCorrectionCompositionCollectivesFree.TabIndex = 13;
+            this.checkBoxCorrectionCompositionCollectivesFree.Text = "Свободен";
+            this.checkBoxCorrectionCompositionCollectivesFree.UseVisualStyleBackColor = true;
+            this.checkBoxCorrectionCompositionCollectivesFree.CheckedChanged += new System.EventHandler(this.checkBoxCorrectionCompositionCollectivesFree_CheckedChanged);
             // 
             // FormCorrectionComposition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 440);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(582, 261);
+            this.Controls.Add(this.checkBoxCorrectionCompositionCollectivesFree);
+            this.Controls.Add(this.buttonCorrectionCompositionConfirm);
+            this.Controls.Add(this.buttonCorrectionCompositionCancel);
+            this.Controls.Add(this.comboBoxCorrectionCompositionCollectives);
+            this.Controls.Add(this.comboBoxCorrectionCompositionGender);
+            this.Controls.Add(this.dateTimePickerCorrectionCompositionDate);
+            this.Controls.Add(this.textBoxCorrectionCompositionPost);
+            this.Controls.Add(this.textBoxCorrectionCompositionName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelCorrectionCompositionID);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCorrectionComposition";
             this.Text = "Добавление/Редактирование участников коллективов";
             this.ResumeLayout(false);
@@ -162,15 +204,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelCorrectionCompositionID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBoxCorrectionCompositionName;
+        private System.Windows.Forms.TextBox textBoxCorrectionCompositionPost;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCorrectionCompositionDate;
+        private System.Windows.Forms.ComboBox comboBoxCorrectionCompositionGender;
+        private System.Windows.Forms.ComboBox comboBoxCorrectionCompositionCollectives;
+        private System.Windows.Forms.Button buttonCorrectionCompositionCancel;
+        private System.Windows.Forms.Button buttonCorrectionCompositionConfirm;
+        private System.Windows.Forms.CheckBox checkBoxCorrectionCompositionCollectivesFree;
     }
 }

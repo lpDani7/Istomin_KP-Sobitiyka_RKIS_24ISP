@@ -28,9 +28,9 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             controller = new Query(AppSetting.ConnStr);
             comboBoxCorrectionResponsibleGender.Items.Add("Мужской");
             comboBoxCorrectionResponsibleGender.Items.Add("Женский");
+            comboBoxCorrectionResponsibleGender.SelectedIndex = -1;
             this.Text = "Добавление Ответственных";
             mode = 1;
-            comboBoxCorrectionResponsibleGender.SelectedIndex = -1;
             labelCorrectionResponsibleID.Text = "";
             dateTimePickerCorrectionResponsibleDate.Value = DateTime.Now;
             textBoxCorrectionResponsibleName.Clear();
