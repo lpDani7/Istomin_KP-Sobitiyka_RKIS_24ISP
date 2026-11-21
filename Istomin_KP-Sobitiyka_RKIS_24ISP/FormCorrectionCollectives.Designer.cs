@@ -83,7 +83,7 @@
             this.textBoxCorrectionCollectivesName.Location = new System.Drawing.Point(118, 40);
             this.textBoxCorrectionCollectivesName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCorrectionCollectivesName.Name = "textBoxCorrectionCollectivesName";
-            this.textBoxCorrectionCollectivesName.Size = new System.Drawing.Size(260, 22);
+            this.textBoxCorrectionCollectivesName.Size = new System.Drawing.Size(370, 22);
             this.textBoxCorrectionCollectivesName.TabIndex = 2;
             // 
             // dataGridViewCorrectionCollectivesCompositionFree

@@ -121,8 +121,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 labelCorrectionCollectivesID.Text = $"Номер: {id}";
                 this.Height = 578;
                 textBoxCorrectionCollectivesName.Enabled = false;
-                buttonCorrectionCollectivesAddEmpty.Enabled = false;
-                buttonCorrectionCollectivesAddEmptyAndFill.Enabled = false;
+                buttonCorrectionCollectivesAddEmpty.Visible = false;
+                buttonCorrectionCollectivesAddEmptyAndFill.Visible = false;
             buttonCorrectionCollectivesCancelUp.Visible = false;
                 string where = $"WHERE СК.Код_коллектива = {id}";
                 dataGridViewCorrectionCollectivesComposition.DataSource = controller.CompositionOfCollectivesTable(where);

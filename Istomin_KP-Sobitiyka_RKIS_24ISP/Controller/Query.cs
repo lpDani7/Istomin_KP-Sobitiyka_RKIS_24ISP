@@ -38,7 +38,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             bufferTable = new DataTable();
             string querytovar = @"SELECT Мер.Код_мероприятия, Мер.Название, strftime('%d.%m.%Y', Мер.Дата) AS 'Дата проведения', 
-                                Мест.Название AS 'Место проведения', Мер.Цена_билета AS 'Цена билета', Мер.Тематика, Мер.Посещаемость AS 'Не льготная посещаемость' 
+                                Мест.Название AS 'Место проведения', Мер.Цена_билета AS 'Цена билета', Мер.Тематика, Мер.Посещаемость AS 'Не льготная посещаемость',
+                                Мест.Код_объекта
                                 FROM Мероприятия Мер INNER JOIN Места_проведения Мест ON Мер.Место_проведения = Мест.Код_объекта
                                 ";
             querytovar += where;
@@ -51,7 +52,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable EventPerformersTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT К.Название
+            string querytovar = @"SELECT К.Название, И.Код_записи
                                 FROM Коллективы К INNER JOIN Исполнители И ON К.Код_коллектива = И.Код_коллектива";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
@@ -63,7 +64,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable ResponsibleForEventTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT О.ФИО, О.Должность, О.Дата_рож AS 'Дата рождения', О.Пол  
+            string querytovar = @"SELECT О.ФИО, О.Должность, О.Дата_рож AS 'Дата рождения', О.Пол, ОМ.Код_записи, ОМ.Таб_номер  
                                 FROM Ответственные О INNER JOIN Ответственные_за_мероприятие ОМ ON О.Таб_номер = ОМ.Таб_номер";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
@@ -75,7 +76,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable ExpensesForEventTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT Т.Тип_расхода AS 'Тип расхода', С.Затраты, С.Описание 
+            string querytovar = @"SELECT Т.Тип_расхода AS 'Тип расхода', С.Затраты, С.Описание, С.Номер_записи 
                                 FROM Типы_расходов Т INNER JOIN Смета С ON С.Тип_расхода = Т.Код_записи";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
@@ -87,7 +88,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable PreferentialCategoriesAtEventTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT ЛК.Название, ЛК.[Послабление(%)], ЛП.Количество  
+            string querytovar = @"SELECT ЛК.Название, ЛК.[Послабление(%)], ЛП.Количество, ЛП.Номер_записи  
                                 FROM Льготные_категории ЛК INNER JOIN Льготная_посещаемость ЛП ON ЛК.Код_категории = ЛП.Код_категории";
             querytovar += where;
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
@@ -671,6 +672,277 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
                 else return true;
             }
             catch { return false; }
+        }
+
+        //Функция получения всех кодов мест проведения в мероприятиях и названий этих мест проведения
+        public DataTable PlacesIDAndNameTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT Название, Код_объекта
+                                FROM Места_проведения";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция прверки на наличие у Мероприятия совпадений в БД
+        public bool IsEventHasCoincidence(string name, string Date, string topic, int placeID, int price)
+        {
+            string sql = @"SELECT COUNT(*) FROM Мероприятия WHERE Название = @name and Дата = @Date and 
+                           Тематика = @topic and Место_проведения = @placeID and Цена_билета = @price";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.Parameters.AddWithValue("@topic", topic);
+            command.Parameters.AddWithValue("@placeID", placeID);
+            command.Parameters.AddWithValue("@price", price);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция модификации данных Мероприятия
+        public int ModifyEvent(int mode, int id, string name, string Date, string topic, int placeID, int price, int traffic)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Мероприятия (Название, Дата, Тематика, Место_проведения, Цена_билета, Посещаемость) 
+                          VALUES (@name, @Date, @topic, @placeID, @price, @traffic)";
+                    break;
+                case 2:
+                    sql = @"UPDATE Мероприятия 
+                          SET Название = @name, Дата = @Date, Тематика = @topic, Место_проведения = @placeID, 
+                          Цена_билета = @price, Посещаемость = @traffic
+                          WHERE Код_мероприятия = @id";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Мероприятия WHERE Код_мероприятия = @id";
+                    //sql = @"DELETE М, И FROM Мероприятия М INNER JOIN Исполнители И ON М.Код_мероприятия = И.Код_мероприятия WHERE М.Код_мероприятия = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            if (mode != 1) command.Parameters.AddWithValue("@id", id);
+            if (mode != 3)
+            {
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@Date", Date);
+                command.Parameters.AddWithValue("@topic", topic);
+                command.Parameters.AddWithValue("@placeID", placeID);
+                command.Parameters.AddWithValue("@price", price);
+                command.Parameters.AddWithValue("@traffic", traffic);
+            }
+            return command.ExecuteNonQuery();
+        }
+
+        //Функция удаления всей привязанной к мероприятию информации
+        public void DeleteEventConnection(int id)
+        {
+            string sql = "";
+            sql = @"DELETE FROM Исполнители WHERE Код_мероприятия = @id";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+            sql = @"DELETE FROM Смета WHERE Код_мероприятия = @id";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+            sql = @"DELETE FROM Ответственные_за_мероприятие WHERE Код_мероприятия = @id";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+            sql = @"DELETE FROM Льготная_посещаемость WHERE Код_мероприятия = @id";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+
+            //command.ExecuteNonQuery();
+        }
+
+        //Функция получения номера мероприятия по его данным
+        public int IDEventByData(string name, string Date, string topic, int placeID, int price, int traffic)
+        {
+            string sql = @"SELECT Код_мероприятия
+                               FROM Мероприятия 
+                               WHERE Название = @name and Дата = @Date and Тематика = @topic and Место_проведения = @placeID and 
+                               Цена_билета = @price and Посещаемость = @traffic";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.Parameters.AddWithValue("@topic", topic);
+            command.Parameters.AddWithValue("@placeID", placeID);
+            command.Parameters.AddWithValue("@price", price);
+            command.Parameters.AddWithValue("@traffic", traffic);
+            int id = Convert.ToInt32(command.ExecuteScalar());
+            return id;
+        }
+
+        //Функция получения всех кодов льготных категорий, названий этих льготных категорий и их процент послабления
+        public DataTable PreferentialCategoriesIDAndNameAndPercentTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT Код_категории, Название || ' - ' || [Послабление(%)] || '%' AS Название_Послабление
+                                FROM Льготные_категории";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всех кодов коллективов не учавствующих в огранизации данного мероприятия и названий этих коллективов
+        public DataTable CollectivesIDAndNameTable(int idEvent)
+        {
+            bufferTable = new DataTable();
+            string querytovar = $@"SELECT Название, Код_коллектива
+                                FROM Коллективы
+                                WHERE Код_коллектива NOT IN (SELECT Код_коллектива
+                                                             FROM Исполнители
+                                                             WHERE Код_мероприятия = {idEvent})";
+            //querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция получения всех кодов типов расходов и названий этих типов расходов
+        public DataTable TypesOfExpensesIDAndNameTable(string where = "")
+        {
+            bufferTable = new DataTable();
+            string querytovar = @"SELECT Тип_расхода, Код_записи
+                                FROM Типы_расходов";
+            querytovar += where;
+            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
+            dataAdapter.Fill(bufferTable);
+            return bufferTable;
+        }
+
+        //Функция модификации данных Льготной посещаемости
+        public int ModifyPreferentialAttendance(int mode, int idEvent, int id, int category, int count)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Льготная_посещаемость (Код_мероприятия, Код_категории, Количество) 
+                          VALUES (@idEvent, @category, @count)";
+                    break;
+                case 2:
+                    sql = @"UPDATE Льготная_посещаемость 
+                          SET Количество = Количество+@count
+                          WHERE Код_мероприятия = @idEvent and Код_категории = @category";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Льготная_посещаемость WHERE Номер_записи = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@idEvent", idEvent);
+            command.Parameters.AddWithValue("@category", category);
+            command.Parameters.AddWithValue("@count", count);
+            return command.ExecuteNonQuery();
+        }
+
+        //Функция прверки на наличие у Льготной посещаемости совпадений в БД
+        public bool IsPreferentialAttendanceHasCoincidence(int idEvent, int category)
+        {
+            string sql = @"SELECT COUNT(*) FROM Льготная_посещаемость WHERE Код_мероприятия = @idEvent and Код_категории = @category";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@idEvent", idEvent);
+            command.Parameters.AddWithValue("@category", category);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция модификации данных Исполнителей
+        public int ModifyPerformers(int mode, int idEvent, int id, int collectives)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Исполнители  (Код_мероприятия, Код_коллектива) 
+                          VALUES (@idEvent, @collectives)";
+                    break;
+                case 2:
+                    sql = @"DELETE FROM Исполнители WHERE Код_записи = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@idEvent", idEvent);
+            command.Parameters.AddWithValue("@collectives", collectives);
+            return command.ExecuteNonQuery();
+        }
+
+        //Функция модификации данных Сметы
+        public int ModifyExpensesForEvent(int mode, int idEvent, int id, int type, int expenses, string description)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Смета (Код_мероприятия, Тип_расхода, Затраты, Описание) 
+                          VALUES (@idEvent, @type, @expenses, @description)";
+                    break;
+                case 2:
+                    sql = @"UPDATE Смета 
+                          SET Затраты = Затраты+@expenses
+                          WHERE Код_мероприятия = @idEvent and Тип_расхода = @type and Описание = @description";
+                    break;
+                case 3:
+                    sql = @"DELETE FROM Смета WHERE Номер_записи = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@idEvent", idEvent);
+            command.Parameters.AddWithValue("@type", type);
+            command.Parameters.AddWithValue("@expenses", expenses);
+            command.Parameters.AddWithValue("@description", description);
+            return command.ExecuteNonQuery();
+        }
+
+        //Функция прверки на наличие у Сметы совпадений в БД
+        public bool IsExpensesForEventHasCoincidence(int idEvent, int type, string description)
+        {
+            string sql = @"SELECT COUNT(*) FROM Смета WHERE Код_мероприятия = @idEvent and Тип_расхода = @type and Описание = @description";
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@idEvent", idEvent);
+            command.Parameters.AddWithValue("@type", type);
+            command.Parameters.AddWithValue("@description", description);
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            if (count > 0) return false;
+            else return true;
+        }
+
+        //Функция модификации данных Ответственные за мероприятие
+        public int ModifyResponsibleForEvent(int mode, int idEvent, int id, int responsible)
+        {
+            string sql = "";
+            switch (mode)
+            {
+                case 1:
+                    sql = @"INSERT INTO Ответственные_за_мероприятие (Код_мероприятия, Таб_номер) 
+                          VALUES (@idEvent, @responsible)";
+                    break;
+                case 2:
+                    sql = @"DELETE FROM Ответственные_за_мероприятие WHERE Код_записи = @id";
+                    break;
+                default: break;
+            }
+            command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@idEvent", idEvent);
+            command.Parameters.AddWithValue("@responsible", responsible);
+            return command.ExecuteNonQuery();
         }
     }
 }

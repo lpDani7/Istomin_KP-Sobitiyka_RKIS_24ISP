@@ -117,4 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonCorrectionEventPlacesCreate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAATVJREFUSEvt1MErg3Ecx/H9XcZMajzUSqJESouZm3JwcnPZ3NyUg9s4WMrm5uai
+        hJJSlPaQohyU89vz9Ps+9avv7/k1245716vU9/d8Tktm0L8qt5habxJWWtCN+NtIIHO6tQZhhF6sntKW
+        OV2pDv0gc7qVI/C5f4e7N/fNJnO65QPw+fw1XDebzOkW98En/DFcN5vM6Rb2wOf523DdbDKnm9+FNFuH
+        8PBlxH+73iRkTje7A4mzW7j56Ez81v5W5nQz25A4uYar6BfTiePorf2tzOmKm5CmUoPLV6Ncdb9JyJxu
+        egN8Ll4M180mc7qgBD6NJ8N1s8mcrrAEPvVHw3WzyZxufA58ak2onrtvNpnTjRWhH2RON1IgzE1Aj9L/
+        XWdzBEN52tk8dCP+dniUSZkb1EmZzB/PW6tA7BFFbAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonCorrectionEventResponsibleCreate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAATVJREFUSEvt1MErg3Ecx/H9XcZMajzUSqJESouZm3JwcnPZ3NyUg9s4WMrm5uai
+        hJJSlPaQohyU89vz9Ps+9avv7/k1245716vU9/d8Tktm0L8qt5habxJWWtCN+NtIIHO6tQZhhF6sntKW
+        OV2pDv0gc7qVI/C5f4e7N/fNJnO65QPw+fw1XDebzOkW98En/DFcN5vM6Rb2wOf523DdbDKnm9+FNFuH
+        8PBlxH+73iRkTje7A4mzW7j56Ez81v5W5nQz25A4uYar6BfTiePorf2tzOmKm5CmUoPLV6Ncdb9JyJxu
+        egN8Ll4M180mc7qgBD6NJ8N1s8mcrrAEPvVHw3WzyZxufA58ak2onrtvNpnTjRWhH2RON1IgzE1Aj9L/
+        XWdzBEN52tk8dCP+dniUSZkb1EmZzB/PW6tA7BFFbAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonCorrectionEventTypesOfExpensesCreate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAATVJREFUSEvt1MErg3Ecx/H9XcZMajzUSqJESouZm3JwcnPZ3NyUg9s4WMrm5uai
+        hJJSlPaQohyU89vz9Ps+9avv7/k1245716vU9/d8Tktm0L8qt5habxJWWtCN+NtIIHO6tQZhhF6sntKW
+        OV2pDv0gc7qVI/C5f4e7N/fNJnO65QPw+fw1XDebzOkW98En/DFcN5vM6Rb2wOf523DdbDKnm9+FNFuH
+        8PBlxH+73iRkTje7A4mzW7j56Ez81v5W5nQz25A4uYar6BfTiePorf2tzOmKm5CmUoPLV6Ncdb9JyJxu
+        egN8Ll4M180mc7qgBD6NJ8N1s8mcrrAEPvVHw3WzyZxufA58ak2onrtvNpnTjRWhH2RON1IgzE1Aj9L/
+        XWdzBEN52tk8dCP+dniUSZkb1EmZzB/PW6tA7BFFbAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonCorrectionEventPreferentialCategoriesCreate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAATVJREFUSEvt1MErg3Ecx/H9XcZMajzUSqJESouZm3JwcnPZ3NyUg9s4WMrm5uai
+        hJJSlPaQohyU89vz9Ps+9avv7/k1245716vU9/d8Tktm0L8qt5habxJWWtCN+NtIIHO6tQZhhF6sntKW
+        OV2pDv0gc7qVI/C5f4e7N/fNJnO65QPw+fw1XDebzOkW98En/DFcN5vM6Rb2wOf523DdbDKnm9+FNFuH
+        8PBlxH+73iRkTje7A4mzW7j56Ez81v5W5nQz25A4uYar6BfTiePorf2tzOmKm5CmUoPLV6Ncdb9JyJxu
+        egN8Ll4M180mc7qgBD6NJ8N1s8mcrrAEPvVHw3WzyZxufA58ak2onrtvNpnTjRWhH2RON1IgzE1Aj9L/
+        XWdzBEN52tk8dCP+dniUSZkb1EmZzB/PW6tA7BFFbAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonCorrectionEventColletivesCreate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAATVJREFUSEvt1MErg3Ecx/H9XcZMajzUSqJESouZm3JwcnPZ3NyUg9s4WMrm5uai
+        hJJSlPaQohyU89vz9Ps+9avv7/k1245716vU9/d8Tktm0L8qt5habxJWWtCN+NtIIHO6tQZhhF6sntKW
+        OV2pDv0gc7qVI/C5f4e7N/fNJnO65QPw+fw1XDebzOkW98En/DFcN5vM6Rb2wOf523DdbDKnm9+FNFuH
+        8PBlxH+73iRkTje7A4mzW7j56Ez81v5W5nQz25A4uYar6BfTiePorf2tzOmKm5CmUoPLV6Ncdb9JyJxu
+        egN8Ll4M180mc7qgBD6NJ8N1s8mcrrAEPvVHw3WzyZxufA58ak2onrtvNpnTjRWhH2RON1IgzE1Aj9L/
+        XWdzBEN52tk8dCP+dniUSZkb1EmZzB/PW6tA7BFFbAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using System.Xml.Linq;
 
 namespace Istomin_KP_Sobitiyka_RKIS_24ISP
 {
@@ -25,25 +26,54 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             InitializeComponent();
             //Метод для добавления к каждой операции привязки данных метода сокрытия служебного столбца с первичным ключом
             dataGridViewEvents.DataBindingComplete += (s, ev) => HideServiceColumnsMain();
+            dataGridViewResponsibleForEvent.DataBindingComplete += (s, ev) => HideServiceColumnsResponsible();
+            dataGridViewEventPerformers.DataBindingComplete += (s, ev) => HideServiceColumnsPerformers();
+            dataGridViewExpensesForEvent.DataBindingComplete += (s, ev) => HideServiceColumnsExpenses();
+            dataGridViewPreferentialCategoriesAtEvent.DataBindingComplete += (s, ev) => HideServiceColumnsPreferentialCategories();
+
             controller = new Query(AppSetting.ConnStr);
             dataGridViewEvents.DataSource = controller.EventsTable();
             ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
         }
 
-        //Метод для сокрытия от пользователя служебного столбца с первичным ключом
+        //Метод для сокрытия от пользователя служебных столбцов мероприятия
         private void HideServiceColumnsMain()
         {
             if (dataGridViewEvents.Columns.Contains("Код_мероприятия"))
                 dataGridViewEvents.Columns["Код_мероприятия"].Visible = false;
 
-            /*if (dataGridViewPlaces.Columns.Contains("Код_объекта"))
-                dataGridViewPlaces.Columns["Код_объекта"].Visible = false;
+            if (dataGridViewEvents.Columns.Contains("Код_объекта"))
+                dataGridViewEvents.Columns["Код_объекта"].Visible = false;
+        }
 
-            if (dataGridViewTypesOfExpenses.Columns.Contains("Код_записи"))
-                dataGridViewTypesOfExpenses.Columns["Код_записи"].Visible = false;
+        //Метод для сокрытия от пользователя служебных столбцов Ответственных за мероприятие
+        private void HideServiceColumnsResponsible()
+        {
+            if (dataGridViewResponsibleForEvent.Columns.Contains("Код_записи"))
+                dataGridViewResponsibleForEvent.Columns["Код_записи"].Visible = false;
+            if (dataGridViewResponsibleForEvent.Columns.Contains("Таб_номер"))
+                dataGridViewResponsibleForEvent.Columns["Таб_номер"].Visible = false;
+        }
 
-            if (dataGridViewPreferentialCategories.Columns.Contains("Код_категории"))
-                dataGridViewPreferentialCategories.Columns["Код_категории"].Visible = false;*/
+        //Метод для сокрытия от пользователя служебных столбцов коллективов исполнителей
+        private void HideServiceColumnsPerformers()
+        {
+            if (dataGridViewEventPerformers.Columns.Contains("Код_записи"))
+                dataGridViewEventPerformers.Columns["Код_записи"].Visible = false;
+        }
+
+        //Метод для сокрытия от пользователя служебных столбцов расходов на мероприятие
+        private void HideServiceColumnsExpenses()
+        {
+            if (dataGridViewExpensesForEvent.Columns.Contains("Номер_записи"))
+                dataGridViewExpensesForEvent.Columns["Номер_записи"].Visible = false;
+        }
+
+        //Метод для сокрытия от пользователя служебных столбцов льготной посещаемости
+        private void HideServiceColumnsPreferentialCategories()
+        {
+            if (dataGridViewPreferentialCategoriesAtEvent.Columns.Contains("Номер_записи"))
+                dataGridViewPreferentialCategoriesAtEvent.Columns["Номер_записи"].Visible = false;
         }
 
         //Метод вывода количества записей
@@ -122,7 +152,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (result != DialogResult.Yes) return;
             else Close();
         }
-        
+
         //Функция отображания окна справки о приложении
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -195,7 +225,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             string wHERE = "";
             eventWhere.Clear();
             eventWhere.Add("WHERE");
-            if (checkBoxEventNameSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventNameSearch.Text) ) eventWhere.Add($"Мер.Название LIKE '{textBoxEventNameSearch.Text}%'");
+            if (checkBoxEventNameSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventNameSearch.Text)) eventWhere.Add($"Мер.Название LIKE '{textBoxEventNameSearch.Text}%'");
             if (checkBoxEventPlaceSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventPlaceSearch.Text)) eventWhere.Add($"Мест.Название LIKE '{textBoxEventPlaceSearch.Text}%'");
             if (checkBoxEventTopicSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventTopicSearch.Text)) eventWhere.Add($"Мер.Тематика LIKE '{textBoxEventTopicSearch.Text}%'");
             if (checkBoxEventDateSearch.Checked == true) eventWhere.Add($"Мер.Дата BETWEEN '{dateTimePickerEventDateSearchFrom.Value.ToString("yyyy-MM-dd")}' AND '{dateTimePickerEventDateSearchUntil.Value.ToString("yyyy-MM-dd")}'");
@@ -237,6 +267,97 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
                 e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
             if (textBoxEventPriceSearchUntil.Text.Length > 5) e.KeyChar = (char)0;
+        }
+
+        //Метод открытия формы правки Мероприятий
+        private void OpenFormCorrectionEvent(int mode)
+        {
+            FormCorrectionEvent formCorrectionEvent;
+            if (mode == 1) formCorrectionEvent = new FormCorrectionEvent();
+            else
+            {
+                DataGridViewRow row = dataGridViewEvents.CurrentRow;
+                // Читаем значения из ячеек выбранной строки
+                int id = Convert.ToInt32(row.Cells["Код_мероприятия"].Value);
+                string name = row.Cells["Название"].Value.ToString();
+                DateTime Date = DateTime.Parse(row.Cells["Дата проведения"].Value.ToString());
+                int placeID = Convert.ToInt32(row.Cells["Код_объекта"].Value.ToString());
+                int price = Convert.ToInt32(row.Cells["Цена билета"].Value);
+                string topic = row.Cells["Тематика"].Value.ToString();
+                int traffic = Convert.ToInt32(row.Cells["Не льготная посещаемость"].Value);
+                formCorrectionEvent = new FormCorrectionEvent(id, name, Date, placeID, price, topic, traffic);
+            }
+            // Блокируем доступ к исходной форме
+            this.Enabled = false;
+            DialogResult result = formCorrectionEvent.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                dataGridViewEvents.DataSource = controller.EventsTable();
+                ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+            }
+            // После закрытия form2 возвращаемся к исходной форме
+            this.Enabled = true;
+        }
+
+        //Функция нажатия кнопки "Добавить"
+        private void buttonEventAdd_Click(object sender, EventArgs e)
+        {
+            int mode = 1;
+            OpenFormCorrectionEvent(mode);
+        }
+
+        //Функция нажатия кнопки "Редактировать"
+        private void buttonEventEdit_Click(object sender, EventArgs e)
+        {
+            int mode = 2;
+            OpenFormCorrectionEvent(mode);
+        }
+
+        //Функция нажатия кнопки "Добавить мероприятие"
+        private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int mode = 1;
+            OpenFormCorrectionEvent(mode);
+        }
+
+        //Функция нажатия кнопки "Редактировать мероприятие"
+        private void редактироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int mode = 2;
+            OpenFormCorrectionEvent(mode);
+        }
+
+        //Функция удаления мероприятия и связанной с ним информации
+        private void DeleteEventAndConnection()
+        {
+            int mode = 3;
+            DataGridViewRow row = dataGridViewEvents.CurrentRow;
+            int id = Convert.ToInt32(row.Cells["Код_мероприятия"].Value);
+            DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить мероприятие " +
+                                                            $"{dataGridViewEvents.CurrentRow.Cells["Название"].Value}, " +
+                                                            $"{dataGridViewEvents.CurrentRow.Cells["Дата проведения"].Value.ToString()} и все его связи? " +
+                                                            $"Это действие нельзя будет отменить, все данные об этом мероприятии и " +
+                                                            $"связанная с ним информация из других таблиц будут удалены!", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                controller.DeleteEventConnection(id);
+                controller.ModifyEvent(mode, id, "", "", "", 0, 0, 0);
+                MessageBox.Show($"Мероприятие и его связи были удалены!");
+                dataGridViewEvents.DataSource = controller.EventsTable();
+                ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+            }
+        }
+
+        //Функция нажатия кнопки "Удалить"
+        private void buttonEventDelete_Click(object sender, EventArgs e)
+        {
+            DeleteEventAndConnection();
+        }
+
+        //Функция нажатия кнопки "Удалить мероприятие"
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteEventAndConnection();
         }
     }
 }

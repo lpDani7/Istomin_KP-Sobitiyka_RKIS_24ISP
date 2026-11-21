@@ -298,8 +298,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 string name = row.Cells["ФИО"].Value.ToString();
                 string post = row.Cells["Должность"].Value.ToString();
                 string gender = row.Cells["Пол"].Value.ToString();
-                string DateStr = row.Cells["Дата рождения"].Value.ToString();
-                DateTime Date = DateTime.Parse(DateStr);
+                DateTime Date = DateTime.Parse(row.Cells["Дата рождения"].Value.ToString());
                 formCorrectionResponsible = new FormCorrectionResponsible(id, name, post, Date, gender);
             }
             // Блокируем доступ к исходной форме

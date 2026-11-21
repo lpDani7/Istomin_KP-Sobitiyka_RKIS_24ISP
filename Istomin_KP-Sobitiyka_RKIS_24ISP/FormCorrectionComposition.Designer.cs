@@ -132,6 +132,7 @@
             // 
             // comboBoxCorrectionCompositionCollectives
             // 
+            this.comboBoxCorrectionCompositionCollectives.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCorrectionCompositionCollectives.FormattingEnabled = true;
             this.comboBoxCorrectionCompositionCollectives.Location = new System.Drawing.Point(127, 164);
             this.comboBoxCorrectionCompositionCollectives.Name = "comboBoxCorrectionCompositionCollectives";

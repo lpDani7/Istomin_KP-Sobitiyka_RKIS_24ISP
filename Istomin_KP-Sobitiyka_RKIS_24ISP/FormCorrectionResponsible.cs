@@ -63,7 +63,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод кнопки "Отмена"
         private void buttonCorrectionResponsibleCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         //Метод кнопки "Подтвердить"

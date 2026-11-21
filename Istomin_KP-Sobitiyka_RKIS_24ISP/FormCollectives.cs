@@ -161,13 +161,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить коллектив " +
                                                             $"{dataGridViewCollectives.CurrentRow.Cells["Название коллектива"].Value}?", 
                                                             "Подтверждение", MessageBoxButtons.YesNo);
-                //if (dialogResult == DialogResult.Yes && controller.ModifyCollectives(mode, id, "") > 0)
-                //{
+                if (dialogResult == DialogResult.Yes)
+                {
                     controller.ModifyCollectives(mode, id, "");
                     MessageBox.Show($"Запись была удалена!");
                     dataGridViewCollectives.DataSource = controller.CollectivesTable();
                     //ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
-                //}
+                }
             }
             else
             {
@@ -187,13 +187,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить коллектив " +
                                                             $"{dataGridViewCollectives.CurrentRow.Cells["Название коллектива"].Value} и его участников?",
                                                             "Подтверждение", MessageBoxButtons.YesNo);
-                //if (dialogResult == DialogResult.Yes && controller.ModifyCollectives(mode, id, "") > 0)
-                //{
+                if (dialogResult == DialogResult.Yes)
+                {
                 controller.ModifyCollectives(mode, id, "");
                     MessageBox.Show($"Записи были удалены!");
                     dataGridViewCollectives.DataSource = controller.CollectivesTable();
                     //ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
-                //}
+                }
             }
             else
             {
@@ -214,8 +214,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 int id = Convert.ToInt32(row.Cells["Код_участника"].Value);
                 string name = row.Cells["ФИО"].Value.ToString();
                 string post = row.Cells["Должность"].Value.ToString();
-                string DateStr = row.Cells["Дата рождения"].Value.ToString();
-                DateTime Date = DateTime.Parse(DateStr);
+                DateTime Date = DateTime.Parse(row.Cells["Дата рождения"].Value.ToString());
                 string genderText = row.Cells["Пол"].Value.ToString();
                 int gender;
                 if (genderText == "Мужской") gender = 0;
