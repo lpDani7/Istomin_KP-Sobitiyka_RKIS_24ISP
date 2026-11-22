@@ -98,14 +98,14 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             else textBoxCorrectionEventTraffic.Text = traffic.ToString();
 
             //Проверка на совпадения в БД
-            if (controller.IsEventHasCoincidence(name, Date, topic, placeID, price) == false && (mode == 1 || mode == 2))
+            if (controller.IsEventHasCoincidence(name, Date, topic, placeID, price, traffic) == false && (mode == 1 || mode == 2))
             {
                 MessageBox.Show("Запись с такими данными уже существует!");
             }
-            else if (controller.ModifyEvent(mode, 0, name, Date, topic, placeID, price, traffic) > 0)
+            else if (controller.ModifyEvent(mode, id, name, Date, topic, placeID, price, traffic) > 0)
             {
                 if (mode == 1) MessageBox.Show($"{name}  {dateTimePickerCorrectionEventDate.Value.ToString("dd.MM.yyyy")} добавлено!");
-                else if (mode == 2) MessageBox.Show($"Запись id отредактирована!");
+                else if (mode == 2) MessageBox.Show($"Запись {id} отредактирована!");
                 if (buttonAddMode == 2) id = controller.IDEventByData(name, Date, topic, placeID, price, traffic);
                 else
                 {
@@ -171,15 +171,18 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             int buttonAddMode = 2;
             AddEventWithOrWithOutConnection(buttonAddMode);
-            this.Width = 1465;
-            this.Height = 801;
-            buttonCorrectionEventAddWithOutConnection.Visible = false;
-            buttonCorrectionEventAddAndConnection.Visible = false;
-            buttonCorrectionEventCancelUp.Visible = false;
-            label7.Visible = true;
-            label7.Text = "Номер:";
-            labelCorrectionEventID.Text = id.ToString();
-            FillCorrectionComboBoxAndCorrectionTableByEventID(id);
+            if (id > 0)
+            {
+                this.Width = 1465;
+                this.Height = 801;
+                buttonCorrectionEventAddWithOutConnection.Visible = false;
+                buttonCorrectionEventAddAndConnection.Visible = false;
+                buttonCorrectionEventCancelUp.Visible = false;
+                label7.Visible = true;
+                label7.Text = "Номер:";
+                labelCorrectionEventID.Text = id.ToString();
+                FillCorrectionComboBoxAndCorrectionTableByEventID(id);
+            }
         }
 
         //Фукнция нажатия на кнопку "Отмена" снизу
@@ -236,7 +239,9 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Функция поиска по первым буквам фамилии при изменении текста
         private void textBoxCorrectionEventResponsibleAllSearch_TextChanged(object sender, EventArgs e)
         {
-
+            string where = $" WHERE Таб_номер NOT IN (SELECT Таб_номер FROM Ответственные_за_мероприятие WHERE Код_мероприятия = {id})" +
+                           $" and ФИО LIKE '{textBoxCorrectionEventResponsibleAllSearch.Text.Trim()}%'";
+            dataGridViewCorrectionEventResponsibleAll.DataSource = controller.ResponsibleTable(where);
         }
 
         //Функция нажатия кнопки "Добавить" для Льготной посещаемости
@@ -411,6 +416,45 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             dataGridViewCorrectionEventResponsibleAtEvent.DataSource = controller.ResponsibleForEventTable(where);
             where = $" WHERE Таб_номер NOT IN (SELECT Таб_номер FROM Ответственные_за_мероприятие WHERE Код_мероприятия = {this.id})";
             dataGridViewCorrectionEventResponsibleAll.DataSource = controller.ResponsibleTable(where);
+        }
+
+        //Ограничение на ввод любых символов, короме цифр и backspace, а также длины не более 20 символов
+        private void textBoxCorrectionEventPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+                e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
+            if (textBoxCorrectionEventPrice.Text.Length > 20) e.KeyChar = (char)0;
+        }
+
+        //Ограничение на ввод любых символов, короме цифр и backspace, а также длины не более 20 символов
+        private void textBoxCorrectionEventTraffic_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+                e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
+            if (textBoxCorrectionEventTraffic.Text.Length > 20) e.KeyChar = (char)0;
+        }
+
+        //Ограничение на ввод любых символов, короме цифр и backspace, а также длины не более 20 символов
+        private void textBoxCorrectionEventPreferentialTraffic_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+                e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
+            if (textBoxCorrectionEventPreferentialTraffic.Text.Length > 20) e.KeyChar = (char)0;
+        }
+
+        //Ограничение на ввод любых символов, короме цифр и backspace, а также длины не более 20 символов
+        private void textBoxCorrectionEventExpenses_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+                e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
+            if (textBoxCorrectionEventExpenses.Text.Length > 20) e.KeyChar = (char)0;
+        }
+
+        //Функция нажатия на кнопку "Подтвердить"
+        private void buttonCorrectionEventConfirm_Click(object sender, EventArgs e)
+        {
+            mode = 2;
+            AddEventWithOrWithOutConnection(1);
         }
     }
 }

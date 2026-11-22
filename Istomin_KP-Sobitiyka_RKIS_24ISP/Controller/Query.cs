@@ -687,16 +687,17 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         }
 
         //Функция прверки на наличие у Мероприятия совпадений в БД
-        public bool IsEventHasCoincidence(string name, string Date, string topic, int placeID, int price)
+        public bool IsEventHasCoincidence(string name, string Date, string topic, int placeID, int price, int traffic)
         {
             string sql = @"SELECT COUNT(*) FROM Мероприятия WHERE Название = @name and Дата = @Date and 
-                           Тематика = @topic and Место_проведения = @placeID and Цена_билета = @price";
+                           Тематика = @topic and Место_проведения = @placeID and Цена_билета = @price and Посещаемость = @traffic";
             command = new SQLiteCommand(sql, connection);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@Date", Date);
             command.Parameters.AddWithValue("@topic", topic);
             command.Parameters.AddWithValue("@placeID", placeID);
             command.Parameters.AddWithValue("@price", price);
+            command.Parameters.AddWithValue("@traffic", traffic);
             int count = Convert.ToInt32(command.ExecuteScalar());
             if (count > 0) return false;
             else return true;
