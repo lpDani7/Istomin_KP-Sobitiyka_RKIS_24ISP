@@ -124,6 +124,7 @@
             // 
             // comboBoxCorrectionCompositionGender
             // 
+            this.comboBoxCorrectionCompositionGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCorrectionCompositionGender.FormattingEnabled = true;
             this.comboBoxCorrectionCompositionGender.Location = new System.Drawing.Point(127, 127);
             this.comboBoxCorrectionCompositionGender.Name = "comboBoxCorrectionCompositionGender";

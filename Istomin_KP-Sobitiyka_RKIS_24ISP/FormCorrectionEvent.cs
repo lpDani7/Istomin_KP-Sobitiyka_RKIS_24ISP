@@ -437,7 +437,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Ограничение на ввод любых символов, короме цифр и backspace, а также длины не более 20 символов
         private void textBoxCorrectionEventPreferentialTraffic_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8 || e.KeyChar == '-'))
                 e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
             if (textBoxCorrectionEventPreferentialTraffic.Text.Length > 20) e.KeyChar = (char)0;
         }
@@ -445,7 +445,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Ограничение на ввод любых символов, короме цифр и backspace, а также длины не более 20 символов
         private void textBoxCorrectionEventExpenses_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8))
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9' || (int)e.KeyChar == 8 || e.KeyChar == '-'))
                 e.KeyChar = (char)0;//Зпрет на ввод любых символов кроме чисел
             if (textBoxCorrectionEventExpenses.Text.Length > 20) e.KeyChar = (char)0;
         }

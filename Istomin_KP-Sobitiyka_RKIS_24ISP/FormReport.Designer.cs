@@ -28,52 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle131 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle132 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle133 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle134 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle135 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title27 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle136 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle137 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle138 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle139 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle140 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title28 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle141 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle142 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle143 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle144 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle145 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea29 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title29 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle146 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle147 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle148 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle149 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle150 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title30 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle126 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle127 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle128 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle129 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle130 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title26 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewReportCountEvent = new System.Windows.Forms.DataGridView();
@@ -102,6 +99,11 @@
             this.comboBoxReportIncomeSelectYear = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.chartReportIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.buttonReportCountEventExport = new System.Windows.Forms.Button();
+            this.buttonReportTrafficExport = new System.Windows.Forms.Button();
+            this.buttonReportTypeTrafficExport = new System.Windows.Forms.Button();
+            this.buttonReportExpensesExport = new System.Windows.Forms.Button();
+            this.buttonReportIncomeExport = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReportCountEvent)).BeginInit();
@@ -137,6 +139,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonReportCountEventExport);
             this.tabPage1.Controls.Add(this.dataGridViewReportCountEvent);
             this.tabPage1.Controls.Add(this.comboBoxReportCountEventSelectYear);
             this.tabPage1.Controls.Add(this.label1);
@@ -154,48 +157,48 @@
             // 
             this.dataGridViewReportCountEvent.AllowUserToAddRows = false;
             this.dataGridViewReportCountEvent.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewReportCountEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle131.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewReportCountEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle131;
             this.dataGridViewReportCountEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReportCountEvent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReportCountEvent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReportCountEvent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportCountEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle132.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle132.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle132.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle132.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle132.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle132.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle132.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportCountEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle132;
             this.dataGridViewReportCountEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReportCountEvent.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle133.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle133.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle133.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle133.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle133.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle133.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle133.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReportCountEvent.DefaultCellStyle = dataGridViewCellStyle133;
             this.dataGridViewReportCountEvent.EnableHeadersVisualStyles = false;
             this.dataGridViewReportCountEvent.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewReportCountEvent.Location = new System.Drawing.Point(20, 40);
             this.dataGridViewReportCountEvent.Name = "dataGridViewReportCountEvent";
             this.dataGridViewReportCountEvent.ReadOnly = true;
             this.dataGridViewReportCountEvent.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportCountEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewReportCountEvent.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewReportCountEvent.Size = new System.Drawing.Size(381, 493);
+            dataGridViewCellStyle134.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle134.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle134.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle134.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle134.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle134.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle134.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportCountEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle134;
+            dataGridViewCellStyle135.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle135.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle135.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewReportCountEvent.RowsDefaultCellStyle = dataGridViewCellStyle135;
+            this.dataGridViewReportCountEvent.Size = new System.Drawing.Size(381, 454);
             this.dataGridViewReportCountEvent.TabIndex = 16;
             // 
             // comboBoxReportCountEventSelectYear
@@ -219,28 +222,26 @@
             // 
             // chartReportCountEvent
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartReportCountEvent.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartReportCountEvent.Legends.Add(legend1);
+            chartArea27.Name = "ChartArea1";
+            this.chartReportCountEvent.ChartAreas.Add(chartArea27);
             this.chartReportCountEvent.Location = new System.Drawing.Point(407, 13);
             this.chartReportCountEvent.Name = "chartReportCountEvent";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Кол-во мероприятий";
-            this.chartReportCountEvent.Series.Add(series1);
+            series32.ChartArea = "ChartArea1";
+            series32.Name = "Кол-во мероприятий";
+            this.chartReportCountEvent.Series.Add(series32);
             this.chartReportCountEvent.Size = new System.Drawing.Size(823, 520);
             this.chartReportCountEvent.TabIndex = 1;
             this.chartReportCountEvent.Text = "chart1";
-            title1.BackColor = System.Drawing.SystemColors.HighlightText;
-            title1.BorderColor = System.Drawing.Color.White;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title1.Name = "Title1";
-            title1.Text = "Количество мероприятий по месяцам";
-            this.chartReportCountEvent.Titles.Add(title1);
+            title27.BackColor = System.Drawing.SystemColors.HighlightText;
+            title27.BorderColor = System.Drawing.Color.White;
+            title27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title27.Name = "Title1";
+            title27.Text = "Количество мероприятий по месяцам";
+            this.chartReportCountEvent.Titles.Add(title27);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonReportTrafficExport);
             this.tabPage2.Controls.Add(this.dataGridViewReportTraffic);
             this.tabPage2.Controls.Add(this.comboBoxReportTrafficSelectYear);
             this.tabPage2.Controls.Add(this.label6);
@@ -258,48 +259,48 @@
             // 
             this.dataGridViewReportTraffic.AllowUserToAddRows = false;
             this.dataGridViewReportTraffic.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewReportTraffic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle136.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewReportTraffic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle136;
             this.dataGridViewReportTraffic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReportTraffic.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReportTraffic.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReportTraffic.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportTraffic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle137.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle137.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle137.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle137.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle137.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle137.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle137.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportTraffic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle137;
             this.dataGridViewReportTraffic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReportTraffic.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle138.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle138.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle138.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle138.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle138.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle138.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReportTraffic.DefaultCellStyle = dataGridViewCellStyle138;
             this.dataGridViewReportTraffic.EnableHeadersVisualStyles = false;
             this.dataGridViewReportTraffic.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewReportTraffic.Location = new System.Drawing.Point(17, 40);
             this.dataGridViewReportTraffic.Name = "dataGridViewReportTraffic";
             this.dataGridViewReportTraffic.ReadOnly = true;
             this.dataGridViewReportTraffic.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportTraffic.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewReportTraffic.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewReportTraffic.Size = new System.Drawing.Size(394, 493);
+            dataGridViewCellStyle139.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle139.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle139.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle139.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle139.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle139.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle139.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportTraffic.RowHeadersDefaultCellStyle = dataGridViewCellStyle139;
+            dataGridViewCellStyle140.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle140.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle140.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewReportTraffic.RowsDefaultCellStyle = dataGridViewCellStyle140;
+            this.dataGridViewReportTraffic.Size = new System.Drawing.Size(394, 449);
             this.dataGridViewReportTraffic.TabIndex = 17;
             // 
             // comboBoxReportTrafficSelectYear
@@ -323,31 +324,32 @@
             // 
             // chartReportTraffic
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartReportTraffic.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartReportTraffic.Legends.Add(legend2);
+            chartArea28.Name = "ChartArea1";
+            this.chartReportTraffic.ChartAreas.Add(chartArea28);
+            legend11.Name = "Legend1";
+            this.chartReportTraffic.Legends.Add(legend11);
             this.chartReportTraffic.Location = new System.Drawing.Point(417, 7);
             this.chartReportTraffic.Name = "chartReportTraffic";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Не льготная посещаемость";
-            series2.YValuesPerPoint = 4;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Льготная посещаемость";
-            this.chartReportTraffic.Series.Add(series2);
-            this.chartReportTraffic.Series.Add(series3);
+            series33.ChartArea = "ChartArea1";
+            series33.Legend = "Legend1";
+            series33.Name = "Не льготная посещаемость";
+            series33.YValuesPerPoint = 4;
+            series34.ChartArea = "ChartArea1";
+            series34.Legend = "Legend1";
+            series34.Name = "Льготная посещаемость";
+            this.chartReportTraffic.Series.Add(series33);
+            this.chartReportTraffic.Series.Add(series34);
             this.chartReportTraffic.Size = new System.Drawing.Size(818, 526);
             this.chartReportTraffic.TabIndex = 7;
             this.chartReportTraffic.Text = "chart2";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title2.Name = "Title1";
-            title2.Text = "Соотношение льготной и обычной посещаемости по месяцам";
-            this.chartReportTraffic.Titles.Add(title2);
+            title28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title28.Name = "Title1";
+            title28.Text = "Соотношение льготной и обычной посещаемости по месяцам";
+            this.chartReportTraffic.Titles.Add(title28);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.buttonReportTypeTrafficExport);
             this.tabPage3.Controls.Add(this.dataGridViewReportTypeTraffic);
             this.tabPage3.Controls.Add(this.comboBoxReportTypeTrafficSelectMonth);
             this.tabPage3.Controls.Add(this.label14);
@@ -366,48 +368,48 @@
             // 
             this.dataGridViewReportTypeTraffic.AllowUserToAddRows = false;
             this.dataGridViewReportTypeTraffic.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewReportTypeTraffic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle141.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewReportTypeTraffic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle141;
             this.dataGridViewReportTypeTraffic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReportTypeTraffic.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReportTypeTraffic.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReportTypeTraffic.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportTypeTraffic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle142.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle142.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle142.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle142.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle142.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle142.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle142.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportTypeTraffic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle142;
             this.dataGridViewReportTypeTraffic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReportTypeTraffic.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle143.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle143.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle143.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle143.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle143.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle143.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle143.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReportTypeTraffic.DefaultCellStyle = dataGridViewCellStyle143;
             this.dataGridViewReportTypeTraffic.EnableHeadersVisualStyles = false;
             this.dataGridViewReportTypeTraffic.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewReportTypeTraffic.Location = new System.Drawing.Point(17, 40);
             this.dataGridViewReportTypeTraffic.Name = "dataGridViewReportTypeTraffic";
             this.dataGridViewReportTypeTraffic.ReadOnly = true;
             this.dataGridViewReportTypeTraffic.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportTypeTraffic.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewReportTypeTraffic.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewReportTypeTraffic.Size = new System.Drawing.Size(394, 493);
+            dataGridViewCellStyle144.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle144.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle144.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle144.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle144.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle144.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle144.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportTypeTraffic.RowHeadersDefaultCellStyle = dataGridViewCellStyle144;
+            dataGridViewCellStyle145.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle145.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle145.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewReportTypeTraffic.RowsDefaultCellStyle = dataGridViewCellStyle145;
+            this.dataGridViewReportTypeTraffic.Size = new System.Drawing.Size(394, 454);
             this.dataGridViewReportTypeTraffic.TabIndex = 25;
             // 
             // comboBoxReportTypeTrafficSelectMonth
@@ -450,27 +452,28 @@
             // 
             // chartReportTypeTraffic
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartReportTypeTraffic.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartReportTypeTraffic.Legends.Add(legend3);
+            chartArea29.Name = "ChartArea1";
+            this.chartReportTypeTraffic.ChartAreas.Add(chartArea29);
+            legend12.Name = "Legend1";
+            this.chartReportTypeTraffic.Legends.Add(legend12);
             this.chartReportTypeTraffic.Location = new System.Drawing.Point(417, 10);
             this.chartReportTypeTraffic.Name = "chartReportTypeTraffic";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartReportTypeTraffic.Series.Add(series4);
+            series35.ChartArea = "ChartArea1";
+            series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series35.Legend = "Legend1";
+            series35.Name = "Series1";
+            this.chartReportTypeTraffic.Series.Add(series35);
             this.chartReportTypeTraffic.Size = new System.Drawing.Size(813, 523);
             this.chartReportTypeTraffic.TabIndex = 16;
             this.chartReportTypeTraffic.Text = "chart3";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title3.Name = "Title1";
-            title3.Text = "Посещаемость по типам льготных категорий";
-            this.chartReportTypeTraffic.Titles.Add(title3);
+            title29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title29.Name = "Title1";
+            title29.Text = "Посещаемость по типам льготных категорий";
+            this.chartReportTypeTraffic.Titles.Add(title29);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.buttonReportExpensesExport);
             this.tabPage4.Controls.Add(this.dataGridViewReportExpenses);
             this.tabPage4.Controls.Add(this.comboBoxReportExpensesSelectYear);
             this.tabPage4.Controls.Add(this.label19);
@@ -487,48 +490,48 @@
             // 
             this.dataGridViewReportExpenses.AllowUserToAddRows = false;
             this.dataGridViewReportExpenses.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewReportExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle146.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewReportExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle146;
             this.dataGridViewReportExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReportExpenses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReportExpenses.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReportExpenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle147.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle147.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle147.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle147.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle147.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle147.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle147.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle147;
             this.dataGridViewReportExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReportExpenses.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle148.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle148.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle148.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle148.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle148.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle148.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle148.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReportExpenses.DefaultCellStyle = dataGridViewCellStyle148;
             this.dataGridViewReportExpenses.EnableHeadersVisualStyles = false;
             this.dataGridViewReportExpenses.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewReportExpenses.Location = new System.Drawing.Point(17, 40);
             this.dataGridViewReportExpenses.Name = "dataGridViewReportExpenses";
             this.dataGridViewReportExpenses.ReadOnly = true;
             this.dataGridViewReportExpenses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportExpenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewReportExpenses.RowsDefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridViewReportExpenses.Size = new System.Drawing.Size(333, 493);
+            dataGridViewCellStyle149.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle149.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle149.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle149.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle149.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle149.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle149.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportExpenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle149;
+            dataGridViewCellStyle150.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle150.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle150.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewReportExpenses.RowsDefaultCellStyle = dataGridViewCellStyle150;
+            this.dataGridViewReportExpenses.Size = new System.Drawing.Size(333, 453);
             this.dataGridViewReportExpenses.TabIndex = 23;
             // 
             // comboBoxReportExpensesSelectYear
@@ -552,27 +555,25 @@
             // 
             // chartReportExpenses
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartReportExpenses.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartReportExpenses.Legends.Add(legend4);
+            chartArea30.Name = "ChartArea1";
+            this.chartReportExpenses.ChartAreas.Add(chartArea30);
             this.chartReportExpenses.Location = new System.Drawing.Point(356, 13);
             this.chartReportExpenses.Name = "chartReportExpenses";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series5.Legend = "Legend1";
-            series5.Name = "Расходы";
-            this.chartReportExpenses.Series.Add(series5);
+            series36.ChartArea = "ChartArea1";
+            series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series36.Name = "Расходы";
+            this.chartReportExpenses.Series.Add(series36);
             this.chartReportExpenses.Size = new System.Drawing.Size(874, 520);
             this.chartReportExpenses.TabIndex = 17;
             this.chartReportExpenses.Text = "chart4";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title4.Name = "Title1";
-            title4.Text = "Расходы на мероприятия по месяцам";
-            this.chartReportExpenses.Titles.Add(title4);
+            title30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title30.Name = "Title1";
+            title30.Text = "Расходы на мероприятия по месяцам";
+            this.chartReportExpenses.Titles.Add(title30);
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.buttonReportIncomeExport);
             this.tabPage5.Controls.Add(this.dataGridViewReportIncome);
             this.tabPage5.Controls.Add(this.comboBoxReportIncomeSelectYear);
             this.tabPage5.Controls.Add(this.label23);
@@ -589,48 +590,48 @@
             // 
             this.dataGridViewReportIncome.AllowUserToAddRows = false;
             this.dataGridViewReportIncome.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewReportIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle126.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewReportIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle126;
             this.dataGridViewReportIncome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReportIncome.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReportIncome.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReportIncome.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportIncome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle127.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle127.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle127.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle127.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle127.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle127.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportIncome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle127;
             this.dataGridViewReportIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReportIncome.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle128.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle128.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle128.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle128.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle128.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle128.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReportIncome.DefaultCellStyle = dataGridViewCellStyle128;
             this.dataGridViewReportIncome.EnableHeadersVisualStyles = false;
             this.dataGridViewReportIncome.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewReportIncome.Location = new System.Drawing.Point(17, 40);
             this.dataGridViewReportIncome.Name = "dataGridViewReportIncome";
             this.dataGridViewReportIncome.ReadOnly = true;
             this.dataGridViewReportIncome.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReportIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewReportIncome.RowsDefaultCellStyle = dataGridViewCellStyle25;
-            this.dataGridViewReportIncome.Size = new System.Drawing.Size(330, 493);
+            dataGridViewCellStyle129.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle129.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle129.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle129.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle129.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle129.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle129.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReportIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle129;
+            dataGridViewCellStyle130.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle130.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle130.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewReportIncome.RowsDefaultCellStyle = dataGridViewCellStyle130;
+            this.dataGridViewReportIncome.Size = new System.Drawing.Size(330, 454);
             this.dataGridViewReportIncome.TabIndex = 23;
             // 
             // comboBoxReportIncomeSelectYear
@@ -654,25 +655,82 @@
             // 
             // chartReportIncome
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartReportIncome.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartReportIncome.Legends.Add(legend5);
+            chartArea26.Name = "ChartArea1";
+            this.chartReportIncome.ChartAreas.Add(chartArea26);
             this.chartReportIncome.Location = new System.Drawing.Point(353, 13);
             this.chartReportIncome.Name = "chartReportIncome";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series6.Legend = "Legend1";
-            series6.Name = "Доходы";
-            series6.YValuesPerPoint = 2;
-            this.chartReportIncome.Series.Add(series6);
+            series31.ChartArea = "ChartArea1";
+            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series31.Name = "Доходы";
+            series31.YValuesPerPoint = 2;
+            this.chartReportIncome.Series.Add(series31);
             this.chartReportIncome.Size = new System.Drawing.Size(882, 520);
             this.chartReportIncome.TabIndex = 17;
             this.chartReportIncome.Text = "chart5";
-            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title5.Name = "Title1";
-            title5.Text = "Доходы с мероприятий по месяцам";
-            this.chartReportIncome.Titles.Add(title5);
+            title26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title26.Name = "Title1";
+            title26.Text = "Доходы с мероприятий по месяцам";
+            this.chartReportIncome.Titles.Add(title26);
+            // 
+            // buttonReportCountEventExport
+            // 
+            this.buttonReportCountEventExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportCountEventExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportCountEventExport.Location = new System.Drawing.Point(20, 500);
+            this.buttonReportCountEventExport.Name = "buttonReportCountEventExport";
+            this.buttonReportCountEventExport.Size = new System.Drawing.Size(381, 38);
+            this.buttonReportCountEventExport.TabIndex = 46;
+            this.buttonReportCountEventExport.Text = "Экспорт в Excel";
+            this.buttonReportCountEventExport.UseVisualStyleBackColor = false;
+            this.buttonReportCountEventExport.Click += new System.EventHandler(this.buttonReportCountEventExport_Click);
+            // 
+            // buttonReportTrafficExport
+            // 
+            this.buttonReportTrafficExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportTrafficExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportTrafficExport.Location = new System.Drawing.Point(17, 495);
+            this.buttonReportTrafficExport.Name = "buttonReportTrafficExport";
+            this.buttonReportTrafficExport.Size = new System.Drawing.Size(394, 38);
+            this.buttonReportTrafficExport.TabIndex = 47;
+            this.buttonReportTrafficExport.Text = "Экспорт в Excel";
+            this.buttonReportTrafficExport.UseVisualStyleBackColor = false;
+            this.buttonReportTrafficExport.Click += new System.EventHandler(this.buttonReportTrafficExport_Click);
+            // 
+            // buttonReportTypeTrafficExport
+            // 
+            this.buttonReportTypeTrafficExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportTypeTrafficExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportTypeTrafficExport.Location = new System.Drawing.Point(17, 500);
+            this.buttonReportTypeTrafficExport.Name = "buttonReportTypeTrafficExport";
+            this.buttonReportTypeTrafficExport.Size = new System.Drawing.Size(394, 38);
+            this.buttonReportTypeTrafficExport.TabIndex = 48;
+            this.buttonReportTypeTrafficExport.Text = "Экспорт в Excel";
+            this.buttonReportTypeTrafficExport.UseVisualStyleBackColor = false;
+            this.buttonReportTypeTrafficExport.Click += new System.EventHandler(this.buttonReportTypeTrafficExport_Click);
+            // 
+            // buttonReportExpensesExport
+            // 
+            this.buttonReportExpensesExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportExpensesExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportExpensesExport.Location = new System.Drawing.Point(17, 499);
+            this.buttonReportExpensesExport.Name = "buttonReportExpensesExport";
+            this.buttonReportExpensesExport.Size = new System.Drawing.Size(333, 38);
+            this.buttonReportExpensesExport.TabIndex = 48;
+            this.buttonReportExpensesExport.Text = "Экспорт в Excel";
+            this.buttonReportExpensesExport.UseVisualStyleBackColor = false;
+            this.buttonReportExpensesExport.Click += new System.EventHandler(this.buttonReportExpensesExport_Click);
+            // 
+            // buttonReportIncomeExport
+            // 
+            this.buttonReportIncomeExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportIncomeExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportIncomeExport.Location = new System.Drawing.Point(17, 500);
+            this.buttonReportIncomeExport.Name = "buttonReportIncomeExport";
+            this.buttonReportIncomeExport.Size = new System.Drawing.Size(330, 38);
+            this.buttonReportIncomeExport.TabIndex = 48;
+            this.buttonReportIncomeExport.Text = "Экспорт в Excel";
+            this.buttonReportIncomeExport.UseVisualStyleBackColor = false;
+            this.buttonReportIncomeExport.Click += new System.EventHandler(this.buttonReportIncomeExport_Click);
             // 
             // FormReport
             // 
@@ -739,5 +797,10 @@
         private System.Windows.Forms.DataGridView dataGridViewReportTypeTraffic;
         private System.Windows.Forms.DataGridView dataGridViewReportExpenses;
         private System.Windows.Forms.DataGridView dataGridViewReportIncome;
+        private System.Windows.Forms.Button buttonReportCountEventExport;
+        private System.Windows.Forms.Button buttonReportTrafficExport;
+        private System.Windows.Forms.Button buttonReportTypeTrafficExport;
+        private System.Windows.Forms.Button buttonReportExpensesExport;
+        private System.Windows.Forms.Button buttonReportIncomeExport;
     }
 }

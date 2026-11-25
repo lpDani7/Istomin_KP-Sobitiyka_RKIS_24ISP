@@ -284,7 +284,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 int placeID = Convert.ToInt32(row.Cells["Код_объекта"].Value.ToString());
                 int price = Convert.ToInt32(row.Cells["Цена билета"].Value);
                 string topic = row.Cells["Тематика"].Value.ToString();
-                int traffic = Convert.ToInt32(row.Cells["Не льготная посещаемость"].Value);
+                int traffic = Convert.ToInt32(row.Cells["Посещаемость"].Value);
                 formCorrectionEvent = new FormCorrectionEvent(id, name, Date, placeID, price, topic, traffic);
             }
             // Блокируем доступ к исходной форме

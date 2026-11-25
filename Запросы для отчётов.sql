@@ -44,3 +44,12 @@
 									) П ON М.Код_мероприятия = П.Код_мероприятия
 	GROUP BY strftime('%m.%Y', М.Дата)
 	HAVING strftime('%Y', М.Дата) like "2026"
+	
+--  Получение всех годов мероприятий
+	SELECT DISTINCT strftime('%Y', М.Дата) AS Год
+	FROM Мероприятия М
+
+--  Получение всех месяцев года
+	SELECT DISTINCT strftime('%m', М.Дата) AS Месяц
+	FROM Мероприятия М
+	WHERE strftime('%Y', М.Дата) like "2026"

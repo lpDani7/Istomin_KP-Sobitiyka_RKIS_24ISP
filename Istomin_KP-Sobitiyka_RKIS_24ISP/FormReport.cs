@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using ClosedXML.Excel;
 
 namespace Istomin_KP_Sobitiyka_RKIS_24ISP
 {
@@ -146,6 +147,83 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             FillReportTable();
             FillReportChart();
+        }
+
+        //Метод для экспорта данных отчёта в Excel
+        private void ExportDataReport(DataGridView ReportDataGrid)
+        {
+            // Диалоговое окно для выбора пути сохранения
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel File (*.xlsx)|*.xlsx";
+            saveFileDialog.FileName = "ExportedData.xlsx";
+            //Можно в имя файла поместить текущую дату
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // Создаём новый документ Excel
+                    using (XLWorkbook workbook = new XLWorkbook())
+                    {
+                        // Добавляем лист и называем его
+                        IXLWorksheet worksheet = workbook.Worksheets.Add("Данные");
+
+                        // Записываем заголовки столбцов
+                        for (int i = 0; i < ReportDataGrid.Columns.Count; i++)
+                        {
+                            worksheet.Cell(1, i + 1).Value = ReportDataGrid.Columns[i].HeaderText;
+                        }
+
+                        // Записываем данные из OrderDataGrid в ячейки Excel-таблицы
+                        for (int i = 0; i < ReportDataGrid.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < ReportDataGrid.Columns.Count; j++)
+                            {
+                                // Проверяем, что ячейка не пустая
+                                if (ReportDataGrid.Rows[i].Cells[j].Value != null)
+                                {
+                                    worksheet.Cell(i + 2, j + 1).Value = ReportDataGrid.Rows[i].Cells[j].Value.ToString();
+                                }
+                            }
+                        }
+                        // Сохраняем файл
+                        workbook.SaveAs(saveFileDialog.FileName);
+                        //workbook.Close();
+                    }
+                    MessageBox.Show("Данные успешно экспортированы!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } //try
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при экспорте: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } //catch
+            }//if
+
+        }
+
+        //Фукнция экспорта Количества мероприятий по месяцам в Excel
+        private void buttonReportCountEventExport_Click(object sender, EventArgs e)
+        {
+            ExportDataReport(dataGridViewReportCountEvent);
+        }
+
+        private void buttonReportTrafficExport_Click(object sender, EventArgs e)
+        {
+            ExportDataReport(dataGridViewReportTraffic);
+        }
+
+        private void buttonReportTypeTrafficExport_Click(object sender, EventArgs e)
+        {
+            ExportDataReport(dataGridViewReportTypeTraffic);
+        }
+
+        private void buttonReportExpensesExport_Click(object sender, EventArgs e)
+        {
+            ExportDataReport(dataGridViewReportExpenses);
+        }
+
+        private void buttonReportIncomeExport_Click(object sender, EventArgs e)
+        {
+            ExportDataReport(dataGridViewReportIncome);
         }
     }
 }
