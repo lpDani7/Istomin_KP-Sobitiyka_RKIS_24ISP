@@ -63,9 +63,10 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             int capacity = Convert.ToInt32(textBoxCorrectionPlacesCapacity.Text.Trim());
             if (controller.IsPlacesHasCoincidence(name, adress, capacity) == false && (mode == 1 || mode == 2))
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 1) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
+                else if (mode == 2 && (name != this.name || adress != this.adress || capacity != this.capacity)) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
             }
-            else if (controller.ModifyPlaces(mode, id, name, adress, capacity) > 0)
+            if (controller.ModifyPlaces(mode, id, name, adress, capacity) > 0)
             {
                 this.DialogResult = DialogResult.OK;
                 if (mode == 1) MessageBox.Show($"{name}, {adress} добавлен(о)!");

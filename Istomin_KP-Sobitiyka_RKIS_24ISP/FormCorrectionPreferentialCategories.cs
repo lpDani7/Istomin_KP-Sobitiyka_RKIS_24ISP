@@ -1,4 +1,5 @@
-﻿using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,9 +58,10 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             int concession = Convert.ToInt32(textBoxCorrectionPreferentialCategoriesConcession.Text.Trim());
             if (controller.IsPreferentialCategoriesHasCoincidence(name, concession) == false && (mode == 1 || mode ==2))
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 1) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
+                else if (mode == 2 && (name != this.name || concession != this.concession)) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
             }
-            else if (controller.ModifyPreferentialCategories(mode, id, name, concession) > 0)
+            if (controller.ModifyPreferentialCategories(mode, id, name, concession) > 0)
             {
                 this.DialogResult = DialogResult.OK;
                 if (mode == 1) MessageBox.Show($"{name}, {concession} добавлена!");

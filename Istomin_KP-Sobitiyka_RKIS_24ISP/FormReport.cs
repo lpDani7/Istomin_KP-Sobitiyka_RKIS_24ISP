@@ -24,12 +24,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             FillReportComboBox();
             FillReportTable();
             FillReportChart();
-            /*comboBoxReportCountEventSelectYear.SelectedIndex = 0;
-            comboBoxReportTrafficSelectYear.SelectedIndex = 0;
-            comboBoxReportTypeTrafficSelectYear.SelectedIndex = 0;
-            comboBoxReportExpensesSelectYear.SelectedIndex = 0;
-            comboBoxReportIncomeSelectYear.SelectedIndex = 0;
-            comboBoxReportTypeTrafficSelectMonth.SelectedIndex = 0;*/
         }
 
         //Функция заполнения таблиц отчётов
@@ -66,7 +60,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             dataGridViewReportExpenses.DataSource = controller.ExpensesTable(having);
             having = $" HAVING strftime('%Y', М.Дата) like '{comboBoxReportIncomeSelectYear.SelectedValue.ToString()}'";
             dataGridViewReportIncome.DataSource = controller.IncomeTable(having);
-
         }
 
         //Функция заполнения таблиц отчётов
@@ -81,7 +74,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             having = $" HAVING strftime('%Y', М.Дата) like '{comboBoxReportTrafficSelectYear.SelectedValue.ToString()}'";
             chartReportTraffic.DataSource = controller.TrafficTable(having);
             chartReportTraffic.Series[0].XValueMember = "Месяц";
-            chartReportTraffic.Series[0].YValueMembers = "Не льготная посещаемость";
+            chartReportTraffic.Series[0].YValueMembers = "Посещаемость";
             chartReportTraffic.Series[1].XValueMember = "Месяц";
             chartReportTraffic.Series[1].YValueMembers = "Льготная посещаемость";
             chartReportTraffic.Legends[0].TextWrapThreshold = 5;
@@ -150,12 +143,12 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         }
 
         //Метод для экспорта данных отчёта в Excel
-        private void ExportDataReport(DataGridView ReportDataGrid)
+        private void ExportDataReport(DataGridView ReportDataGrid, string reportName)
         {
             // Диалоговое окно для выбора пути сохранения
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel File (*.xlsx)|*.xlsx";
-            saveFileDialog.FileName = "ExportedData.xlsx";
+            saveFileDialog.FileName = $"ExportedData{DateTime.Now.ToShortDateString()}.xlsx";
             //Можно в имя файла поместить текущую дату
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -168,10 +161,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                         // Добавляем лист и называем его
                         IXLWorksheet worksheet = workbook.Worksheets.Add("Данные");
 
+                        // Подписываем отчёт
+                        worksheet.Cell(1, 1).Value = reportName;
+
                         // Записываем заголовки столбцов
                         for (int i = 0; i < ReportDataGrid.Columns.Count; i++)
                         {
-                            worksheet.Cell(1, i + 1).Value = ReportDataGrid.Columns[i].HeaderText;
+                            worksheet.Cell(2, i + 1).Value = ReportDataGrid.Columns[i].HeaderText;
                         }
 
                         // Записываем данные из OrderDataGrid в ячейки Excel-таблицы
@@ -182,7 +178,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                 // Проверяем, что ячейка не пустая
                                 if (ReportDataGrid.Rows[i].Cells[j].Value != null)
                                 {
-                                    worksheet.Cell(i + 2, j + 1).Value = ReportDataGrid.Rows[i].Cells[j].Value.ToString();
+                                    worksheet.Cell(i + 3, j + 1).Value = ReportDataGrid.Rows[i].Cells[j].Value.ToString();
                                 }
                             }
                         }
@@ -197,33 +193,37 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                     MessageBox.Show($"Ошибка при экспорте: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 } //catch
             }//if
-
         }
 
         //Фукнция экспорта Количества мероприятий по месяцам в Excel
         private void buttonReportCountEventExport_Click(object sender, EventArgs e)
         {
-            ExportDataReport(dataGridViewReportCountEvent);
+            ExportDataReport(dataGridViewReportCountEvent, $"Количество мероприятий по месяцам за {comboBoxReportCountEventSelectYear.SelectedValue.ToString()}");
         }
 
+        //Фукнция экспорта Посещаемости мероприятия по месяцам в Excel
         private void buttonReportTrafficExport_Click(object sender, EventArgs e)
         {
-            ExportDataReport(dataGridViewReportTraffic);
+            ExportDataReport(dataGridViewReportTraffic, $"Посещаемость мероприятий по месяцам за {comboBoxReportTrafficSelectYear.SelectedValue.ToString()}");
         }
 
+        //Фукнция экспорта Посещаемости мероприятия по типам льотных категорий в коткретный месяц, конкретного года в Excel
         private void buttonReportTypeTrafficExport_Click(object sender, EventArgs e)
         {
-            ExportDataReport(dataGridViewReportTypeTraffic);
+            ExportDataReport(dataGridViewReportTypeTraffic, $"Посещаемость мероприятий по типам льготных категорий за " +
+                                                            $"{comboBoxReportTypeTrafficSelectYear.SelectedValue.ToString()}.{comboBoxReportTypeTrafficSelectMonth.SelectedValue.ToString()}");
         }
 
+        //Фукнция экспорта Расходов на мероприятия по месяцам в Excel
         private void buttonReportExpensesExport_Click(object sender, EventArgs e)
         {
-            ExportDataReport(dataGridViewReportExpenses);
+            ExportDataReport(dataGridViewReportExpenses, $"Расходы на мероприятия по месяцам за {comboBoxReportExpensesSelectYear.SelectedValue.ToString()}");
         }
 
+        //Фукнция экспорта Доходов с мероприятий по месяцам в Excel
         private void buttonReportIncomeExport_Click(object sender, EventArgs e)
         {
-            ExportDataReport(dataGridViewReportIncome);
+            ExportDataReport(dataGridViewReportIncome, $"Доходы с мероприятий по месяцам за {comboBoxReportIncomeSelectYear.SelectedValue.ToString()}");
         }
     }
 }

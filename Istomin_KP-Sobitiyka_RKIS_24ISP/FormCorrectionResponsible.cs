@@ -77,11 +77,12 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             string post = textBoxCorrectionResponsiblePost.Text.Trim();
             string Date = dateTimePickerCorrectionResponsibleDate.Value.ToString("yyyy-MM-dd");
             string gender = comboBoxCorrectionResponsibleGender.SelectedItem.ToString();
-            if (controller.IsResponsibleHasCoincidence(name, post, Date, gender)==false && (mode == 1 || mode == 2))
+            if (controller.IsResponsibleHasCoincidence(name, post, Date, gender) == false && (mode == 1 || mode == 2))
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 1) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
+                else if (mode == 2 && (name != this.name || post != this.post || Convert.ToDateTime(Date) != this.Date || gender != this.gender)) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
             }
-            else if (controller.ModifyResponseble(mode, id, name, post, dateTimePickerCorrectionResponsibleDate.Value, gender) > 0)
+            if (controller.ModifyResponseble(mode, id, name, post, dateTimePickerCorrectionResponsibleDate.Value, gender) > 0)
             {
                 this.DialogResult = DialogResult.OK;
                 if (mode == 1) MessageBox.Show($"{name}, {post} добавлен(а)!");

@@ -1,4 +1,5 @@
-﻿using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,9 +51,10 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             string name = textBoxCorrectionTypesOfExpensesName.Text.Trim();
             if (controller.IsTypesOfExpensesHasCoincidence(name) == false && (mode == 1 || mode == 2))
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 1) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
+                else if (mode == 2 && name != this.name) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
             }
-            else if (controller.ModifyTypesOfExpenses(mode, id, name) > 0)
+            if (controller.ModifyTypesOfExpenses(mode, id, name) > 0)
             {
                 this.DialogResult = DialogResult.OK;
                 if (mode == 1) MessageBox.Show($"{name} добавлено!");

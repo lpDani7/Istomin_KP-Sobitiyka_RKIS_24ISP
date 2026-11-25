@@ -43,6 +43,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
                                 FROM Мероприятия Мер INNER JOIN Места_проведения Мест ON Мер.Место_проведения = Мест.Код_объекта
                                 ";
             querytovar += where;
+            querytovar += " ORDER BY Мер.Дата";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -55,6 +56,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT К.Название, И.Код_записи
                                 FROM Коллективы К INNER JOIN Исполнители И ON К.Код_коллектива = И.Код_коллектива";
             querytovar += where;
+            querytovar += " ORDER BY К.Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -64,9 +66,10 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable ResponsibleForEventTable(string where = "")
         {
             bufferTable = new DataTable();
-            string querytovar = @"SELECT О.ФИО, О.Должность, О.Дата_рож AS 'Дата рождения', О.Пол, ОМ.Код_записи, ОМ.Таб_номер  
+            string querytovar = @"SELECT О.ФИО, О.Должность, strftime('%d.%m.%Y',О.Дата_рож) AS 'Дата рождения', О.Пол, ОМ.Код_записи, ОМ.Таб_номер  
                                 FROM Ответственные О INNER JOIN Ответственные_за_мероприятие ОМ ON О.Таб_номер = ОМ.Таб_номер";
             querytovar += where;
+            querytovar += " ORDER BY О.ФИО";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -79,6 +82,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Т.Тип_расхода AS 'Тип расхода', С.Затраты, С.Описание, С.Номер_записи 
                                 FROM Типы_расходов Т INNER JOIN Смета С ON С.Тип_расхода = Т.Код_записи";
             querytovar += where;
+            querytovar += " ORDER BY Т.Тип_расхода";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -91,6 +95,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT ЛК.Название, ЛК.[Послабление(%)], ЛП.Количество, ЛП.Номер_записи  
                                 FROM Льготные_категории ЛК INNER JOIN Льготная_посещаемость ЛП ON ЛК.Код_категории = ЛП.Код_категории";
             querytovar += where;
+            querytovar += " ORDER BY ЛК.Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -165,6 +170,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Таб_номер, ФИО, Должность, strftime('%d.%m.%Y', Дата_рож) AS 'Дата рождения', Пол
                                FROM Ответственные";
             querytovar += where;
+            querytovar += " ORDER BY ФИО";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -177,6 +183,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Код_объекта, Название, Адрес, Вместимость 
                                FROM Места_проведения";
             querytovar += where;
+            querytovar += " ORDER BY Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -189,6 +196,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Код_записи, Тип_расхода AS 'Тип расхода'
                                FROM Типы_расходов";
             querytovar += where;
+            querytovar += " ORDER BY Тип_расхода";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -201,6 +209,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Код_категории, Название AS 'Название категории', [Послабление(%)]
                                FROM Льготные_категории";
             querytovar += where;
+            querytovar += " ORDER BY Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -333,7 +342,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         {
             try
             {
-                string sql = @"SELECT COUNT(*) FROM Ответственный_за_мероприятия WHERE Таб_номер = @id";
+                string sql = @"SELECT COUNT(*) FROM Ответственные_за_мероприятие WHERE Таб_номер = @id";
                 command = new SQLiteCommand(sql, connection);
                 command.Parameters.AddWithValue("@id", id);
                 int count = Convert.ToInt32(command.ExecuteScalar());
@@ -445,6 +454,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Код_коллектива, Название AS 'Название коллектива'
                                FROM Коллективы";
             querytovar += where;
+            querytovar += " ORDER BY Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -457,6 +467,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT СК.Код_участника, СК.ФИО, СК.Должность, strftime('%d.%m.%Y', СК.Дата_рож) AS 'Дата рождения', СК.Пол, СК.Код_коллектива
                                 FROM Состав_коллектива СК ";
             querytovar += where;
+            querytovar += " ORDER BY СК.ФИО";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -469,6 +480,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT К.Название, К.Код_коллектива
                                 FROM Коллективы К";
             querytovar += where;
+            querytovar += " ORDER BY К.Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -609,7 +621,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public bool IsCompositionHasCoincidenceForEdit(string name, string post, string Date, string gender, int collective)
         {
             string sql = @"SELECT COUNT(*) FROM Состав_коллектива WHERE ФИО = @name and Должность = @post and Дата_рож = @Date 
-                           and Пол = @gender and Код_коллектива = @collective";
+                           and Пол = @gender";
             command = new SQLiteCommand(sql, connection);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@post", post);
@@ -681,23 +693,24 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Название, Код_объекта
                                 FROM Места_проведения";
             querytovar += where;
+            querytovar += " ORDER BY Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
         }
 
         //Функция прверки на наличие у Мероприятия совпадений в БД
-        public bool IsEventHasCoincidence(string name, string Date, string topic, int placeID, int price, int traffic)
+        public bool IsEventHasCoincidence(string name, string Date, string topic, int placeID, int price)
         {
             string sql = @"SELECT COUNT(*) FROM Мероприятия WHERE Название = @name and Дата = @Date and 
-                           Тематика = @topic and Место_проведения = @placeID and Цена_билета = @price and Посещаемость = @traffic";
+                           Тематика = @topic and Место_проведения = @placeID and Цена_билета = @price";
             command = new SQLiteCommand(sql, connection);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@Date", Date);
             command.Parameters.AddWithValue("@topic", topic);
             command.Parameters.AddWithValue("@placeID", placeID);
             command.Parameters.AddWithValue("@price", price);
-            command.Parameters.AddWithValue("@traffic", traffic);
+            //command.Parameters.AddWithValue("@traffic", traffic);
             int count = Convert.ToInt32(command.ExecuteScalar());
             if (count > 0) return false;
             else return true;
@@ -788,6 +801,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Код_категории, Название || ' - ' || [Послабление(%)] || '%' AS Название_Послабление
                                 FROM Льготные_категории";
             querytovar += where;
+            querytovar += " ORDER BY Название_Послабление";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -803,6 +817,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
                                                              FROM Исполнители
                                                              WHERE Код_мероприятия = {idEvent})";
             //querytovar += where;
+            querytovar += " ORDER BY Название";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -815,6 +830,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT Тип_расхода, Код_записи
                                 FROM Типы_расходов";
             querytovar += where;
+            querytovar += " ORDER BY Тип_расхода";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;

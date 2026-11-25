@@ -15,6 +15,11 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
     {
         int mode = 0;
         private int id;
+        string name;
+        string post;
+        DateTime Date;
+        int gender;
+        int collective;
         Query controller;
 
 
@@ -53,30 +58,28 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             mode = 2;
             controller = new Query(AppSetting.ConnStr);
             labelCorrectionCompositionID.Text = $"Номер: {id}";
+            this.name = name;
             textBoxCorrectionCompositionName.Text = name;
+            this.post = post;
             textBoxCorrectionCompositionPost.Text = post;
+            this.Date = Date;
             dateTimePickerCorrectionCompositionDate.Value = Date;
             comboBoxCorrectionCompositionGender.Items.Add("Мужской");
             comboBoxCorrectionCompositionGender.Items.Add("Женский");
+            this.gender = gender;
             comboBoxCorrectionCompositionGender.SelectedIndex = gender;
             comboBoxCorrectionCompositionCollectives.Items.Clear();
             comboBoxCorrectionCompositionCollectives.DataSource = controller.CompositionIDAndCollectivesNameTable();
             comboBoxCorrectionCompositionCollectives.ValueMember = "Код_коллектива";
             comboBoxCorrectionCompositionCollectives.DisplayMember = "Название";
+            this.collective = collectiveID;
             if (collectiveID == -10)
             {
                 comboBoxCorrectionCompositionCollectives.SelectedIndex = -1;
                 checkBoxCorrectionCompositionCollectivesFree.Checked = true;
             }
             else comboBoxCorrectionCompositionCollectives.SelectedValue = collectiveID;
-
-            /*controller = new Query(AppSetting.ConnStr);
-            string where = $"WHERE СК.Код_коллектива = {id}";
-            dataGridViewCorrectionCollectivesComposition.DataSource = controller.CompositionOfCollectivesTable(where);
-            string whereFree = "WHERE СК.Код_коллектива IS NULL";
-            dataGridViewCorrectionCollectivesCompositionFree.DataSource = controller.CompositionOfCollectivesTable(whereFree);*/
         }
-
 
         //Функция нажатия на кнопку "Свободен"
         private void checkBoxCorrectionCompositionCollectivesFree_CheckedChanged(object sender, EventArgs e)
@@ -87,7 +90,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 comboBoxCorrectionCompositionCollectives.Enabled = false;
             }
             else comboBoxCorrectionCompositionCollectives.Enabled = true;
-
         }
 
         //Функция нажатия на кнопку "Подтвердить"
@@ -102,17 +104,18 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             string post = textBoxCorrectionCompositionPost.Text.Trim();
             string Date = dateTimePickerCorrectionCompositionDate.Value.ToString("yyyy-MM-dd");
             string gender = comboBoxCorrectionCompositionGender.SelectedItem.ToString();
+            int Igender = comboBoxCorrectionCompositionGender.SelectedIndex;
             int collective = Convert.ToInt32(comboBoxCorrectionCompositionCollectives.SelectedValue);
             bool chek = checkBoxCorrectionCompositionCollectivesFree.Checked;
             if (controller.IsCompositionHasCoincidenceForAdd(name, post, Date, gender) == false && mode == 1)
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                MessageBox.Show("Запись с такими данными уже существует!"); return;
             }
             else if (controller.IsCompositionHasCoincidenceForEdit(name, post, Date, gender, collective) == false && mode == 2)
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 2 && (name != this.name || post != this.post || Convert.ToDateTime(Date) != this.Date || Igender != this.gender /*|| collective!=this.collective*/)) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
             }
-            else if (controller.ModifyComposition(mode, id, name, post, dateTimePickerCorrectionCompositionDate.Value, gender, collective, chek) > 0)
+            if (controller.ModifyComposition(mode, id, name, post, dateTimePickerCorrectionCompositionDate.Value, gender, collective, chek) > 0)
             {
                 this.DialogResult = DialogResult.OK;
                 if (mode == 1 && checkBoxCorrectionCompositionCollectivesFree.Checked == false) MessageBox.Show($"{name}, {post} добавлен(а) в " +

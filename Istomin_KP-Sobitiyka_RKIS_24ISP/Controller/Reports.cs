@@ -42,7 +42,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
         public DataTable TrafficTable(string having = "")
         {
             bufferTable = new DataTable();
-            string sql = @"SELECT strftime('%m', М.Дата) AS Месяц, SUM(М.Посещаемость) AS ""Не льготная посещаемость"", SUM(Л.[Льгот пос]) AS ""Льготная посещаемость"", SUM(М.Посещаемость) + SUM(Л.[Льгот пос]) AS ""Общая посещаемость""
+            string sql = @"SELECT strftime('%m', М.Дата) AS Месяц, SUM(М.Посещаемость) AS ""Посещаемость"", SUM(Л.[Льгот пос]) AS ""Льготная посещаемость"", SUM(М.Посещаемость) + SUM(Л.[Льгот пос]) AS ""Общая посещаемость""
 	                              FROM Мероприятия М LEFT JOIN (
 									                            SELECT Код_мероприятия, SUM(Количество) AS ""Льгот пос""
 									                            FROM Льготная_посещаемость
@@ -114,6 +114,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT DISTINCT strftime('%Y', М.Дата) AS Год
 	                              FROM Мероприятия М";
             querytovar += having;
+            querytovar += " ORDER BY М.Дата";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;
@@ -126,6 +127,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             string querytovar = @"SELECT DISTINCT strftime('%m', М.Дата) AS Месяц
 	                              FROM Мероприятия М";
             querytovar += where;
+            querytovar += " ORDER BY М.Дата";
             dataAdapter = new SQLiteDataAdapter(querytovar, connection);
             dataAdapter.Fill(bufferTable);
             return bufferTable;

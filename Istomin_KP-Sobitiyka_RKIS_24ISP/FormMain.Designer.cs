@@ -110,7 +110,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelEventSelectedNameAndDate = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonEventPrint = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
@@ -870,17 +869,6 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Выбрано:";
             // 
-            // buttonEventPrint
-            // 
-            this.buttonEventPrint.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonEventPrint.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonEventPrint.Location = new System.Drawing.Point(1504, 50);
-            this.buttonEventPrint.Name = "buttonEventPrint";
-            this.buttonEventPrint.Size = new System.Drawing.Size(121, 43);
-            this.buttonEventPrint.TabIndex = 52;
-            this.buttonEventPrint.Text = "Печать";
-            this.buttonEventPrint.UseVisualStyleBackColor = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -888,7 +876,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1649, 939);
-            this.Controls.Add(this.buttonEventPrint);
             this.Controls.Add(this.labelEventSelectedNameAndDate);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
@@ -997,7 +984,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.Button buttonEventPrint;
     }
 }
 

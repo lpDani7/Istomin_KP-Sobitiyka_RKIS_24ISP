@@ -315,7 +315,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCorrectionCollectives";
             this.Text = "Добавление/Редактирование коллектива";
-            this.Load += new System.EventHandler(this.FormCorrectionCollectives_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrectionCollectivesCompositionFree)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrectionCollectivesComposition)).EndInit();
             this.ResumeLayout(false);

@@ -1,9 +1,11 @@
-﻿using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
+﻿using ClosedXML.Excel;
+using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         Query controller;
         int mode = 0;
         int id = 0;
+        string name;
+        DateTime Date;
+        int placeID;
+        int price;
+        string topic;
+        int traffic;
+        bool readyToExport = false;
 
         public FormCorrectionEvent()
         {
@@ -58,11 +67,17 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
 
             //Заполнение полей информацией о выбранном мероприятии
             labelCorrectionEventID.Text = id.ToString();
+            this.Date = Date;
             dateTimePickerCorrectionEventDate.Value = Date;
+            this.name = name;
             textBoxCorrectionEventName.Text = name;
+            this.topic = topic;
             textBoxCorrectionEventTopic.Text = topic;
+            this.price = price;
             textBoxCorrectionEventPrice.Text = price.ToString();
+            this.traffic = traffic;
             textBoxCorrectionEventTraffic.Text = traffic.ToString();
+            this.placeID = placeID;
 
             //Заполнение списка мест проведения и выбор того, что стоит в редактируемом мероприятии
             comboBoxCorrectionEventPlaces.Items.Clear();
@@ -98,11 +113,12 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             else textBoxCorrectionEventTraffic.Text = traffic.ToString();
 
             //Проверка на совпадения в БД
-            if (controller.IsEventHasCoincidence(name, Date, topic, placeID, price, traffic) == false && (mode == 1 || mode == 2))
+            if (controller.IsEventHasCoincidence(name, Date, topic, placeID, price) == false && (mode == 1 || mode == 2))
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 1) { MessageBox.Show("Запись с такими данными уже существует 1!"); return; }
+                else if ((name != this.name || Convert.ToDateTime(Date) != this.Date || topic != this.topic || placeID != this.placeID || price != this.price /*|| traffic != this.traffic*/) && mode == 2) { MessageBox.Show("Запись с такими данными уже существует 2!"); return; }
             }
-            else if (controller.ModifyEvent(mode, id, name, Date, topic, placeID, price, traffic) > 0)
+            if (controller.ModifyEvent(mode, id, name, Date, topic, placeID, price, traffic) > 0)
             {
                 if (mode == 1) MessageBox.Show($"{name}  {dateTimePickerCorrectionEventDate.Value.ToString("dd.MM.yyyy")} добавлено!");
                 else if (mode == 2) MessageBox.Show($"Запись {id} отредактирована!");
@@ -112,7 +128,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
+                readyToExport = true;
             }
+
+            /*else if (controller.IsEventHasCoincidence(name, Date, topic, placeID, price) == false && mode == 2 *//*&& name != this.name && Convert.ToDateTime(Date) != this.Date && topic != this.topic && placeID != this.placeID && price != this.price && traffic != this.traffic*//*)
+            {
+                MessageBox.Show("Запись с такими данными уже существует!");
+            }*/
         }
 
         //Функция для заполнения всех таблиц и комбо боксов в форме редактирования
@@ -163,6 +185,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         private void buttonCorrectionEventAddWithOutConnection_Click(object sender, EventArgs e)
         {
             int buttonAddMode = 1;
+            mode = 1;
             AddEventWithOrWithOutConnection(buttonAddMode);
         }
 
@@ -170,6 +193,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         private void buttonCorrectionEventAddAndConnection_Click(object sender, EventArgs e)
         {
             int buttonAddMode = 2;
+            mode = 1;
             AddEventWithOrWithOutConnection(buttonAddMode);
             if (id > 0)
             {
@@ -182,6 +206,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 label7.Text = "Номер:";
                 labelCorrectionEventID.Text = id.ToString();
                 FillCorrectionComboBoxAndCorrectionTableByEventID(id);
+                mode = 2;
+                this.Date = dateTimePickerCorrectionEventDate.Value;
+                this.name = textBoxCorrectionEventName.Text;
+                this.topic = textBoxCorrectionEventTopic.Text;
+                this.price = Convert.ToInt32(textBoxCorrectionEventPrice.Text);
+                this.traffic = Convert.ToInt32(textBoxCorrectionEventTraffic.Text);
+                this.placeID = Convert.ToInt32(comboBoxCorrectionEventPlaces.SelectedValue);
             }
         }
 
@@ -455,6 +486,135 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             mode = 2;
             AddEventWithOrWithOutConnection(1);
+        }
+
+        //Функция создания в Excel сводки мероприятия
+        private void ExportSummaryDataOfEvent()
+        {
+            {
+                // Диалоговое окно для выбора пути сохранения
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel File (*.xlsx)|*.xlsx";
+                saveFileDialog.FileName = "ExportedDataEventCard.xlsx";
+                //Можно в имя файла поместить текущую дату
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    { 
+                        // Создаём новый документ Excel
+                        using (XLWorkbook workbook = new XLWorkbook())
+                        {
+                            // Добавляем лист и называем его
+                            IXLWorksheet worksheet = workbook.Worksheets.Add("Данные");
+
+                            // Структура сводки
+                            int l;
+                            worksheet.Cell(1, 1).Value = $"Карта мероприятия: {labelCorrectionEventID.Text}";
+                            worksheet.Cell(2, 1).Value = $"==============================================================================================================================";
+                            worksheet.Cell(3, 1).Value = $"Название: "; worksheet.Cell(3, 2).Value = textBoxCorrectionEventName.Text.Trim();
+                            worksheet.Cell(4, 1).Value = $"Дата: "; worksheet.Cell(4, 2).Value = dateTimePickerCorrectionEventDate.Value.ToShortDateString();
+                            worksheet.Cell(5, 1).Value = "Тематика: "; worksheet.Cell(5, 2).Value = textBoxCorrectionEventTopic.Text.Trim();
+                            worksheet.Cell(6, 1).Value = "Место проведения: "; worksheet.Cell(6, 2).Value = comboBoxCorrectionEventPlaces.Text.Trim();
+                            worksheet.Cell(7, 1).Value = "Цена билета: "; worksheet.Cell(7, 2).Value = Convert.ToInt32(textBoxCorrectionEventPrice.Text.Trim());
+                            worksheet.Cell(8, 1).Value = "Посещаемость: "; worksheet.Cell(8, 2).Value = Convert.ToInt32(textBoxCorrectionEventTraffic.Text.Trim());
+                            worksheet.Cell(9, 1).Value = $"==============================================================================================================================";
+                            worksheet.Cell(10, 1).Value = $"Ответственные:   {dataGridViewCorrectionEventResponsibleAtEvent.Rows.Count}";
+                            for (int i = 0; i < dataGridViewCorrectionEventResponsibleAtEvent.Columns.Count-2; i++)
+                            {
+                                worksheet.Cell(11, i + 1).Value = dataGridViewCorrectionEventResponsibleAtEvent.Columns[i].HeaderText;
+                            }
+                            l = 12;
+                            for (int i = 0; i < dataGridViewCorrectionEventResponsibleAtEvent.Rows.Count; i++)
+                            {
+                                l++;
+                                for (int j = 0; j < dataGridViewCorrectionEventResponsibleAtEvent.Columns.Count-2; j++)
+                                {
+                                    // Проверяем, что ячейка не пустая
+                                    if (dataGridViewCorrectionEventResponsibleAtEvent.Rows[i].Cells[j].Value != null)
+                                    {
+                                        worksheet.Cell(i + 12, j + 1).Value = dataGridViewCorrectionEventResponsibleAtEvent.Rows[i].Cells[j].Value.ToString();
+                                    }
+                                }
+                            }
+                            worksheet.Cell(l, 1).Value = $"==============================================================================================================================";
+                            worksheet.Cell(l+1, 1).Value = $"Коллективы исполнители:   {dataGridViewCorrectionEventCollectives.Rows.Count}";
+                            for (int i = 0; i < dataGridViewCorrectionEventCollectives.Columns.Count-1; i++)
+                            {
+                                worksheet.Cell(l+2, i + 1).Value = dataGridViewCorrectionEventCollectives.Columns[i].HeaderText;
+                            }
+                            l+=3;
+                            for (int i = 0; i < dataGridViewCorrectionEventCollectives.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < dataGridViewCorrectionEventCollectives.Columns.Count-1; j++)
+                                {
+                                    // Проверяем, что ячейка не пустая
+                                    if (dataGridViewCorrectionEventCollectives.Rows[i].Cells[j].Value != null)
+                                    {
+                                        worksheet.Cell(i + l, j + 1).Value = dataGridViewCorrectionEventCollectives.Rows[i].Cells[j].Value.ToString();
+                                    }
+                                }
+                            }
+                            l += dataGridViewCorrectionEventCollectives.Rows.Count;
+                            worksheet.Cell(l, 1).Value = $"==============================================================================================================================";
+                            worksheet.Cell(l+1, 1).Value = $"Льготная посещаемость мероприятия: "; worksheet.Cell(l + 1, 2).Value = Convert.ToInt32(controller.PreferentialTrafficSum(Convert.ToInt32(labelCorrectionEventID.Text)));
+                            for (int i = 0; i < dataGridViewCorrectionEventPreferentialCategories.Columns.Count - 1; i++)
+                            {
+                                worksheet.Cell(l + 2, i + 1).Value = dataGridViewCorrectionEventPreferentialCategories.Columns[i].HeaderText;
+                            }
+                            l += 3;
+                            for (int i = 0; i < dataGridViewCorrectionEventPreferentialCategories.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < dataGridViewCorrectionEventPreferentialCategories.Columns.Count - 1; j++)
+                                {
+                                    // Проверяем, что ячейка не пустая
+                                    if (dataGridViewCorrectionEventPreferentialCategories.Rows[i].Cells[j].Value != null)
+                                    {
+                                        worksheet.Cell(i + l, j + 1).Value = dataGridViewCorrectionEventPreferentialCategories.Rows[i].Cells[j].Value.ToString();
+                                    }
+                                }
+                            }
+                            l += dataGridViewCorrectionEventPreferentialCategories.Rows.Count;
+                            worksheet.Cell(l, 1).Value = $"==============================================================================================================================";
+                            worksheet.Cell(l + 1, 1).Value = $"Расходы на мероприятие: "; worksheet.Cell(l + 1, 2).Value = Convert.ToInt32(controller.ExpensesSum(Convert.ToInt32(labelCorrectionEventID.Text)));
+                            for (int i = 0; i < dataGridViewCorrectionEventTypesOfExpenses.Columns.Count - 1; i++)
+                            {
+                                worksheet.Cell(l + 2, i + 1).Value = dataGridViewCorrectionEventTypesOfExpenses.Columns[i].HeaderText;
+                            }
+                            l += 3;
+                            for (int i = 0; i < dataGridViewCorrectionEventTypesOfExpenses.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < dataGridViewCorrectionEventTypesOfExpenses.Columns.Count - 1; j++)
+                                {
+                                    // Проверяем, что ячейка не пустая
+                                    if (dataGridViewCorrectionEventTypesOfExpenses.Rows[i].Cells[j].Value != null)
+                                    {
+                                        worksheet.Cell(i + l, j + 1).Value = dataGridViewCorrectionEventTypesOfExpenses.Rows[i].Cells[j].Value.ToString();
+                                    }
+                                }
+                            }
+                            l += dataGridViewCorrectionEventTypesOfExpenses.Rows.Count;
+
+                            // Сохраняем файл
+                            workbook.SaveAs(saveFileDialog.FileName);
+                            //workbook.Close();
+                        }
+                        MessageBox.Show("Данные успешно экспортированы!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } //try
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ошибка при экспорте: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    } //catch
+                }//if
+            }
+        }
+
+        //Функция нажатия на кнопку "Печать"
+        private void buttonCorrectionEventPrint_Click(object sender, EventArgs e)
+        {
+            mode = 2;
+            AddEventWithOrWithOutConnection(1);
+            if (readyToExport) ExportSummaryDataOfEvent();
         }
     }
 }

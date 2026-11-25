@@ -529,7 +529,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             int id = Convert.ToInt32(row.Cells["Код_категории"].Value);
             if (controller.IsPreferentialCategoriesUsed(id) == true)
             {
-                DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить место проведения " +
+                DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить категорию " +
                                                             $"{dataGridViewPreferentialCategories.CurrentRow.Cells["Название категории"].Value}, " +
                                                             $"{dataGridViewPreferentialCategories.CurrentRow.Cells["Послабление(%)"].Value}%?", "Подтверждение", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes && controller.ModifyPreferentialCategories(mode, id, "", 0) > 0)

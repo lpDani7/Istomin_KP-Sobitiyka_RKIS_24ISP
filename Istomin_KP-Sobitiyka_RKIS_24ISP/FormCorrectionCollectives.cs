@@ -1,4 +1,5 @@
-﻿using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
     public partial class FormCorrectionCollectives : Form
     {
         int mode = 0;
-
         private int id;
+        string name;
         Query controller;
 
 
@@ -49,6 +50,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             this.id = id;
             mode = 2;
             //this.Height = 111;
+            this.name = name;
             textBoxCorrectionCollectivesName.Text = name;
             labelCorrectionCollectivesID.Text = $"Номер: {id}";
             buttonCorrectionCollectivesAddEmpty.Visible = false;
@@ -78,11 +80,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 dataGridViewCorrectionCollectivesComposition.Columns["Код_участника"].Visible = false;
         }
 
-        private void FormCorrectionCollectives_Load(object sender, EventArgs e)
-        {
-
-        }
-
         //Функция нажатия на конопку "Создать пустой коллектив"
         private void buttonCorrectionCollectivesAddEmpty_Click(object sender, EventArgs e)
         {
@@ -91,6 +88,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (controller.IsCollectivesHasCoincidence(name) == false && (mode == 1 || mode == 2))
             {
                 MessageBox.Show("Запись с такими данными уже существует!");
+                return;
             }
             //else if (controller.ModifyCollectives(mode, id, name) > 0)
             //{
@@ -107,9 +105,11 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         {
             if (String.IsNullOrWhiteSpace(textBoxCorrectionCollectivesName.Text)) { MessageBox.Show("Ошибка ввода Названия!"); return; }
             string name = textBoxCorrectionCollectivesName.Text.Trim();
+            this.name = name;
             if (controller.IsCollectivesHasCoincidence(name) == false && (mode == 1 || mode == 2))
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 1) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
+                else if (mode == 2 && name != this.name) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
             }
             //else if (controller.ModifyCollectives(mode, id, name) > 0)
             //{
@@ -196,14 +196,16 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             string name = textBoxCorrectionCollectivesName.Text.Trim();
             if (controller.IsCollectivesHasCoincidence(name) == false && (mode == 1 || mode == 2))
             {
-                MessageBox.Show("Запись с такими данными уже существует!");
+                if (mode == 1) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
+                else if (mode == 2 && name != this.name) { MessageBox.Show("Запись с такими данными уже существует!"); return; }
             }
-            else if (controller.ModifyCollectives(mode, id, name) > 0)
-            {
+            /*if (controller.ModifyCollectives(mode, id, name) > 0)
+            {*/
+            controller.ModifyCollectives(mode, id, name);
                 MessageBox.Show($"Запись {id} отредактирована!");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
+            //}
         }
 
     }
