@@ -47,11 +47,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             ShowCountOfSpravTableEntry(toolStripStatusLabelPlaces, dataGridViewPlaces);
             ShowCountOfSpravTableEntry(toolStripStatusLabelTypesOfExpenses, dataGridViewTypesOfExpenses);
             ShowCountOfSpravTableEntry(toolStripStatusLabelPreferentialCategories, dataGridViewPreferentialCategories);
-            //Заполнения comboBox поиска значениями столбцов таблицы
-            //FillingComboBoxSearch(comboBoxResponsibleSearch, dataGridViewResponsible);
-            //FillingComboBoxSearch(comboBoxPlacesSearch, dataGridViewPlaces);
-            //FillingComboBoxSearch(comboBoxTypesOfExpensesSearch, dataGridViewTypesOfExpenses);
-            //FillingComboBoxSearch(comboBoxPreferentialCategoriesSearch, dataGridViewPreferentialCategories);
         }
 
         //Метод для сокрытия от пользователя служебного столбца с первичным ключом
@@ -71,22 +66,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 dataGridViewPreferentialCategories.Columns["Код_категории"].Visible = false;
         }
         // [ИИ-блок|Конец]
-
-
-        private void FormSprav_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        /*//Метод заполнения comboBox поиска значениями столбцов таблицы
-        private void FillingComboBoxSearch(System.Windows.Forms.ComboBox comboBoxSearch, DataGridView dataGridViewSearch)
-        {
-            comboBoxSearch.Items.Clear();
-            foreach (DataGridViewColumn column in dataGridViewSearch.Columns)
-            {
-                comboBoxSearch.Items.Add(column.Name);
-            }
-        }*/
 
         //Метод вывода количества записей
         private void ShowCountOfSpravTableEntry(ToolStripStatusLabel toolStripStatusLabel, DataGridView dataGridView)

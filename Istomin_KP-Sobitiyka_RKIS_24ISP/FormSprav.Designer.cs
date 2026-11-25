@@ -1010,7 +1010,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSprav";
             this.Text = "Справочники";
-            this.Load += new System.EventHandler(this.FormSprav_Load);
             this.tabControlMain.ResumeLayout(false);
             this.tabPageResponsible.ResumeLayout(false);
             this.tabPageResponsible.PerformLayout();

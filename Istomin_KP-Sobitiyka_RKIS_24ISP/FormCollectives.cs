@@ -111,7 +111,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             UpdateSelectedComposition();
         }
 
-        //Метод открытия формы правки Ответсвтвенных
+        //Метод открытия формы добавления Коллектива
         private void OpenFormCorrectionCollectives(int mode)
         {
             FormCorrectionCollectives formCorrectionCollectives;

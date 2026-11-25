@@ -130,11 +130,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 }
                 readyToExport = true;
             }
-
-            /*else if (controller.IsEventHasCoincidence(name, Date, topic, placeID, price) == false && mode == 2 *//*&& name != this.name && Convert.ToDateTime(Date) != this.Date && topic != this.topic && placeID != this.placeID && price != this.price && traffic != this.traffic*//*)
-            {
-                MessageBox.Show("Запись с такими данными уже существует!");
-            }*/
         }
 
         //Функция для заполнения всех таблиц и комбо боксов в форме редактирования
@@ -615,6 +610,99 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             mode = 2;
             AddEventWithOrWithOutConnection(1);
             if (readyToExport) ExportSummaryDataOfEvent();
+        }
+
+        //Функция добавления Ответственного (+)
+        private void buttonCorrectionEventResponsibleCreate_Click(object sender, EventArgs e)
+        {
+            FormCorrectionResponsible formCorrectionResponsible;
+            formCorrectionResponsible = new FormCorrectionResponsible();
+            // Блокируем доступ к исходной форме
+            this.Enabled = false;
+            DialogResult result = formCorrectionResponsible.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                string where = $" WHERE Таб_номер NOT IN (SELECT Таб_номер FROM Ответственные_за_мероприятие WHERE Код_мероприятия = {id})";
+                dataGridViewCorrectionEventResponsibleAll.DataSource = controller.ResponsibleTable(where);
+            }
+            // После закрытия form2 возвращаемся к исходной форме
+            this.Enabled = true;
+        }
+
+        //Функция добавления Места проведения (+)
+        private void buttonCorrectionEventPlacesCreate_Click(object sender, EventArgs e)
+        {
+            FormCorrectionPlaces formCorrectionPlaces;
+            formCorrectionPlaces = new FormCorrectionPlaces();
+            // Блокируем доступ к исходной форме
+            this.Enabled = false;
+            DialogResult result = formCorrectionPlaces.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                comboBoxCorrectionEventPlaces.DataSource = controller.PlacesIDAndNameTable();
+                comboBoxCorrectionEventPlaces.ValueMember = "Код_объекта";
+                comboBoxCorrectionEventPlaces.DisplayMember = "Название";
+                comboBoxCorrectionEventPlaces.SelectedIndex = -1;
+            }
+            // После закрытия form2 возвращаемся к исходной форме
+            this.Enabled = true;
+        }
+
+        //Функция добавления Типа расхода (+)
+        private void buttonCorrectionEventTypesOfExpensesCreate_Click(object sender, EventArgs e)
+        {
+            FormCorrectionTypesOfExpenses formCorrectionTypesOfExpenses;
+            formCorrectionTypesOfExpenses = new FormCorrectionTypesOfExpenses();
+            // Блокируем доступ к исходной форме
+            this.Enabled = false;
+            DialogResult result = formCorrectionTypesOfExpenses.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                comboBoxCorrectionEventTypesOfExpenses.DataSource = controller.TypesOfExpensesIDAndNameTable();
+                comboBoxCorrectionEventTypesOfExpenses.ValueMember = "Код_записи";
+                comboBoxCorrectionEventTypesOfExpenses.DisplayMember = "Тип_расхода";
+                comboBoxCorrectionEventTypesOfExpenses.SelectedIndex = -1;
+            }
+            // После закрытия form2 возвращаемся к исходной форме
+            this.Enabled = true;
+        }
+
+        //Функция добавления Льготной категории (+)
+        private void buttonCorrectionEventPreferentialCategoriesCreate_Click(object sender, EventArgs e)
+        {
+            FormCorrectionPreferentialCategories formCorrectionPreferentialCategories;
+            formCorrectionPreferentialCategories = new FormCorrectionPreferentialCategories();
+            // Блокируем доступ к исходной форме
+            this.Enabled = false;
+            DialogResult result = formCorrectionPreferentialCategories.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                comboBoxCorrectionEventPreferentialCategories.DataSource = controller.PreferentialCategoriesIDAndNameAndPercentTable();
+                comboBoxCorrectionEventPreferentialCategories.ValueMember = "Код_категории";
+                comboBoxCorrectionEventPreferentialCategories.DisplayMember = "Название_Послабление";
+                comboBoxCorrectionEventPreferentialCategories.SelectedIndex = -1;
+            }
+            // После закрытия form2 возвращаемся к исходной форме
+            this.Enabled = true;
+        }
+
+        //Функция добавления Коллектива (+)
+        private void buttonCorrectionEventColletivesCreate_Click(object sender, EventArgs e)
+        {
+            FormCorrectionCollectives formCorrectionCollectives;
+            formCorrectionCollectives = new FormCorrectionCollectives();
+            // Блокируем доступ к исходной форме
+            this.Enabled = false;
+            DialogResult result = formCorrectionCollectives.ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                comboBoxCorrectionEventCollectives.DataSource = controller.CollectivesIDAndNameTable(id);
+                comboBoxCorrectionEventCollectives.ValueMember = "Код_коллектива";
+                comboBoxCorrectionEventCollectives.DisplayMember = "Название";
+                comboBoxCorrectionEventCollectives.SelectedIndex = -1;
+            }
+            // После закрытия form2 возвращаемся к исходной форме
+            this.Enabled = true;
         }
     }
 }
