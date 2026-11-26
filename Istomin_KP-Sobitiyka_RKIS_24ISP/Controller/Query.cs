@@ -106,7 +106,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             return sum;
         }
 
-        //Функция получения суммы льготной посещвемости на выбранном мероприятии
+        //Функция получения суммы льготной посещаемости на выбранном мероприятии
         public int PreferentialTrafficSum(int id)
         {
             string sql = @"SELECT SUM(Количество)
@@ -119,7 +119,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             return sum;
         }
 
-        //Функция получения не льготной посещвемости на выбранном мероприятии
+        //Функция получения не льготной посещаемости на выбранном мероприятии
         public int NotPreferentialTrafficSum(int id)
         {
             string sql = @"SELECT Посещаемость
@@ -143,7 +143,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             return name;
         }
 
-        //Функция получения названия выбранного мероприятия
+        //Функция получения даты выбранного мероприятия
         public string SelectedEventDate(int id)
         {
             string sql = @"SELECT strftime('%d.%m.%Y', Дата) AS Дата
@@ -478,19 +478,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             return bufferTable;
         }
 
-        /*//Функция получения всех свободных участников коллективов
-        public DataTable FreeCompositionTable(string where = "")
-        {
-            bufferTable = new DataTable();
-            string querytovar = @"SELECT СК.Код_участника, СК.ФИО, СК.Должность, strftime('%d.%m.%Y', СК.Дата_рож) AS 'Дата рождения', СК.Пол, СК.Код_коллектива
-                                FROM Состав_коллектива СК
-                                WHERE СК.Код_коллектива IS NULL";
-            querytovar += where;
-            dataAdapter = new SQLiteDataAdapter(querytovar, connection);
-            dataAdapter.Fill(bufferTable);
-            return bufferTable;
-        }*/
-
         //Функция модификации данных Коллективов
         public int ModifyCollectives(int mode, int id, string name)
         {
@@ -764,8 +751,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             command = new SQLiteCommand(sql, connection);
             command.Parameters.AddWithValue("@id", id);
             command.ExecuteNonQuery();
-
-            //command.ExecuteNonQuery();
         }
 
         //Функция получения номера мероприятия по его данным

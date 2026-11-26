@@ -1,4 +1,5 @@
-﻿using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -168,27 +169,50 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Метод обновления вспомогательных таблиц
         private void FillAllEventTable()
         {
-            DataGridViewRow row = dataGridViewEvents.CurrentRow;
-            // Читаем значения из ячеек выбранной строки
-            int id = Convert.ToInt32(row.Cells["Код_мероприятия"].Value);
+            if (dataGridViewEvents.CurrentRow != null)
+            {
+                DataGridViewRow row = dataGridViewEvents.CurrentRow;
+                // Читаем значения из ячеек выбранной строки
+                int id = Convert.ToInt32(row.Cells["Код_мероприятия"].Value);
 
-            //Заполнение вспомогательных таблиц данными, на основе выбранной строки в главной таблице
-            string where = $" WHERE И.Код_мероприятия = {id}";
-            dataGridViewEventPerformers.DataSource = controller.EventPerformersTable(where);
-            where = $" WHERE ОМ.Код_мероприятия = {id}";
-            dataGridViewResponsibleForEvent.DataSource = controller.ResponsibleForEventTable(where);
-            where = $" WHERE С.Код_мероприятия = {id}";
-            dataGridViewExpensesForEvent.DataSource = controller.ExpensesForEventTable(where);
-            where = $" WHERE ЛП.Код_мероприятия = {id}";
-            dataGridViewPreferentialCategoriesAtEvent.DataSource = controller.PreferentialCategoriesAtEventTable(where);
+                //Заполнение вспомогательных таблиц данными, на основе выбранной строки в главной таблице
+                string where = $" WHERE И.Код_мероприятия = {id}";
+                dataGridViewEventPerformers.DataSource = controller.EventPerformersTable(where);
+                where = $" WHERE ОМ.Код_мероприятия = {id}";
+                dataGridViewResponsibleForEvent.DataSource = controller.ResponsibleForEventTable(where);
+                where = $" WHERE С.Код_мероприятия = {id}";
+                dataGridViewExpensesForEvent.DataSource = controller.ExpensesForEventTable(where);
+                where = $" WHERE ЛП.Код_мероприятия = {id}";
+                dataGridViewPreferentialCategoriesAtEvent.DataSource = controller.PreferentialCategoriesAtEventTable(where);
 
-            //Заполнение label таблиц дополнительной информации
-            ShowCountOfMainTableEntry(labelEventResponsibleCount, dataGridViewResponsibleForEvent);
-            ShowCountOfMainTableEntry(labelEventPerformersCount, dataGridViewEventPerformers);
-            labelEventExpensesSum.Text = controller.ExpensesSum(id).ToString();
-            labelEventPreferentialTrafficSum.Text = controller.PreferentialTrafficSum(id).ToString();
-            labelEventGeneralTrafficSum.Text = (controller.NotPreferentialTrafficSum(id) + controller.PreferentialTrafficSum(id)).ToString();
-            labelEventSelectedNameAndDate.Text = (controller.SelectedEventName(id) + "  " + controller.SelectedEventDate(id)).ToString();
+                //Заполнение label таблиц дополнительной информации
+                ShowCountOfMainTableEntry(labelEventResponsibleCount, dataGridViewResponsibleForEvent);
+                ShowCountOfMainTableEntry(labelEventPerformersCount, dataGridViewEventPerformers);
+                labelEventExpensesSum.Text = controller.ExpensesSum(id).ToString();
+                labelEventPreferentialTrafficSum.Text = controller.PreferentialTrafficSum(id).ToString();
+                labelEventGeneralTrafficSum.Text = (controller.NotPreferentialTrafficSum(id) + controller.PreferentialTrafficSum(id)).ToString();
+                labelEventSelectedNameAndDate.Text = (controller.SelectedEventName(id) + "  " + controller.SelectedEventDate(id)).ToString();
+            }
+            else
+            {
+                //Заполнение вспомогательных таблиц данными, на основе выбранной строки в главной таблице
+                string where = $" WHERE И.Код_мероприятия = -1";
+                dataGridViewEventPerformers.DataSource = controller.EventPerformersTable(where);
+                where = $" WHERE ОМ.Код_мероприятия = -1";
+                dataGridViewResponsibleForEvent.DataSource = controller.ResponsibleForEventTable(where);
+                where = $" WHERE С.Код_мероприятия = -1";
+                dataGridViewExpensesForEvent.DataSource = controller.ExpensesForEventTable(where);
+                where = $" WHERE ЛП.Код_мероприятия = -1";
+                dataGridViewPreferentialCategoriesAtEvent.DataSource = controller.PreferentialCategoriesAtEventTable(where);
+
+                //Заполнение label таблиц дополнительной информации
+                ShowCountOfMainTableEntry(labelEventResponsibleCount, dataGridViewResponsibleForEvent);
+                ShowCountOfMainTableEntry(labelEventPerformersCount, dataGridViewEventPerformers);
+                labelEventExpensesSum.Text = "0";
+                labelEventPreferentialTrafficSum.Text = "0";
+                labelEventGeneralTrafficSum.Text = "0";
+                labelEventSelectedNameAndDate.Text = "0";
+            }
         }
 
         //Функция обновления вспомогательных таблиц при нажатии на строку главной таблицы
@@ -243,27 +267,20 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (checkBoxEventPriceSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventPriceSearchFrom.Text) && !String.IsNullOrWhiteSpace(textBoxEventPriceSearchUntil.Text))
                 eventWhere.Add($"[Цена билета] BETWEEN {textBoxEventPriceSearchFrom.Text} AND {textBoxEventPriceSearchUntil.Text}");
 
-            /*if (eventWhere.Count <= 2)
-            {
-                eventWhere[0] = eventWhere[0] + " " + eventWhere[1];
-                wHERE = eventWhere[0];
-                dataGridViewEvents.DataSource = controller.EventsTable(wHERE);
-                ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
-            }*/
             if (eventWhere.Count > 1)
             {
                 eventWhere[0] = eventWhere[0] + " " + eventWhere[1];
                 wHERE = String.Join(" AND ", eventWhere);
                 dataGridViewEvents.DataSource = controller.EventsTable(wHERE);
                 ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+                FillAllEventTable();
             }
             else
             {
                 dataGridViewEvents.DataSource = controller.EventsTable();
                 ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+                FillAllEventTable();
             }
-            /*if (eventWhere.Count == 2) wHERE = String.Join(" ", eventWhere);
-            else if (eventWhere.Count >= 3) wHERE = String.Join(" AND ", eventWhere);*/
         }
 
         private void textBoxEventPriceSearchFrom_KeyPress(object sender, KeyPressEventArgs e)
