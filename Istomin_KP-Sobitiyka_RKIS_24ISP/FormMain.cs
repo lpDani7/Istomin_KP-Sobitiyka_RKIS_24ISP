@@ -261,7 +261,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             eventWhere.Clear();
             eventWhere.Add("WHERE");
             if (checkBoxEventNameSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventNameSearch.Text)) eventWhere.Add($"Мер.Название LIKE '{textBoxEventNameSearch.Text}%'");
-            if (checkBoxEventPlaceSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventPlaceSearch.Text)) eventWhere.Add($"Мест.Название LIKE '{textBoxEventPlaceSearch.Text}%'");
+            if (checkBoxEventPlaceSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventPlaceSearch.Text)) eventWhere.Add($"Мест.Название LIKE '%{textBoxEventPlaceSearch.Text}%'");
             if (checkBoxEventTopicSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventTopicSearch.Text)) eventWhere.Add($"Мер.Тематика LIKE '{textBoxEventTopicSearch.Text}%'");
             if (checkBoxEventDateSearch.Checked == true) eventWhere.Add($"Мер.Дата BETWEEN '{dateTimePickerEventDateSearchFrom.Value.ToString("yyyy-MM-dd")}' AND '{dateTimePickerEventDateSearchUntil.Value.ToString("yyyy-MM-dd")}'");
             if (checkBoxEventPriceSearch.Checked == true && !String.IsNullOrWhiteSpace(textBoxEventPriceSearchFrom.Text) && !String.IsNullOrWhiteSpace(textBoxEventPriceSearchUntil.Text))
