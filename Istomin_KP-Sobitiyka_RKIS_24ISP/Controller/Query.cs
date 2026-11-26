@@ -24,14 +24,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP.Controller
             connection = new SQLiteConnection(conn);
             connection.Open();
         }
-        //Запрос получения всех Ответственных
-        static string responsibleTable = @"SELECT * FROM Ответственные ORDER BY ФИО";
-        //Запрос получения всех Мест проведения
-        static string placesTable = @"SELECT * FROM Места_проведения ORDER BY Название";
-        //Запрос получения всех Типов расходов
-        static string typesOfExpensesTable = @"SELECT * FROM Типы_расходов ORDER BY Тип_расхода";
-        //Запрос получения всех Льготных категорий
-        static string preferentialCategoriesTable = @"SELECT * FROM Льготные_категории ORDER BY Название";
 
         //Функция получения всех Мероприятий
         public DataTable EventsTable(string where = "")

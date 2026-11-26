@@ -26,7 +26,6 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             dataGridViewCollectives.DataBindingComplete += (s, ev) => HideServiceColumnsCollectives();
             dataGridViewCompositionOfCollectives.DataBindingComplete += (s, ev) => HideServiceColumnsCollectives();
 
-
             controller = new Query(AppSetting.ConnStr);
 
             //Заполнение таблиц-справочников записями
@@ -36,6 +35,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             dataGridViewCompositionOfCollectives.DataSource = controller.CompositionOfCollectivesTable();
             ShowCountOfCollectivesTableEntry(labelCompositionOfCollectivesCount, dataGridViewCompositionOfCollectives);
             labelCollectivesCompositionShowMode.Text = "Все участники:";
+        }
+
+        //Функция загрузки формы
+        private void FormCollectives_Load(object sender, EventArgs e)
+        {
+            FillAllCollectivesTable();
+            UpdateSelectedComposition();
         }
 
         //Метод для сокрытия от пользователя служебного столбца с первичным ключом
@@ -68,8 +74,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             label.Text = $"{(dataGridView.RowCount).ToString()}";
         }
 
-        //Функция заполнения состава коллектива при нажатии на любую часть ячейки Коллективов
-        private void dataGridViewCollectives_CellClick(object sender, DataGridViewCellEventArgs e)
+        //Метод для заполнения состава коллектива
+        private void FillAllCollectivesTable()
         {
             showMode = 1;
             DataGridViewRow row = dataGridViewCollectives.CurrentRow;
@@ -86,6 +92,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             labelCollectivesCompositionShowMode.Text = "Участники коллектива:";
         }
 
+        //Функция заполнения состава коллектива при нажатии на любую часть ячейки Коллективов
+        private void dataGridViewCollectives_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FillAllCollectivesTable();
+            UpdateSelectedComposition();
+        }
+
         //Функция при нажатии на кнопку "Показать всех участвников" для отображения всех участников когда-либо записаных в БД
         private void buttonCollectivesShowAllComposition_Click(object sender, EventArgs e)
         {
@@ -99,9 +112,14 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         //Функция изменения значения label на имя и дату рож. выбранного участника
         private void UpdateSelectedComposition()
         {
-            DataGridViewRow row = dataGridViewCompositionOfCollectives.CurrentRow;
-            string name = row.Cells["ФИО"].Value.ToString();
-            string DateStr = row.Cells["Дата рождения"].Value.ToString();
+            string name = "";
+            string DateStr = "";
+            if (dataGridViewCompositionOfCollectives.CurrentRow != null)
+            {
+                DataGridViewRow row = dataGridViewCompositionOfCollectives.CurrentRow;
+                name = row.Cells["ФИО"].Value.ToString();
+                DateStr = row.Cells["Дата рождения"].Value.ToString();
+            }
             labelCompositionOfCollectivesSelectedNameAndDate.Text = name + "  " + DateStr;
         }
 
@@ -131,6 +149,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             {
                 dataGridViewCollectives.DataSource = controller.CollectivesTable();
                 ShowCountOfCollectivesTableEntry(labelCompositionOfCollectivesCount, dataGridViewCompositionOfCollectives);
+                FillAllCollectivesTable();
+                UpdateSelectedComposition();
             }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
@@ -159,14 +179,15 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             if (controller.IsCollectivesUsed(id) == true)
             {
                 DialogResult dialogResult = MessageBox.Show($"Вы уверены, что хотите удалить коллектив " +
-                                                            $"{dataGridViewCollectives.CurrentRow.Cells["Название коллектива"].Value}?", 
+                                                            $"{dataGridViewCollectives.CurrentRow.Cells["Название коллектива"].Value}?",
                                                             "Подтверждение", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     controller.ModifyCollectives(mode, id, "");
                     MessageBox.Show($"Запись была удалена!");
                     dataGridViewCollectives.DataSource = controller.CollectivesTable();
-                    //ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+                    FillAllCollectivesTable();
+                    UpdateSelectedComposition();
                 }
             }
             else
@@ -189,10 +210,11 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                                             "Подтверждение", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                controller.ModifyCollectives(mode, id, "");
+                    controller.ModifyCollectives(mode, id, "");
                     MessageBox.Show($"Записи были удалены!");
                     dataGridViewCollectives.DataSource = controller.CollectivesTable();
-                    //ShowCountOfSpravTableEntry(toolStripStatusLabelResponsible, dataGridViewResponsible);
+                    FillAllCollectivesTable();
+                    UpdateSelectedComposition();
                 }
             }
             else
@@ -232,6 +254,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             {
                 dataGridViewCompositionOfCollectives.DataSource = controller.CompositionOfCollectivesTable();
                 ShowCountOfCollectivesTableEntry(labelCompositionOfCollectivesCount, dataGridViewCompositionOfCollectives);
+                FillAllCollectivesTable();
+                UpdateSelectedComposition();
             }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
@@ -267,6 +291,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                     MessageBox.Show($"Запись была удалена!");
                     dataGridViewCompositionOfCollectives.DataSource = controller.CompositionOfCollectivesTable();
                     ShowCountOfCollectivesTableEntry(labelCompositionOfCollectivesCount, dataGridViewCompositionOfCollectives);
+                    FillAllCollectivesTable();
+                    UpdateSelectedComposition();
                 }
             }
             else

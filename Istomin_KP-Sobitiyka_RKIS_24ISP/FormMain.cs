@@ -36,6 +36,11 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            FillAllEventTable();
+        }
+
         //Метод для сокрытия от пользователя служебных столбцов мероприятия
         private void HideServiceColumnsMain()
         {
@@ -160,8 +165,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 "\nРазработчик: Студент 3 курса ОГТИ Истомин Данил Евгеньевич", "Справка");
         }
 
-        //Функция обновления вспомогательных таблиц при нажатии на строку главной таблицы
-        private void dataGridViewEvents_CellClick(object sender, DataGridViewCellEventArgs e)
+        //Метод обновления вспомогательных таблиц
+        private void FillAllEventTable()
         {
             DataGridViewRow row = dataGridViewEvents.CurrentRow;
             // Читаем значения из ячеек выбранной строки
@@ -184,6 +189,12 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             labelEventPreferentialTrafficSum.Text = controller.PreferentialTrafficSum(id).ToString();
             labelEventGeneralTrafficSum.Text = (controller.NotPreferentialTrafficSum(id) + controller.PreferentialTrafficSum(id)).ToString();
             labelEventSelectedNameAndDate.Text = (controller.SelectedEventName(id) + "  " + controller.SelectedEventDate(id)).ToString();
+        }
+
+        //Функция обновления вспомогательных таблиц при нажатии на строку главной таблицы
+        private void dataGridViewEvents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FillAllEventTable();
         }
 
         //Функция нажатия на кнопку "Сбросить" для сброса всех значений фильтра
@@ -294,6 +305,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
             {
                 dataGridViewEvents.DataSource = controller.EventsTable();
                 ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+                FillAllEventTable();
             }
             // После закрытия form2 возвращаемся к исходной форме
             this.Enabled = true;
@@ -345,6 +357,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                 MessageBox.Show($"Мероприятие и его связи были удалены!");
                 dataGridViewEvents.DataSource = controller.EventsTable();
                 ShowCountOfMainTableEntry(labelEventCount, dataGridViewEvents);
+                FillAllEventTable();
             }
         }
 

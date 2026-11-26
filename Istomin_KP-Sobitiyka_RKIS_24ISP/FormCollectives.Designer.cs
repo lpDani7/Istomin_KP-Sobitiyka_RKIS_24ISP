@@ -544,6 +544,7 @@
             this.Name = "FormCollectives";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Коллективы";
+            this.Load += new System.EventHandler(this.FormCollectives_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCollectives)).EndInit();
