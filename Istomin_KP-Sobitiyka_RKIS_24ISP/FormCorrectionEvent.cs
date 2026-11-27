@@ -505,19 +505,20 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
 
                             // Структура сводки
                             int l;
-                            worksheet.Cell(1, 1).Value = $"Карта мероприятия: {labelCorrectionEventID.Text}";
+                            worksheet.Cell(1, 1).Value = $"Карта мероприятия: {labelCorrectionEventID.Text}"; worksheet.Cell(1, 1).Style.Font.Bold = true;
                             worksheet.Cell(2, 1).Value = $"==============================================================================================================================";
-                            worksheet.Cell(3, 1).Value = $"Название: "; worksheet.Cell(3, 2).Value = textBoxCorrectionEventName.Text.Trim();
-                            worksheet.Cell(4, 1).Value = $"Дата: "; worksheet.Cell(4, 2).Value = dateTimePickerCorrectionEventDate.Value.ToShortDateString();
-                            worksheet.Cell(5, 1).Value = "Тематика: "; worksheet.Cell(5, 2).Value = textBoxCorrectionEventTopic.Text.Trim();
-                            worksheet.Cell(6, 1).Value = "Место проведения: "; worksheet.Cell(6, 2).Value = comboBoxCorrectionEventPlaces.Text.Trim();
-                            worksheet.Cell(7, 1).Value = "Цена билета: "; worksheet.Cell(7, 2).Value = Convert.ToInt32(textBoxCorrectionEventPrice.Text.Trim());
-                            worksheet.Cell(8, 1).Value = "Посещаемость: "; worksheet.Cell(8, 2).Value = Convert.ToInt32(textBoxCorrectionEventTraffic.Text.Trim());
+                            worksheet.Cell(3, 1).Value = $"Название: "; worksheet.Cell(3, 2).Value = textBoxCorrectionEventName.Text.Trim(); worksheet.Cell(3, 2).Style.Font.Bold = true;
+                            worksheet.Cell(4, 1).Value = $"Дата: "; worksheet.Cell(4, 2).Value = dateTimePickerCorrectionEventDate.Value.ToShortDateString(); worksheet.Cell(4, 2).Style.Font.Bold = true;
+                            worksheet.Cell(5, 1).Value = "Тематика: "; worksheet.Cell(5, 2).Value = textBoxCorrectionEventTopic.Text.Trim(); worksheet.Cell(5, 2).Style.Font.Bold = true;
+                            worksheet.Cell(6, 1).Value = "Место проведения: "; worksheet.Cell(6, 2).Value = comboBoxCorrectionEventPlaces.Text.Trim(); worksheet.Cell(6, 2).Style.Font.Bold = true;
+                            worksheet.Cell(7, 1).Value = "Цена билета: "; worksheet.Cell(7, 2).Value = Convert.ToInt32(textBoxCorrectionEventPrice.Text.Trim()); worksheet.Cell(7, 2).Style.Font.Bold = true;
+                            worksheet.Cell(8, 1).Value = "Посещаемость: "; worksheet.Cell(8, 2).Value = Convert.ToInt32(textBoxCorrectionEventTraffic.Text.Trim()); worksheet.Cell(8, 2).Style.Font.Bold = true;
                             worksheet.Cell(9, 1).Value = $"==============================================================================================================================";
                             worksheet.Cell(10, 1).Value = $"Ответственные:   {dataGridViewCorrectionEventResponsibleAtEvent.Rows.Count}";
                             for (int i = 0; i < dataGridViewCorrectionEventResponsibleAtEvent.Columns.Count-2; i++)
                             {
                                 worksheet.Cell(11, i + 1).Value = dataGridViewCorrectionEventResponsibleAtEvent.Columns[i].HeaderText;
+                                worksheet.Cell(11, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                             }
                             l = 12;
                             for (int i = 0; i < dataGridViewCorrectionEventResponsibleAtEvent.Rows.Count; i++)
@@ -529,6 +530,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                     if (dataGridViewCorrectionEventResponsibleAtEvent.Rows[i].Cells[j].Value != null)
                                     {
                                         worksheet.Cell(i + 12, j + 1).Value = dataGridViewCorrectionEventResponsibleAtEvent.Rows[i].Cells[j].Value.ToString();
+                                        worksheet.Cell(i + 12, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                                     }
                                 }
                             }
@@ -536,7 +538,8 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                             worksheet.Cell(l+1, 1).Value = $"Коллективы исполнители:   {dataGridViewCorrectionEventCollectives.Rows.Count}";
                             for (int i = 0; i < dataGridViewCorrectionEventCollectives.Columns.Count-1; i++)
                             {
-                                worksheet.Cell(l+2, i + 1).Value = dataGridViewCorrectionEventCollectives.Columns[i].HeaderText;
+                                worksheet.Cell(l + 2, i + 1).Value = dataGridViewCorrectionEventCollectives.Columns[i].HeaderText;
+                                worksheet.Cell(l + 2, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                             }
                             l+=3;
                             for (int i = 0; i < dataGridViewCorrectionEventCollectives.Rows.Count; i++)
@@ -547,6 +550,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                     if (dataGridViewCorrectionEventCollectives.Rows[i].Cells[j].Value != null)
                                     {
                                         worksheet.Cell(i + l, j + 1).Value = dataGridViewCorrectionEventCollectives.Rows[i].Cells[j].Value.ToString();
+                                        worksheet.Cell(i + l, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                                     }
                                 }
                             }
@@ -556,6 +560,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                             for (int i = 0; i < dataGridViewCorrectionEventPreferentialCategories.Columns.Count - 1; i++)
                             {
                                 worksheet.Cell(l + 2, i + 1).Value = dataGridViewCorrectionEventPreferentialCategories.Columns[i].HeaderText;
+                                worksheet.Cell(l + 2, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                             }
                             l += 3;
                             for (int i = 0; i < dataGridViewCorrectionEventPreferentialCategories.Rows.Count; i++)
@@ -566,6 +571,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                     if (dataGridViewCorrectionEventPreferentialCategories.Rows[i].Cells[j].Value != null)
                                     {
                                         worksheet.Cell(i + l, j + 1).Value = dataGridViewCorrectionEventPreferentialCategories.Rows[i].Cells[j].Value.ToString();
+                                        worksheet.Cell(i + l, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                                     }
                                 }
                             }
@@ -575,6 +581,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                             for (int i = 0; i < dataGridViewCorrectionEventTypesOfExpenses.Columns.Count - 1; i++)
                             {
                                 worksheet.Cell(l + 2, i + 1).Value = dataGridViewCorrectionEventTypesOfExpenses.Columns[i].HeaderText;
+                                worksheet.Cell(l + 2, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                             }
                             l += 3;
                             for (int i = 0; i < dataGridViewCorrectionEventTypesOfExpenses.Rows.Count; i++)
@@ -585,6 +592,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                     if (dataGridViewCorrectionEventTypesOfExpenses.Rows[i].Cells[j].Value != null)
                                     {
                                         worksheet.Cell(i + l, j + 1).Value = dataGridViewCorrectionEventTypesOfExpenses.Rows[i].Cells[j].Value.ToString();
+                                        worksheet.Cell(i + l, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                                     }
                                 }
                             }

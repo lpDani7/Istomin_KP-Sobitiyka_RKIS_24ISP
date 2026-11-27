@@ -162,12 +162,13 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                         IXLWorksheet worksheet = workbook.Worksheets.Add("Данные");
 
                         // Подписываем отчёт
-                        worksheet.Cell(1, 1).Value = reportName;
+                        worksheet.Cell(1, 1).Value = reportName; worksheet.Cell(1, 1).Style.Font.Bold = true;
 
                         // Записываем заголовки столбцов
                         for (int i = 0; i < ReportDataGrid.Columns.Count; i++)
                         {
                             worksheet.Cell(2, i + 1).Value = ReportDataGrid.Columns[i].HeaderText;
+                            worksheet.Cell(2, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                         }
 
                         // Записываем данные из OrderDataGrid в ячейки Excel-таблицы
@@ -179,6 +180,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                 if (ReportDataGrid.Rows[i].Cells[j].Value != null)
                                 {
                                     worksheet.Cell(i + 3, j + 1).Value = ReportDataGrid.Rows[i].Cells[j].Value.ToString();
+                                    worksheet.Cell(i + 3, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
                                 }
                             }
                         }

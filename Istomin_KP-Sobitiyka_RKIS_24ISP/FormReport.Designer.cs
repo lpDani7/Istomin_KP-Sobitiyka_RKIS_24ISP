@@ -71,18 +71,22 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReport));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonReportCountEventExport = new System.Windows.Forms.Button();
             this.dataGridViewReportCountEvent = new System.Windows.Forms.DataGridView();
             this.comboBoxReportCountEventSelectYear = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chartReportCountEvent = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonReportTrafficExport = new System.Windows.Forms.Button();
             this.dataGridViewReportTraffic = new System.Windows.Forms.DataGridView();
             this.comboBoxReportTrafficSelectYear = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.chartReportTraffic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonReportTypeTrafficExport = new System.Windows.Forms.Button();
             this.dataGridViewReportTypeTraffic = new System.Windows.Forms.DataGridView();
             this.comboBoxReportTypeTrafficSelectMonth = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -90,20 +94,17 @@
             this.label15 = new System.Windows.Forms.Label();
             this.chartReportTypeTraffic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.buttonReportExpensesExport = new System.Windows.Forms.Button();
             this.dataGridViewReportExpenses = new System.Windows.Forms.DataGridView();
             this.comboBoxReportExpensesSelectYear = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.chartReportExpenses = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonReportIncomeExport = new System.Windows.Forms.Button();
             this.dataGridViewReportIncome = new System.Windows.Forms.DataGridView();
             this.comboBoxReportIncomeSelectYear = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.chartReportIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.buttonReportCountEventExport = new System.Windows.Forms.Button();
-            this.buttonReportTrafficExport = new System.Windows.Forms.Button();
-            this.buttonReportTypeTrafficExport = new System.Windows.Forms.Button();
-            this.buttonReportExpensesExport = new System.Windows.Forms.Button();
-            this.buttonReportIncomeExport = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReportCountEvent)).BeginInit();
@@ -152,6 +153,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Количество мероприятий";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonReportCountEventExport
+            // 
+            this.buttonReportCountEventExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportCountEventExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportCountEventExport.Location = new System.Drawing.Point(20, 500);
+            this.buttonReportCountEventExport.Name = "buttonReportCountEventExport";
+            this.buttonReportCountEventExport.Size = new System.Drawing.Size(381, 38);
+            this.buttonReportCountEventExport.TabIndex = 46;
+            this.buttonReportCountEventExport.Text = "Экспорт в Excel";
+            this.buttonReportCountEventExport.UseVisualStyleBackColor = false;
+            this.buttonReportCountEventExport.Click += new System.EventHandler(this.buttonReportCountEventExport_Click);
             // 
             // dataGridViewReportCountEvent
             // 
@@ -254,6 +267,18 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Посещаемость";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // buttonReportTrafficExport
+            // 
+            this.buttonReportTrafficExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportTrafficExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportTrafficExport.Location = new System.Drawing.Point(17, 495);
+            this.buttonReportTrafficExport.Name = "buttonReportTrafficExport";
+            this.buttonReportTrafficExport.Size = new System.Drawing.Size(437, 38);
+            this.buttonReportTrafficExport.TabIndex = 47;
+            this.buttonReportTrafficExport.Text = "Экспорт в Excel";
+            this.buttonReportTrafficExport.UseVisualStyleBackColor = false;
+            this.buttonReportTrafficExport.Click += new System.EventHandler(this.buttonReportTrafficExport_Click);
             // 
             // dataGridViewReportTraffic
             // 
@@ -363,6 +388,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Типы посещаемости";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // buttonReportTypeTrafficExport
+            // 
+            this.buttonReportTypeTrafficExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportTypeTrafficExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportTypeTrafficExport.Location = new System.Drawing.Point(17, 500);
+            this.buttonReportTypeTrafficExport.Name = "buttonReportTypeTrafficExport";
+            this.buttonReportTypeTrafficExport.Size = new System.Drawing.Size(394, 38);
+            this.buttonReportTypeTrafficExport.TabIndex = 48;
+            this.buttonReportTypeTrafficExport.Text = "Экспорт в Excel";
+            this.buttonReportTypeTrafficExport.UseVisualStyleBackColor = false;
+            this.buttonReportTypeTrafficExport.Click += new System.EventHandler(this.buttonReportTypeTrafficExport_Click);
             // 
             // dataGridViewReportTypeTraffic
             // 
@@ -486,6 +523,18 @@
             this.tabPage4.Text = "Расходы";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // buttonReportExpensesExport
+            // 
+            this.buttonReportExpensesExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportExpensesExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportExpensesExport.Location = new System.Drawing.Point(17, 499);
+            this.buttonReportExpensesExport.Name = "buttonReportExpensesExport";
+            this.buttonReportExpensesExport.Size = new System.Drawing.Size(333, 38);
+            this.buttonReportExpensesExport.TabIndex = 48;
+            this.buttonReportExpensesExport.Text = "Экспорт в Excel";
+            this.buttonReportExpensesExport.UseVisualStyleBackColor = false;
+            this.buttonReportExpensesExport.Click += new System.EventHandler(this.buttonReportExpensesExport_Click);
+            // 
             // dataGridViewReportExpenses
             // 
             this.dataGridViewReportExpenses.AllowUserToAddRows = false;
@@ -586,6 +635,18 @@
             this.tabPage5.Text = "Доходы";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // buttonReportIncomeExport
+            // 
+            this.buttonReportIncomeExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonReportIncomeExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReportIncomeExport.Location = new System.Drawing.Point(17, 500);
+            this.buttonReportIncomeExport.Name = "buttonReportIncomeExport";
+            this.buttonReportIncomeExport.Size = new System.Drawing.Size(330, 38);
+            this.buttonReportIncomeExport.TabIndex = 48;
+            this.buttonReportIncomeExport.Text = "Экспорт в Excel";
+            this.buttonReportIncomeExport.UseVisualStyleBackColor = false;
+            this.buttonReportIncomeExport.Click += new System.EventHandler(this.buttonReportIncomeExport_Click);
+            // 
             // dataGridViewReportIncome
             // 
             this.dataGridViewReportIncome.AllowUserToAddRows = false;
@@ -672,66 +733,6 @@
             title5.Text = "Доходы с мероприятий по месяцам";
             this.chartReportIncome.Titles.Add(title5);
             // 
-            // buttonReportCountEventExport
-            // 
-            this.buttonReportCountEventExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonReportCountEventExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonReportCountEventExport.Location = new System.Drawing.Point(20, 500);
-            this.buttonReportCountEventExport.Name = "buttonReportCountEventExport";
-            this.buttonReportCountEventExport.Size = new System.Drawing.Size(381, 38);
-            this.buttonReportCountEventExport.TabIndex = 46;
-            this.buttonReportCountEventExport.Text = "Экспорт в Excel";
-            this.buttonReportCountEventExport.UseVisualStyleBackColor = false;
-            this.buttonReportCountEventExport.Click += new System.EventHandler(this.buttonReportCountEventExport_Click);
-            // 
-            // buttonReportTrafficExport
-            // 
-            this.buttonReportTrafficExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonReportTrafficExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonReportTrafficExport.Location = new System.Drawing.Point(17, 495);
-            this.buttonReportTrafficExport.Name = "buttonReportTrafficExport";
-            this.buttonReportTrafficExport.Size = new System.Drawing.Size(437, 38);
-            this.buttonReportTrafficExport.TabIndex = 47;
-            this.buttonReportTrafficExport.Text = "Экспорт в Excel";
-            this.buttonReportTrafficExport.UseVisualStyleBackColor = false;
-            this.buttonReportTrafficExport.Click += new System.EventHandler(this.buttonReportTrafficExport_Click);
-            // 
-            // buttonReportTypeTrafficExport
-            // 
-            this.buttonReportTypeTrafficExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonReportTypeTrafficExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonReportTypeTrafficExport.Location = new System.Drawing.Point(17, 500);
-            this.buttonReportTypeTrafficExport.Name = "buttonReportTypeTrafficExport";
-            this.buttonReportTypeTrafficExport.Size = new System.Drawing.Size(394, 38);
-            this.buttonReportTypeTrafficExport.TabIndex = 48;
-            this.buttonReportTypeTrafficExport.Text = "Экспорт в Excel";
-            this.buttonReportTypeTrafficExport.UseVisualStyleBackColor = false;
-            this.buttonReportTypeTrafficExport.Click += new System.EventHandler(this.buttonReportTypeTrafficExport_Click);
-            // 
-            // buttonReportExpensesExport
-            // 
-            this.buttonReportExpensesExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonReportExpensesExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonReportExpensesExport.Location = new System.Drawing.Point(17, 499);
-            this.buttonReportExpensesExport.Name = "buttonReportExpensesExport";
-            this.buttonReportExpensesExport.Size = new System.Drawing.Size(333, 38);
-            this.buttonReportExpensesExport.TabIndex = 48;
-            this.buttonReportExpensesExport.Text = "Экспорт в Excel";
-            this.buttonReportExpensesExport.UseVisualStyleBackColor = false;
-            this.buttonReportExpensesExport.Click += new System.EventHandler(this.buttonReportExpensesExport_Click);
-            // 
-            // buttonReportIncomeExport
-            // 
-            this.buttonReportIncomeExport.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonReportIncomeExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonReportIncomeExport.Location = new System.Drawing.Point(17, 500);
-            this.buttonReportIncomeExport.Name = "buttonReportIncomeExport";
-            this.buttonReportIncomeExport.Size = new System.Drawing.Size(330, 38);
-            this.buttonReportIncomeExport.TabIndex = 48;
-            this.buttonReportIncomeExport.Text = "Экспорт в Excel";
-            this.buttonReportIncomeExport.UseVisualStyleBackColor = false;
-            this.buttonReportIncomeExport.Click += new System.EventHandler(this.buttonReportIncomeExport_Click);
-            // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -739,6 +740,7 @@
             this.ClientSize = new System.Drawing.Size(1246, 570);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormReport";
             this.Text = "Отчёты";

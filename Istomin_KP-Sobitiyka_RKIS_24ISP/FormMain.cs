@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.Excel;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Istomin_KP_Sobitiyka_RKIS_24ISP.Controller;
 using System;
 using System.Collections.Generic;
@@ -366,7 +367,7 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
                                                             $"{dataGridViewEvents.CurrentRow.Cells["Название"].Value}, " +
                                                             $"{dataGridViewEvents.CurrentRow.Cells["Дата проведения"].Value.ToString()} и все его связи? " +
                                                             $"Это действие нельзя будет отменить, все данные об этом мероприятии и " +
-                                                            $"связанная с ним информация из других таблиц будут удалены!", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                                            $"связанная с ним информация из других таблиц будет удалена!", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
                 controller.DeleteEventConnection(id);
@@ -388,6 +389,61 @@ namespace Istomin_KP_Sobitiyka_RKIS_24ISP
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteEventAndConnection();
+        }
+
+        //Функция экспорта списка мероприятий
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Диалоговое окно для выбора пути сохранения
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel File (*.xlsx)|*.xlsx";
+            saveFileDialog.FileName = $"ExportedEventList{DateTime.Now.ToShortDateString()}.xlsx";
+            //Можно в имя файла поместить текущую дату
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // Создаём новый документ Excel
+                    using (XLWorkbook workbook = new XLWorkbook())
+                    {
+                        // Добавляем лист и называем его
+                        IXLWorksheet worksheet = workbook.Worksheets.Add("Данные");
+
+                        // Подписываем отчёт
+                        worksheet.Cell(1, 1).Value = "Список мероприятий"; worksheet.Cell(1, 1).Style.Font.Bold = true;
+
+                        // Записываем заголовки столбцов
+                        for (int i = 0; i < dataGridViewEvents.Columns.Count; i++)
+                        {
+                            worksheet.Cell(2, i + 1).Value = dataGridViewEvents.Columns[i].HeaderText;
+                            worksheet.Cell(2, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                        }
+
+                        // Записываем данные из OrderDataGrid в ячейки Excel-таблицы
+                        for (int i = 0; i < dataGridViewEvents.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < dataGridViewEvents.Columns.Count; j++)
+                            {
+                                // Проверяем, что ячейка не пустая
+                                if (dataGridViewEvents.Rows[i].Cells[j].Value != null)
+                                {
+                                    worksheet.Cell(i + 3, j + 1).Value = dataGridViewEvents.Rows[i].Cells[j].Value.ToString();
+                                    worksheet.Cell(i + 3, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                                }
+                            }
+                        }
+                        // Сохраняем файл
+                        workbook.SaveAs(saveFileDialog.FileName);
+                        //workbook.Close();
+                    }
+                    MessageBox.Show("Данные успешно экспортированы!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } //try
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при экспорте: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } //catch
+            }//if
         }
     }
 }
